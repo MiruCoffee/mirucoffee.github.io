@@ -1,61 +1,62 @@
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #faf7f2;
+  font-family: Arial, sans-serif;
+  background-color: #fffaf0;
   margin: 0;
   padding: 0;
 }
 
-.logo {
-  max-width: 180px;
-  margin: 2rem auto 1rem auto;
-  display: block;
+header {
+  background-color: #5c4033;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.hero {
-  text-align: center;
-  padding: 2rem 1rem 2rem 1rem;
-  background: #f8ecd7;
-  border-bottom: 2px solid #e2d2b0;
+.logo img {
+  width: 150px;
+  height: auto;
 }
 
-.hero .tagline {
-  font-size: 1.3rem;
-  color: #a06c3b;
-  margin: 1rem 0;
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
 }
 
-.cta-btn {
-  display: inline-block;
-  padding: 0.7rem 2rem;
-  margin-top: 1rem;
-  background: #a06c3b;
-  color: #fff;
-  border-radius: 2rem;
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #ffffff;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.2rem;
-  box-shadow: 0 2px 8px #e2d2b088;
-  transition: background 0.2s;
-}
-.cta-btn:hover {
-  background: #603d1d;
 }
 
-section {
-  max-width: 800px;
-  margin: 2rem auto;
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 2px 12px #e6e1d7cc;
-  padding: 2rem 2.5rem;
+nav ul li a:hover {
+  color: #ffd700;
 }
 
-.about, .subscribe, .contact {
-  margin-top: 2rem;
+main {
+  padding: 20px;
 }
 
-@media (max-width: 600px) {
-  section { padding: 1rem; }
-  .logo { max-width: 110px; }
-  .hero h1 { font-size: 2rem; }
+footer {
+  background-color: #5c4033;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+a {
+  color: #c66;
+}
+
+a:hover {
+  color: #f93;
 }
