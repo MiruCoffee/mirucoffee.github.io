@@ -15,7 +15,7 @@ body {
 
 /* 調整速度 */
 marquee {
-  scrollamount: 5; /* 數值越小，速度越慢 */
+  scrollamount: ４; /* 數值越小，速度越慢 */
 }
 
 
