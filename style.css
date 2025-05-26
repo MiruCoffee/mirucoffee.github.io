@@ -1,62 +1,71 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #fffaf0;
-  margin: 0;
+  background-color: #f8f2ec;
+  color: #333;
   padding: 0;
+  margin: 0;
 }
 
-header {
-  background-color: #5c4033;
-  padding: 10px;
+.header-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  background-color: transparent;
+  padding-top: 20px;
 }
 
-.logo img {
-  width: 150px;
+.logo-link {
+  display: inline-block;
+}
+
+.logo {
+  max-width: 300px;
+  width: 100%;
   height: auto;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.nav-menu ul {
   display: flex;
+  gap: 40px;
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0 0;
+  font-size: 1.2rem;
 }
 
-nav ul li {
-  margin-left: 20px;
-}
-
-nav ul li a {
-  color: #ffffff;
+.nav-menu ul li a {
   text-decoration: none;
+  color: #5c4033;
   font-weight: bold;
+  padding-bottom: 8px;
 }
 
-nav ul li a:hover {
-  color: #ffd700;
+.nav-menu ul li a:hover {
+  color: #ff9900;
 }
 
 main {
+  width: 80%;
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+section {
+  background-color: #fff;
+  border-radius: 12px;
   padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 footer {
-  background-color: #5c4033;
-  color: white;
   text-align: center;
-  padding: 10px;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
+  padding: 20px;
+  font-size: 0.9rem;
+  background-color: #f2e5d8;
 }
 
-a {
-  color: #c66;
-}
-
-a:hover {
-  color: #f93;
+footer a {
+  color: #5c4033;
 }
