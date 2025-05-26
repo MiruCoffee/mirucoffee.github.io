@@ -5,25 +5,12 @@
   <title>Miru Coffee - Official Website</title>
   <link rel="stylesheet" href="style.css"> <!-- 確保路徑正確 -->
 </head>
-<script>
-  // 使用 Fetch API 讀取外部文字檔案內容，然後放入跑馬燈
-  fetch(MSG/001 announcement.txt)
-    .then(response => response.text())
-    .then(text => {
-      document.getElementById('announcement-marquee').textContent = text;
-    })
-    .catch(error => {
-      console.error('Failed to load announcement file', error);
-    });
-</script>
-
 <body>
   <header>
     <!-- 跑馬燈提示 -->
-<marquee class="header-marquee" id="announcement-marquee">
-
-</marquee>
-
+    <marquee class="header-marquee" id="announcement-marquee">
+      <!-- 文字將透過JavaScript載入 -->
+    </marquee>
 
     <!-- 導覽列 -->
     <nav class="navbar">
@@ -63,5 +50,25 @@
   <footer>
     <p>Follow us on <a href="https://www.facebook.com/61576253565111/">Facebook</a> | Email: <a href="mailto:info@mirucoffee.com">info@mirucoffee.com</a></p>
   </footer>
+
+  <script>
+    // 使用 Fetch API 載入公告內容到跑馬燈中
+    fetch('MSG/001 announcement.txt') // 注意路徑須加引號
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+      })
+      .then(text => {
+        const marquee = document.getElementById('announcement-marquee');
+        marquee.textContent = text;
+        marquee.setAttribute('scrollamount', '5');  // 調整跑馬燈速度，數字越小越慢
+        marquee.style.fontSize = '20px'; // 字體大小調整
+      })
+      .catch(error => {
+        console.error('Failed to load announcement file', error);
+        document.getElementById('announcement-marquee').textContent = '⚠️ Announcement loading failed.';
+      });
+  </script>
+
 </body>
 </html>

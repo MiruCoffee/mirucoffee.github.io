@@ -9,8 +9,15 @@ body {
   background-color: #654321;
   color: #ffffff;
   padding: 10px;
-  font-size: 20px;
+  font-size: 24px; /* 增大字體 */
+  font-weight: bold;
 }
+
+/* 調整速度 */
+marquee {
+  scrollamount: 5; /* 數值越小，速度越慢 */
+}
+
 
 .navbar {
   background-color: #6e4b3a;
