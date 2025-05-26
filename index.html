@@ -1,91 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <title>Miru Coffee - Official Website</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f8f3e9;
-      color: #333;
-      text-align: center;
-    }
-    .header {
-      position: relative;
-      padding: 20px;
-      background-image: url('facebook front page 1.png');
-      background-size: cover;
-      background-position: center;
-      height: 350px;
-    }
-    .nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 20px;
-    }
-    .nav img {
-      height: 80px;
-      margin-right: 40px;
-    }
-    .nav a {
-      margin: 0 20px;
-      color: #5c4033;
-      font-weight: bold;
-      font-size: 18px;
-      text-decoration: none;
-    }
-    .content {
-      margin: 40px auto;
-      width: 70%;
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    footer {
-      background-color: #5c4033;
-      color: #f8f3e9;
-      padding: 10px;
-      margin-top: 40px;
-      font-size: 14px;
-    }
-    footer a {
-      color: #ffcc66;
-      text-decoration: none;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="header">
-  <img src="images/facebook front page 1.png" alt="Miru Coffee Cover Image" class="header-image">
-  <nav class="navbar">
-    <img src="images/20250516_MiruCoffee.png" alt="Miru Coffee Logo" class="logo">
-    <ul>
-      <li><a href="subscriptions.html">Subscriptions</a></li>
-      <li><a href="coffee.html">Coffee</a></li>
-      <li><a href="myaccount.html">My Account</a></li>
-    </ul>
-  </nav>
-</div>
-  <div class="content">
-    <h1>Welcome to Miru Coffee</h1>
-    <p>Specialty coffee, small batch, freshly roasted every weekend.<br>
-       Curated & shipped from Texas, USA.</p>
+  <header>
+    <img class="header-image" src="images/facebook front page 1.png" alt="Miru Coffee Cover">
+    <nav class="navbar">
+      <img class="logo" src="images/20250516_MiruCoffee.png" alt="Miru Coffee Logo">
+      <ul>
+        <li><a href="subscriptions.html">Subscriptions</a></li>
+        <li><a href="coffee.html">Coffee</a></li>
+        <li><a href="myaccount.html">My Account</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <h2>About Us</h2>
-    <p>We select only premium beans and use air roasting for a clean, vibrant flavor. 
-       Every batch is roasted in small quantities, then shipped within two days of roasting.</p>
+  <main>
+    <div class="content">
+      <section class="card">
+        <h2>Welcome to Miru Coffee</h2>
+        <p>Specialty coffee, small batch, freshly roasted every weekend.<br>Curated & shipped from Texas, USA.</p>
+      </section>
 
-    <h2>Subscribe</h2>
-    <p>Want to try our rotating selection? Email us at <a href="mailto:info@mirucoffee.com">info@mirucoffee.com</a> to get a custom quote and shipping estimate.</p>
-  </div>
+      <section class="card">
+        <h2>About Us</h2>
+        <p>We select only premium beans and use air roasting for a clean, vibrant flavor. Every batch is roasted in small quantities, then shipped within two days of roasting.</p>
+      </section>
+
+      <section class="card">
+        <h2>Subscribe</h2>
+        <p>Want to try our rotating selection? Email us at <a href="mailto:info@mirucoffee.com">info@mirucoffee.com</a> to get a custom quote and shipping estimate.</p>
+      </section>
+    </div>
+  </main>
 
   <footer>
-    Follow us on <a href="https://www.facebook.com/61576253565111">Facebook</a> | Email: <a href="mailto:info@mirucoffee.com">info@mirucoffee.com</a>
+    <p>Follow us on <a href="https://www.facebook.com/61576253565111/">Facebook</a> | Email: <a href="mailto:info@mirucoffee.com">info@mirucoffee.com</a></p>
   </footer>
-
 </body>
 </html>
