@@ -5,13 +5,25 @@
   <title>Miru Coffee - Official Website</title>
   <link rel="stylesheet" href="style.css"> <!-- 確保路徑正確 -->
 </head>
+<script>
+  // 使用 Fetch API 讀取外部文字檔案內容，然後放入跑馬燈
+  fetch(MSG/001 announcement.txt)
+    .then(response => response.text())
+    .then(text => {
+      document.getElementById('announcement-marquee').textContent = text;
+    })
+    .catch(error => {
+      console.error('Failed to load announcement file', error);
+    });
+</script>
 
 <body>
   <header>
     <!-- 跑馬燈提示 -->
-    <marquee class="header-marquee" behavior="scroll" direction="left">
-      Free shipping on orders exceed 50 dollars or more! Subscribe now and get 10% off your order!
-    </marquee>
+<marquee class="header-marquee" id="announcement-marquee">
+
+</marquee>
+
 
     <!-- 導覽列 -->
     <nav class="navbar">
