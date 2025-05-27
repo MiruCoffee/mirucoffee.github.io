@@ -3,71 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <title>Miru Coffee - Official Website</title>
-  <link rel="stylesheet" href="style.css"> <!-- 確保路徑正確 -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <!-- 跑馬燈提示 -->
-    <marquee class="header-marquee" id="announcement-marquee">
-      <!-- 文字將透過JavaScript載入 -->
-    </marquee>
-
-    <!-- 導覽列 -->
+    <marquee class="header-marquee" id="announcement-marquee"></marquee>
     <nav class="navbar">
-      <!-- Logo 點擊可回到首頁 -->
       <a href="index.html">
         <img class="logo" src="IMG/001 Miru Coffee Logo.png" alt="Miru Coffee Logo">
       </a>
-
-      <!-- 導覽選單 -->
       <ul>
         <li><a href="subscriptions.html">Subscriptions</a></li>
         <li><a href="coffee.html">Coffee</a></li>
-        <li><a href="about us.html">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="myaccount.html">My Account</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-  <div class="content">
-    <section class="card">
-      <h2>Welcome to Miru Coffee</h2>
-      <p>Specialty coffee, small batch, freshly roasted every weekend.<br>Curated & shipped from Texas, USA.</p>
-    </section>
+    <div class="content">
 
-    <section class="card">
-      <h2>Subscribe</h2>
-      <p>Want to try our rotating selection? Email us at <a href="mailto:info@mirucoffee.com">info@mirucoffee.com</a> to get a custom quote and shipping estimate.</p>
-    </section>
+      <!-- Welcome Hero Section -->
+      <section class="card hero-section">
+        <div class="hero-flex">
+          <div class="hero-text">
+            <h1 class="hero-heading">Welcome to Miru Coffee</h1>
+            <p class="hero-subheading"><strong>Air-roasted specialty coffee, handcrafted in small batches from rural Texas.</strong></p>
+            <p>At Miru Coffee, we use a <strong>modern air roaster</strong> to precisely roast <strong>premium-grade beans</strong>. Our method produces a cleaner, more vibrant flavor — no smokiness, just the pure expression of origin.</p>
+            <p>We roast fresh every two weeks. You can <strong>buy one bag</strong> or <strong>subscribe</strong> to receive a rotating selection every 2, 4, or 6 weeks.</p>
+            <a href="subscriptions.html" class="subscribe-button">☕ Subscribe Now</a>
+          </div>
+          <div class="hero-image">
+            <img src="IMG/Equipment/EQ002 Air Roaster.png" alt="Miru Air Roaster">
+          </div>
+        </div>
+      </section>
 
-    <section class="card">
-      <h2>Recent Roasts</h2>
-      <div class="roast-gallery">
-        <img src="IMG/Product/PROD-4.png" alt="Previous 4th" class="coffee-pack">
-        <img src="IMG/Product/PROD-3.png" alt="Previous 3rd" class="coffee-pack">
-        <img src="IMG/Product/PROD-2.png" alt="Previous 2nd" class="coffee-pack">
-        <img src="IMG/Product/PROD-1.png" alt="Previous" class="coffee-pack">
-      </div>
-    </section>
+      <!-- Bean Type Category Section -->
+      <section class="card bean-type-section">
+        <h2>Explore Our Green Coffee Origins</h2>
+        <div class="bean-type-gallery">
+          <a href="coffee.html#C1001">
+            <img src="IMG/Bean/C1001.png" alt="C1001">
+          </a>
+          <a href="coffee.html#C1002">
+            <img src="IMG/Bean/C1002.png" alt="C1002">
+          </a>
+          <a href="coffee.html#C1004">
+            <img src="IMG/Bean/C1004.png" alt="C1004">
+          </a>
+          <a href="coffee.html#C1005">
+            <img src="IMG/Bean/C1005.png" alt="C1005">
+          </a>
+        </div>
+      </section>
 
-    <section class="card">
-      <h2>Next Roast Preview</h2>
-      <div class="roast-preview">
-        <img src="IMG/Product/PROD-0.png" alt="Coming Roast" class="coffee-pack-large">
-      </div>
-    </section>
-  </div>
-</main>
+      <!-- Recent Roasts -->
+      <section class="card">
+        <h2>Recent Roasts</h2>
+        <div class="roast-gallery">
+          <img src="IMG/Product/PROD-4.png" alt="Previous 4th" class="coffee-pack">
+          <img src="IMG/Product/PROD-3.png" alt="Previous 3rd" class="coffee-pack">
+          <img src="IMG/Product/PROD-2.png" alt="Previous 2nd" class="coffee-pack">
+          <img src="IMG/Product/PROD-1.png" alt="Previous" class="coffee-pack">
+        </div>
+      </section>
 
+      <!-- Next Roast -->
+      <section class="card">
+        <h2>Next Roast Preview</h2>
+        <div class="roast-preview">
+          <img src="IMG/Product/PROD-0.png" alt="Coming Roast" class="coffee-pack-large">
+        </div>
+      </section>
+
+    </div>
+  </main>
 
   <footer>
-    <p>Follow us on <a href="https://www.facebook.com/61576253565111/">Facebook</a> | Email: <a href="mailto:info@mirucoffee.com">info@mirucoffee.com</a></p>
+    <p>Follow us on <a href="https://www.facebook.com/61576253565111/">Facebook</a> |
+      Email: <a href="mailto:info@mirucoffee.com">info@mirucoffee.com</a></p>
   </footer>
 
   <script>
-    // 使用 Fetch API 載入公告內容到跑馬燈中
-    fetch('MSG/001 announcement.txt') // 注意路徑須加引號
+    fetch('MSG/001 announcement.txt')
       .then(response => {
         if (!response.ok) throw new Error('Network response was not ok');
         return response.text();
@@ -75,14 +95,13 @@
       .then(text => {
         const marquee = document.getElementById('announcement-marquee');
         marquee.textContent = text;
-        marquee.setAttribute('scrollamount', '5');  // 調整跑馬燈速度，數字越小越慢
-        marquee.style.fontSize = '20px'; // 字體大小調整
+        marquee.setAttribute('scrollamount', '5');
+        marquee.style.fontSize = '20px';
       })
       .catch(error => {
         console.error('Failed to load announcement file', error);
         document.getElementById('announcement-marquee').textContent = '⚠️ Announcement loading failed.';
       });
   </script>
-
 </body>
 </html>
