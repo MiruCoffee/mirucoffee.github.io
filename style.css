@@ -75,3 +75,34 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+.roast-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.roast-preview {
+  text-align: center;
+}
+
+.coffee-pack {
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.coffee-pack:hover {
+  transform: scale(1.05);
+}
+
+.coffee-pack-large {
+  height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
