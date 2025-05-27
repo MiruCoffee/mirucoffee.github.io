@@ -15,9 +15,8 @@ body {
 
 /* 調整速度 */
 marquee {
-  scrollamount: ４; /* 數值越小，速度越慢 */
+  scrollamount: 4; /* 數值越小，速度越慢 */
 }
-
 
 .navbar {
   background-color: #6e4b3a;
@@ -47,17 +46,20 @@ marquee {
 }
 
 main {
-  padding: 30px;
-  max-width: 900px;
+  padding: 30px 5vw;
+  max-width: 1200px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .card {
   background-color: #ffffff;
   border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 24px;
+  margin-bottom: 24px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 footer {
@@ -105,4 +107,34 @@ footer a:hover {
   border-radius: 8px;
   margin-bottom: 0.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* ✅ 手機版調整 */
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .coffee-pack {
+    height: 200px;
+  }
+
+  .coffee-pack-large {
+    height: 240px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  main {
+    padding: 20px 3vw;
+  }
 }
