@@ -1,8 +1,14 @@
+/* ====== Base ====== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f8f3e9;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .header-marquee {
@@ -17,6 +23,7 @@ marquee {
   scrollamount: 4;
 }
 
+/* ====== Navbar ====== */
 .navbar {
   background-color: #6e4b3a;
   display: flex;
@@ -27,6 +34,7 @@ marquee {
 
 .logo {
   height: 60px;
+  max-width: 200px;
 }
 
 .navbar ul {
@@ -44,10 +52,9 @@ marquee {
   font-size: 22px;
 }
 
+/* ====== Layout ====== */
 main {
   padding: 30px 5vw;
-  max-width: 1200px;
-  margin: 0 auto;
   box-sizing: border-box;
 }
 
@@ -77,7 +84,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* ========== Hero Section (Welcome) ========== */
+/* ====== Hero (Welcome) ====== */
 .hero-section {
   padding-bottom: 2rem;
 }
@@ -122,11 +129,12 @@ footer a:hover {
 
 .hero-image img {
   max-width: 100%;
+  height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-/* ========== Bean Type Section ========== */
+/* ====== Bean Type Section ====== */
 .bean-type-section h2 {
   text-align: center;
   font-size: 1.6rem;
@@ -142,6 +150,7 @@ footer a:hover {
 
 .bean-type-gallery img {
   width: 180px;
+  max-width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
@@ -152,7 +161,7 @@ footer a:hover {
   transform: scale(1.05);
 }
 
-/* ========== Roast Gallery ========== */
+/* ====== Roast Gallery ====== */
 .roast-gallery {
   display: flex;
   flex-wrap: wrap;
@@ -170,6 +179,7 @@ footer a:hover {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: transform 0.2s ease;
+  max-width: 100%;
 }
 
 .coffee-pack:hover {
@@ -182,9 +192,10 @@ footer a:hover {
   border-radius: 8px;
   margin-bottom: 0.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  max-width: 100%;
 }
 
-/* ========== Responsive Design ========== */
+/* ====== Responsive (Mobile) ====== */
 @media (max-width: 600px) {
   .navbar ul {
     flex-direction: column;
