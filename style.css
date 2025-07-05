@@ -12,6 +12,9 @@ body {
 }
 
 .header-marquee {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   background-color: #654321;
   color: #ffffff;
   padding: 10px;
@@ -25,6 +28,9 @@ marquee {
 
 /* ====== Navbar ====== */
 .navbar {
+  position: sticky;
+  top: 48px;
+  z-index: 999;
   background-color: #6e4b3a;
   display: flex;
   justify-content: space-between;
@@ -56,6 +62,7 @@ marquee {
 main {
   padding: 30px 5vw;
   box-sizing: border-box;
+  padding-top: 120px; /* 避開 sticky 的 header + navbar */
 }
 
 .card {
@@ -165,7 +172,7 @@ footer a:hover {
 .coffee-pack {
   width: 100%;
   max-width: 220px;
-  aspect-ratio: 1 / 1; /* 可改成 3 / 4 依需求 */
+  aspect-ratio: 1 / 1;
   object-fit: contain;
   background-color: #f8f3e9;
   border-radius: 8px;
@@ -217,6 +224,7 @@ footer a:hover {
 
   main {
     padding: 20px 3vw;
+    padding-top: 100px; /* 手機版：避免被 sticky 區遮住 */
   }
 
   .hero-flex {
