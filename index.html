@@ -90,6 +90,7 @@
     <p>© 2025 Miru Coffee. All rights reserved.</p>
   </footer>
 
+  <!-- Announcement Loader -->
   <script>
     fetch('MSG/001 announcement.txt')
       .then(response => {
@@ -106,6 +107,17 @@
         console.error('Failed to load announcement file', error);
         document.getElementById('announcement-marquee').textContent = '⚠️ Announcement loading failed.';
       });
+  </script>
+
+  <!-- Image Auto-Versioning (Cache Bypass) -->
+  <script>
+    const version = new Date().toISOString().split('T')[0]; // e.g., 2025-07-05
+    document.querySelectorAll('img').forEach(img => {
+      const src = img.getAttribute('src');
+      if (src && !src.includes('?v=')) {
+        img.src = `${src}?v=${version}`;
+      }
+    });
   </script>
 </body>
 </html>
