@@ -148,19 +148,6 @@ footer a:hover {
   flex-wrap: wrap;
 }
 
-.bean-type-gallery img {
-  width: 180px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  transition: transform 0.2s ease;
-}
-
-.bean-type-gallery img:hover {
-  transform: scale(1.05);
-}
-
 /* ====== Roast Gallery ====== */
 .roast-gallery {
   display: flex;
@@ -173,19 +160,26 @@ footer a:hover {
   text-align: center;
 }
 
+/* ====== Unified Image Style (Origins & Roasts) ====== */
+.bean-type-gallery img,
 .coffee-pack {
-  height: 250px;
-  object-fit: cover;
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 1 / 1; /* 可改成 3 / 4 依需求 */
+  object-fit: contain;
+  background-color: #f8f3e9;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 6px;
   transition: transform 0.2s ease;
-  max-width: 100%;
 }
 
+.bean-type-gallery img:hover,
 .coffee-pack:hover {
   transform: scale(1.05);
 }
 
+/* ====== Single Large Image (Next Roast) ====== */
 .coffee-pack-large {
   height: 300px;
   object-fit: contain;
@@ -208,8 +202,9 @@ footer a:hover {
     align-items: flex-start;
   }
 
+  .bean-type-gallery img,
   .coffee-pack {
-    height: 200px;
+    max-width: 46%;
   }
 
   .coffee-pack-large {
