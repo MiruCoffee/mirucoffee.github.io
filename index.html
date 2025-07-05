@@ -109,9 +109,9 @@
       });
   </script>
 
-  <!-- Image Auto-Versioning (Cache Bypass) -->
+  <!-- Image Auto-Versioning (Cache Bypass, millisecond precision) -->
   <script>
-    const version = new Date().toISOString().split('T')[0]; // e.g., 2025-07-05
+    const version = Date.now(); // 每次載入都不同，強制重新載圖
     document.querySelectorAll('img').forEach(img => {
       const src = img.getAttribute('src');
       if (src && !src.includes('?v=')) {
