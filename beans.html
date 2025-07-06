@@ -41,7 +41,7 @@
     <div class="content">
       <!-- 上方：詳細介紹 -->
       <section class="card" id="bean-detail">
-        <!-- 這裡會載入 beans/C1001.txt 的內容 -->
+        <!-- 這裡會載入 beans/Cxxxx.txt 的內容 -->
       </section>
 
       <!-- 下方：豆子縮圖列表 -->
@@ -80,6 +80,11 @@
       const mainImg = document.querySelector('.bean-full-image');
       if (mainImg) addVersionToImage(mainImg);
     }
+
+    function getBeanCodeFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("code") || "C1001";
+    }
   </script>
 
   <!-- 載入豆子介紹內容 -->
@@ -96,13 +101,15 @@
         });
     }
 
-    loadBean('C1001');
+    const initialCode = getBeanCodeFromURL();
+    loadBean(initialCode);
 
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.bean-thumbnails img').forEach(img => {
         img.addEventListener('click', () => {
           const code = img.dataset.code;
           loadBean(code);
+          history.replaceState(null, '', '?code=' + code);
         });
       });
 

@@ -28,16 +28,16 @@
       <section class="card bean-type-section">
         <h2>Explore Our Green Coffee Origins</h2>
         <div class="bean-type-gallery">
-          <a href="coffee.html#C1001">
+          <a href="beans.html?code=C1001">
             <img src="IMG/Bean/C1001.png" alt="C1001">
           </a>
-          <a href="coffee.html#C1002">
+          <a href="beans.html?code=C1002">
             <img src="IMG/Bean/C1002.png" alt="C1002">
           </a>
-          <a href="coffee.html#C1004">
+          <a href="beans.html?code=C1004">
             <img src="IMG/Bean/C1004.png" alt="C1004">
           </a>
-          <a href="coffee.html#C1005">
+          <a href="beans.html?code=C1005">
             <img src="IMG/Bean/C1005.png" alt="C1005">
           </a>
         </div>
@@ -74,8 +74,6 @@
       .then(res => res.text())
       .then(html => {
         document.getElementById('shared-header').innerHTML = html;
-
-        // 載入 marquee 文字
         return fetch('MSG/001 announcement.txt');
       })
       .then(res => res.text())
