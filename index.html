@@ -6,20 +6,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <marquee class="header-marquee" id="announcement-marquee"></marquee>
-    <nav class="navbar">
-      <a href="index.html">
-        <img class="logo" src="IMG/001 Miru Coffee Logo.png" alt="Miru Coffee Logo">
-      </a>
-      <ul>
-        <li><a href="subscriptions.html">Subscriptions</a></li>
-        <li><a href="coffee.html">Coffee</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="myaccount.html">My Account</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- 共用頁首 -->
+  <header id="shared-header"></header>
 
   <main>
     <div class="content">
@@ -76,31 +64,41 @@
     </div>
   </main>
 
-  <footer>
-    <p>Follow us on 
-      <a href="https://www.facebook.com/61576253565111/">Facebook</a> |
-      <a href="https://www.instagram.com/mirucoffeeairroastery/">Instagram</a> | 
-      Email: <a href="mailto:info@mirucoffee.com">info@mirucoffee.com</a>
-    </p>
-    <p>© 2025 Miru Coffee. All rights reserved.</p>
-  </footer>
+  <!-- 共用頁尾 -->
+  <footer id="shared-footer"></footer>
 
-  <!-- Announcement Loader -->
+  <!-- Shared Header + Footer Loader -->
   <script>
-    fetch('MSG/001 announcement.txt')
-      .then(response => {
-        if (!response.ok) throw new Error('Network response was not ok');
-        return response.text();
+    // 載入 Header
+    fetch('shared/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('shared-header').innerHTML = html;
+
+        // 載入 marquee 文字
+        return fetch('MSG/001 announcement.txt');
       })
+      .then(res => res.text())
       .then(text => {
         const marquee = document.getElementById('announcement-marquee');
-        marquee.textContent = text;
-        marquee.setAttribute('scrollamount', '5');
-        marquee.style.fontSize = '20px';
+        if (marquee) {
+          marquee.textContent = text;
+          marquee.setAttribute('scrollamount', '5');
+          marquee.style.fontSize = '20px';
+        }
       })
-      .catch(error => {
-        console.error('Failed to load announcement file', error);
-        document.getElementById('announcement-marquee').textContent = '⚠️ Announcement loading failed.';
+      .catch(err => {
+        console.error("Failed to load header or marquee", err);
+      });
+
+    // 載入 Footer
+    fetch('shared/footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('shared-footer').innerHTML = html;
+      })
+      .catch(err => {
+        console.error("Failed to load footer", err);
       });
   </script>
 
