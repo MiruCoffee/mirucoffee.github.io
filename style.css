@@ -87,6 +87,13 @@ main {
   box-sizing: border-box;
 }
 
+.card p {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
 /* ====== Footer ====== */
 footer {
   background-color: #6e4b3a;
@@ -183,7 +190,6 @@ footer a:hover {
   text-align: center;
 }
 
-/* ====== Image Styles ====== */
 .bean-type-gallery img,
 .coffee-pack {
   width: 100%;
@@ -210,7 +216,6 @@ footer a:hover {
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   max-width: 100%;
 }
-
 /* ====== Bean Hero Flex (beans page) ====== */
 .bean-hero-flex {
   display: flex;
@@ -310,14 +315,6 @@ footer a:hover {
 .map-link a {
   color: #3366cc;
   text-decoration: underline;
-}
-
-/* Producer Notes 段落更寬鬆 */
-.bean-hero-text p,
-.card p {
-  margin-bottom: 0.8rem;
-  font-size: 1rem;
-  line-height: 1.6;
 }
 
 /* ====== Responsive (Mobile) ====== */
