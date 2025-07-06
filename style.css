@@ -211,7 +211,7 @@ footer a:hover {
   max-width: 100%;
 }
 
-/* ====== Bean Detail: Hero Flex (Beans Page) ====== */
+/* ====== Bean Hero Flex (beans page) ====== */
 .bean-hero-flex {
   display: flex;
   flex-wrap: wrap;
@@ -236,7 +236,6 @@ footer a:hover {
   text-align: center;
 }
 
-/* ====== Bean Detail Enhancements ====== */
 .bean-full-image {
   max-width: 300px;
   display: block;
@@ -271,9 +270,12 @@ footer a:hover {
   margin-bottom: 1rem;
 }
 
+.bean-info-section > * {
+  flex: 1 1 48%;
+  max-width: 550px;
+}
+
 .bean-info-table {
-  flex: 1;
-  min-width: 260px;
   font-size: 0.95rem;
   line-height: 1.6;
 }
@@ -291,14 +293,13 @@ footer a:hover {
 }
 
 .map-embed {
-  flex: 1;
-  min-width: 260px;
   text-align: center;
 }
 
 .map-embed iframe {
   border-radius: 8px;
   border: 1px solid #ccc;
+  height: 180px;
 }
 
 .map-link {
@@ -309,6 +310,14 @@ footer a:hover {
 .map-link a {
   color: #3366cc;
   text-decoration: underline;
+}
+
+/* Producer Notes 段落更寬鬆 */
+.bean-hero-text p,
+.card p {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* ====== Responsive (Mobile) ====== */
