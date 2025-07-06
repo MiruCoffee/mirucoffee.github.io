@@ -384,4 +384,10 @@ footer a:hover {
   .bean-hero-text h2 {
     text-align: center;
   }
+
+  .flavor-notes,
+  .flavor-summary {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
 }
