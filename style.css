@@ -31,15 +31,17 @@ marquee {
 /* ====== Navbar ====== */
 .navbar {
   position: fixed;
-  top: 48px; /* 高度約等於 marquee 區 */
+  top: 48px; /* 跑馬燈高度 */
   left: 0;
   width: 100%;
   z-index: 999;
   background-color: #6e4b3a;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -50,9 +52,13 @@ marquee {
 .navbar ul {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  justify-content: flex-end;
   gap: 25px;
   margin: 0;
   padding: 0;
+  overflow-x: auto;
 }
 
 .navbar ul li a {
@@ -60,13 +66,14 @@ marquee {
   text-decoration: none;
   font-weight: bold;
   font-size: 22px;
+  white-space: nowrap;
 }
 
 /* ====== Layout ====== */
 main {
   padding: 30px 5vw;
   box-sizing: border-box;
-  padding-top: 130px; /* 保留上方 header + navbar 空間 */
+  padding-top: 130px; /* 避開 header + navbar */
 }
 
 .card {
@@ -228,7 +235,7 @@ footer a:hover {
 
   main {
     padding: 20px 3vw;
-    padding-top: 130px; /* 手機同樣避開固定 header */
+    padding-top: 130px; /* 手機版也避開 header */
   }
 
   .hero-flex {
