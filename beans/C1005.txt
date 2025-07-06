@@ -1,41 +1,53 @@
 <h2>Ethiopia West Arsi, Werka Nensebo</h2>
 
-<img src="IMG/Bean/C1005.png" alt="C1005" class="bean-full-image" style="margin: 10px auto; display: block;">
+<img src="IMG/Bean/C1005.png" alt="C1005" class="bean-full-image">
 
-<h4 style="margin-top: 1.5rem;">Flavor Notes:</h4>
-<ul style="list-style: none; padding-left: 0; line-height: 1.6;">
+<h4>Flavor Notes</h4>
+<ul class="flavor-notes">
   <li>Strawberry, Chocolate, Yogurt</li>
   <li>Mandarin Orange, Pomegranate, Mixed Berries</li>
 </ul>
-<p style="font-style: italic; color: #666;">
+<p class="flavor-summary">
   Meticulous organic cultivation and fermentation yield juicy flavors.
+</p>
+<p class="flavor-summary">
+  We are truly blown away by the cup profile of this coffee. The perfect growing altitude, heirloom varietals,
+  and attention to detail from picking to drying, all combine to produce a stunningly complex and vibrant cup.
 </p>
 
 <hr>
 
 <h4>Origin Details</h4>
-<table style="margin: 0 auto; font-size: 0.95rem; line-height: 1.5;">
-  <tr><td><strong>Origin:</strong></td><td>Werka Village, Refisa Kebele, Nensebo District, West Arsi, Oromia</td></tr>
-  <tr><td><strong>Altitude:</strong></td><td>1950–2100 m.a.s.l.</td></tr>
-  <tr><td><strong>Processing:</strong></td><td>Natural (Raised Bed Dried)</td></tr>
-  <tr><td><strong>Varieties:</strong></td><td>Selective local heirloom varieties</td></tr>
-  <tr><td><strong>Washing Station:</strong></td><td>Nensebo A.A.S.H. Washing Station</td></tr>
-  <tr><td><strong>Farmers:</strong></td><td>Nearly 850 smallholder family farmers</td></tr>
-</table>
+<div class="bean-info-section">
+  <table class="bean-info-table">
+    <tr><td>Origin:</td><td>Werka Village, Refisa Kebele, Nensebo District, West Arsi, Oromia</td></tr>
+    <tr><td>Altitude:</td><td>1950–2100 m.a.s.l.</td></tr>
+    <tr><td>Processing:</td><td>Natural (Raised Bed Dried)</td></tr>
+    <tr><td>Varieties:</td><td>Selective local heirloom varieties</td></tr>
+    <tr><td>Washing Station:</td><td>Nensebo A.A.S.H. Washing Station</td></tr>
+    <tr><td>Farmers:</td><td>Nearly 850 smallholder family farmers</td></tr>
+  </table>
+  <div class="map-embed">
+    <iframe
+      src="https://www.google.com/maps?q=6.6264637,39.1464906&z=13&output=embed"
+      width="100%" height="220"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+    <p class="map-link">
+      <a href="https://www.google.com/maps/search/?api=1&query=6.6264637,39.1464906"
+         target="_blank" rel="noopener">View on Google Maps</a>
+    </p>
+  </div>
+</div>
 
 <hr>
 
-<h4>Behind the Bean</h4>
-<p>The A.A.S.H. Nensebo washing station is owned and operated by the Yonis family. We have had the pleasure of sourcing coffee from Faysel Yonis for over a decade. Their friendship and commitment to quality have been a highlight in our sourcing journey.</p>
-
-<p>Nearly 850 smallholder farmers surrounding the Werka village contribute freshly picked coffee. Each farmer typically manages 2–5 hectares of certified organic land and personally delivers their crop to the Nensebo station.</p>
-
-<hr>
-
-<h4>Processing Method</h4>
-<p>In the natural process, cherries are floated in water to remove “floaters,” then dried on raised beds. Beans are regularly rotated for even drying. Any under-ripe cherries are sorted out by hand. Drying typically takes 15–18 days depending on weather conditions.</p>
-
-<hr>
-
-<h4>Our Impression</h4>
-<p>We are truly blown away by the cup profile of this coffee. The perfect growing altitude, heirloom varietals, and attention to detail from picking to drying, all combine to produce a stunningly complex and vibrant cup.</p>
+<h4>Producer Notes</h4>
+<p>
+  This coffee is sourced through a U.S.-based green coffee importer who partners with the A.A.S.H. Nensebo washing station in Ethiopia’s West Arsi region. The station is managed by the Yonis family and serves a network of nearly 850 smallholder farmers in Werka village and surrounding areas.
+</p>
+<p>
+  Most contributing farmers manage 2–5 hectares of certified organic coffee and personally deliver freshly picked cherries to the station.
+  According to the importer, the coffee is naturally processed: cherries are floated in water to remove “floaters,” then dried on raised beds and rotated regularly. Any under-ripe cherries are hand-sorted. Drying takes approximately 15–18 days depending on the weather.
+</p>
