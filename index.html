@@ -69,7 +69,10 @@
 
   <!-- Shared Header + Footer Loader -->
   <script>
-    // 載入 Header
+    // 儲存 scroll 位置（避免載入 header/footer 時跳頂部）
+    const savedScrollY = window.scrollY;
+
+    // 載入 Header + Marquee
     fetch('shared/header.html')
       .then(res => res.text())
       .then(html => {
@@ -84,6 +87,9 @@
           marquee.setAttribute('scrollamount', '5');
           marquee.style.fontSize = '20px';
         }
+
+        // ✅ 回復 scrollY 位置（避免跳頂）
+        window.scrollTo(0, savedScrollY);
       })
       .catch(err => {
         console.error("Failed to load header or marquee", err);
