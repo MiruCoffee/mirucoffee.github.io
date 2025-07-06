@@ -1,40 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
-  <title>Miru Coffee - Coffee Selection</title>
+  <title>Miru Coffee – Our Beans</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .bean-full-image {
+      max-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+    }
+    .bean-thumbnails img {
+      width: 100px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+    .bean-thumbnails img:hover {
+      transform: scale(1.05);
+    }
+    .bean-thumbnails {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 2rem;
+    }
+    #bean-detail {
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
+  <!-- 共用頁首 -->
+  <header id="shared-header"></header>
 
-<header>
-  <div class="logo">
-    <a href="index.html">
-      <img src="20250516_MiruCoffee.png" alt="Miru Coffee Logo">
-    </a>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="subscriptions.html">Subscriptions</a></li>
-      <li><a href="coffee.html">Coffee</a></li>
-      <li><a href="account.html">My Account</a></li>
-    </ul>
-  </nav>
-</header>
+  <main>
+    <div class="content">
+      <!-- 上方：詳細介紹 -->
+      <section class="card" id="bean-detail">
+        <!-- 這裡會載入 beans/C1001.txt 的內容 -->
+      </section>
 
-<main>
-  <h1>Our Coffee Selection</h1>
-  <p>Descriptions and availability of our coffee beans will be coming soon!</p>
-</main>
+      <!-- 下方：豆子縮圖列表 -->
+      <section class="card">
+        <h3>Other Origins</h3>
+        <div class="bean-thumbnails">
+          <img src="IMG/Product/C1001.png" data-code="C1001" alt="C1001">
+          <img src="IMG/Product/C1002.png" data-code="C1002" alt="C1002">
+          <img src="IMG/Product/C1003.png" data-code="C1003" alt="C1003">
+          <img src="IMG/Product/C1004.png" data-code="C1004" alt="C1004">
+          <img src="IMG/Product/C1005.png" data-code="C1005" alt="C1005">
+        </div>
+      </section>
+    </div>
+  </main>
 
-  <footer>
-    <p>Follow us on 
-      <a href="https://www.facebook.com/61576253565111/">Facebook</a> |
-      <a href="https://www.instagram.com/mirucoffeeairroastery/">Instagram</a> | 
-      Email: <a href="mailto:info@mirucoffee.com">info@mirucoffee.com</a>
-    </p>
-    <p>© 2025 Miru Coffee. All rights reserved.</p>
-  </footer>
+  <!-- 共用頁尾 -->
+  <footer id="shared-footer"></footer>
 
+  <!-- 載入豆子介紹內容 -->
+  <script>
+    function loadBean(code) {
+      fetch('beans/' + code + '.txt')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('bean-detail').innerHTML = html;
+        })
+        .catch(() => {
+          document.getElementById('bean-detail').innerHTML = '<p>❌ Bean not found.</p>';
+        });
+    }
+
+    // 預設載入第一支
+    loadBean('C1001');
+
+    // 點縮圖切換介紹
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.bean-thumbnails img').forEach(img => {
+        img.addEventListener('click', () => {
+          const code = img.dataset.code;
+          loadBean(code);
+        });
+      });
+    });
+  </script>
+
+  <!-- 載入共用 header + footer + 跑馬燈 -->
+  <script>
+    fetch('shared/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('shared-header').innerHTML = html;
+        return fetch('MSG/001 announcement.txt');
+      })
+      .then(res => res.text())
+      .then(text => {
+        const marquee = document.getElementById('announcement-marquee');
+        if (marquee) {
+          marquee.textContent = text;
+          marquee.setAttribute('scrollamount', '5');
+          marquee.style.fontSize = '20px';
+        }
+      });
+
+    fetch('shared/footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('shared-footer').innerHTML = html;
+      });
+  </script>
 </body>
 </html>
