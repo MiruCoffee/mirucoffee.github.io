@@ -157,7 +157,7 @@ footer a:hover {
 
 /* ====== Bean Type Section ====== */
 .bean-type-section h2 {
-  text-align: center;
+  text-align: left;
   font-size: 1.6rem;
   margin-bottom: 1rem;
 }
