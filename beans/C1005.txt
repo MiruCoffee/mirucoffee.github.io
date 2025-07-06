@@ -1,5 +1,5 @@
 <h2>Ethiopia West Arsi, Werka Nensebo</h2>
-<img src="IMG/Product/C1005.png" alt="C1005" class="bean-full-image">
+<img src="IMG/Bean/C1005.png" alt="C1005" class="bean-full-image">
 
 <p><strong>Flavor Notes:</strong></p>
 <ul>
