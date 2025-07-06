@@ -112,5 +112,16 @@
         document.getElementById('shared-footer').innerHTML = html;
       });
   </script>
+
+  <!-- ✅ 圖片自動加版本參數（避免快取） -->
+  <script>
+    const version = Date.now();
+    document.querySelectorAll('.bean-thumbnails img').forEach(img => {
+      const src = img.getAttribute('src');
+      if (src && !src.includes('?v=')) {
+        img.src = `${src}?v=${version}`;
+      }
+    });
+  </script>
 </body>
 </html>
