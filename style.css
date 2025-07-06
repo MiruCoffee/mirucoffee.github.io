@@ -116,17 +116,20 @@ footer a:hover {
 
 .hero-text {
   flex: 1 1 300px;
+  font-size: 1.15rem;
+  line-height: 1.6;
 }
 
 .hero-heading {
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   margin-bottom: 0.3rem;
 }
 
 .hero-subheading {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin-bottom: 1rem;
   color: #333;
+  font-weight: bold;
 }
 
 .subscribe-button {
@@ -235,7 +238,7 @@ footer a:hover {
 
   main {
     padding: 20px 3vw;
-    padding-top: 130px; /* 手機版也避開 header */
+    padding-top: 130px;
   }
 
   .hero-flex {
@@ -243,10 +246,14 @@ footer a:hover {
   }
 
   .hero-heading {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .hero-subheading {
+    font-size: 1.2rem;
+  }
+
+  .hero-text {
     font-size: 1rem;
   }
 

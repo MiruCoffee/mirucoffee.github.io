@@ -1,0 +1,15 @@
+<h1 class="hero-heading">Welcome to Miru Coffee</h1>
+<p class="hero-subheading">Air-roasted specialty coffee, handcrafted in small batches from rural Texas.</p>
+
+<p>
+  At Miru Coffee, we use a <strong>modern air roaster</strong> to precisely roast 
+  <strong>premium-grade beans</strong>. Our method produces a cleaner, more vibrant flavor — 
+  no smokiness, just the pure expression of origin.
+</p>
+
+<p>
+  We roast fresh every two weeks. You can <strong>buy one bag</strong> or 
+  <strong>subscribe</strong> to receive a rotating selection every 2, 4, or 6 weeks.
+</p>
+
+<a href="subscriptions.html" class="subscribe-button">☕ Subscribe Now</a>

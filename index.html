@@ -27,12 +27,8 @@
       <!-- Welcome Hero Section -->
       <section class="card hero-section">
         <div class="hero-flex">
-          <div class="hero-text">
-            <h1 class="hero-heading">Welcome to Miru Coffee</h1>
-            <p class="hero-subheading"><strong>Air-roasted specialty coffee, handcrafted in small batches from rural Texas.</strong></p>
-            <p>At Miru Coffee, we use a <strong>modern air roaster</strong> to precisely roast <strong>premium-grade beans</strong>. Our method produces a cleaner, more vibrant flavor — no smokiness, just the pure expression of origin.</p>
-            <p>We roast fresh every two weeks. You can <strong>buy one bag</strong> or <strong>subscribe</strong> to receive a rotating selection every 2, 4, or 6 weeks.</p>
-            <a href="subscriptions.html" class="subscribe-button">☕ Subscribe Now</a>
+          <div class="hero-text" id="hero-content">
+            <!-- Content will be loaded from MSG/002 hero.txt -->
           </div>
           <div class="hero-image">
             <img src="IMG/Equipment/EQ002 Air Roaster.png" alt="Miru Air Roaster">
@@ -108,9 +104,21 @@
       });
   </script>
 
-  <!-- Image Auto-Versioning (Cache Bypass, millisecond precision) -->
+  <!-- Hero Text Loader -->
   <script>
-    const version = Date.now(); // 每次載入都不同，強制重新載圖
+    fetch('MSG/002 hero.txt')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('hero-content').innerHTML = html;
+      })
+      .catch(err => {
+        console.error("Failed to load hero content", err);
+      });
+  </script>
+
+  <!-- Image Auto-Versioning (Cache Bypass) -->
+  <script>
+    const version = Date.now();
     document.querySelectorAll('img').forEach(img => {
       const src = img.getAttribute('src');
       if (src && !src.includes('?v=')) {
