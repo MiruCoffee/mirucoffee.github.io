@@ -11,7 +11,6 @@
   display: flex;
   align-items: center;
 }
-
 .announcement-text {
   white-space: nowrap;
   display: inline-block;
@@ -21,7 +20,6 @@
   font-weight: bold;
   color: #fff;
 }
-
 @keyframes scroll-left {
   0% {
     transform: translateX(0%);
@@ -38,7 +36,6 @@ body {
   padding: 0;
   background-color: #f8f3e9;
 }
-
 .content {
   max-width: 1200px;
   margin: 0 auto;
@@ -59,12 +56,10 @@ body {
   padding: 10px 30px;
   box-sizing: border-box;
 }
-
 .logo {
   height: 60px;
   max-width: 200px;
 }
-
 .navbar ul {
   list-style: none;
   display: flex;
@@ -76,7 +71,6 @@ body {
   padding: 0;
   overflow-x: auto;
 }
-
 .navbar ul li a {
   color: #fff;
   text-decoration: none;
@@ -91,7 +85,6 @@ main {
   box-sizing: border-box;
   padding-top: 130px;
 }
-
 .card {
   background-color: #ffffff;
   border-radius: 10px;
@@ -101,7 +94,6 @@ main {
   width: 100%;
   box-sizing: border-box;
 }
-
 .card p {
   margin-bottom: 0.8rem;
   font-size: 1rem;
@@ -116,12 +108,10 @@ footer {
   padding: 15px 0;
   color: #fff;
 }
-
 footer a {
   color: #ffcc66;
   text-decoration: none;
 }
-
 footer a:hover {
   text-decoration: underline;
 }
@@ -130,32 +120,27 @@ footer a:hover {
 .hero-section {
   padding-bottom: 2rem;
 }
-
 .hero-flex {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 2rem;
 }
-
 .hero-text {
   flex: 1 1 300px;
   font-size: 1.15rem;
   line-height: 1.6;
 }
-
 .hero-heading {
   font-size: 2.6rem;
   margin-bottom: 0.3rem;
 }
-
 .hero-subheading {
   font-size: 1.4rem;
   margin-bottom: 1rem;
   color: #333;
   font-weight: bold;
 }
-
 .subscribe-button {
   display: inline-block;
   margin-top: 1rem;
@@ -167,241 +152,12 @@ footer a:hover {
   text-decoration: none;
   transition: background-color 0.2s ease;
 }
-
 .subscribe-button:hover {
   background-color: #543626;
 }
-
 .hero-image img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-
-/* ====== Bean Type Section (Index) ====== */
-.bean-type-section h2 {
-  text-align: left;
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-}
-
-.bean-type-gallery {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-/* ====== Roast Gallery (Index) ====== */
-.roast-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.roast-preview {
-  text-align: center;
-}
-
-.bean-type-gallery img,
-.coffee-pack {
-  width: 100%;
-  max-width: 220px;
-  aspect-ratio: 1 / 1;
-  object-fit: contain;
-  background-color: #f8f3e9;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  padding: 6px;
-  transition: transform 0.2s ease;
-}
-
-.bean-type-gallery img:hover,
-.coffee-pack:hover {
-  transform: scale(1.05);
-}
-
-.coffee-pack-large {
-  height: 300px;
-  object-fit: contain;
-  border-radius: 8px;
-  margin-bottom: 0.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  max-width: 100%;
-}
-/* ====== Bean Hero Flex (beans page) ====== */
-.bean-hero-flex {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.bean-hero-text {
-  flex: 1 1 300px;
-  text-align: left;
-}
-
-.bean-hero-text h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: left;
-}
-
-.bean-hero-image {
-  flex: 1 1 250px;
-  text-align: center;
-}
-
-.bean-full-image {
-  max-width: 300px;
-  display: block;
-  margin: 10px auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.flavor-notes {
-  list-style: none;
-  padding-left: 0;
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  text-align: left;
-}
-
-.flavor-summary {
-  font-style: italic;
-  color: #666;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  text-align: left;
-}
-
-.bean-info-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-  align-items: flex-start;
-  margin-bottom: 1rem;
-}
-
-.bean-info-section > * {
-  flex: 1 1 48%;
-  max-width: 550px;
-}
-
-.bean-info-table {
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.bean-info-table td {
-  padding: 4px 8px;
-  vertical-align: top;
-}
-
-.bean-info-table td:first-child {
-  text-align: right;
-  font-weight: bold;
-  white-space: nowrap;
-  padding-right: 10px;
-}
-
-.map-embed {
-  text-align: center;
-}
-
-.map-embed iframe {
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  height: 180px;
-}
-
-.map-link {
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
-}
-
-.map-link a {
-  color: #3366cc;
-  text-decoration: underline;
-}
-/* ====== Responsive (Mobile) ====== */
-@media (max-width: 600px) {
-  .navbar ul {
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-  }
-
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .bean-type-gallery img,
-  .coffee-pack {
-    max-width: 46%;
-  }
-
-  .coffee-pack-large {
-    height: 240px;
-  }
-
-  .card {
-    padding: 16px;
-  }
-
-  main {
-    padding: 20px 3vw;
-    padding-top: 130px;
-  }
-
-  .hero-flex {
-    flex-direction: column;
-  }
-
-  .hero-heading {
-    font-size: 2rem;
-  }
-
-  .hero-subheading {
-    font-size: 1.2rem;
-  }
-
-  .hero-text {
-    font-size: 1rem;
-  }
-
-  .bean-type-gallery img {
-    width: 140px;
-  }
-
-  .bean-info-section {
-    flex-direction: column;
-  }
-
-  .bean-hero-flex {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .bean-hero-text {
-    text-align: left;
-  }
-
-  .bean-hero-text h2 {
-    text-align: center;
-  }
-
-  .flavor-notes,
-  .flavor-summary {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
 }
