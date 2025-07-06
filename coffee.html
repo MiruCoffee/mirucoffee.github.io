@@ -61,6 +61,28 @@
   <!-- 共用頁尾 -->
   <footer id="shared-footer"></footer>
 
+  <!-- 版本控制變數 -->
+  <script>
+    const version = Date.now();
+
+    // 為所有圖片加入版本參數（避免快取）
+    function addVersionToImage(img) {
+      const src = img.getAttribute('src');
+      if (src && !src.includes('?v=')) {
+        img.src = `${src}?v=${version}`;
+      }
+    }
+
+    function refreshAllImages() {
+      document.querySelectorAll('img').forEach(addVersionToImage);
+    }
+
+    function refreshMainImageVersion() {
+      const mainImg = document.querySelector('.bean-full-image');
+      if (mainImg) addVersionToImage(mainImg);
+    }
+  </script>
+
   <!-- 載入豆子介紹內容 -->
   <script>
     function loadBean(code) {
@@ -68,6 +90,7 @@
         .then(res => res.text())
         .then(html => {
           document.getElementById('bean-detail').innerHTML = html;
+          refreshMainImageVersion(); // 加入主圖版本參數
         })
         .catch(() => {
           document.getElementById('bean-detail').innerHTML = '<p>❌ Bean not found.</p>';
@@ -85,6 +108,8 @@
           loadBean(code);
         });
       });
+
+      refreshAllImages(); // 為縮圖加版本
     });
   </script>
 
@@ -111,17 +136,6 @@
       .then(html => {
         document.getElementById('shared-footer').innerHTML = html;
       });
-  </script>
-
-  <!-- ✅ 圖片自動加版本參數（避免快取） -->
-  <script>
-    const version = Date.now();
-    document.querySelectorAll('.bean-thumbnails img').forEach(img => {
-      const src = img.getAttribute('src');
-      if (src && !src.includes('?v=')) {
-        img.src = `${src}?v=${version}`;
-      }
-    });
   </script>
 </body>
 </html>
