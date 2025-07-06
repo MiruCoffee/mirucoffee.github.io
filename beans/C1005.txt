@@ -1,19 +1,25 @@
-<h2>Ethiopia West Arsi, Werka Nensebo</h2>
+<div class="bean-hero-flex">
+  <div class="bean-hero-text">
+    <h2>Ethiopia West Arsi, Werka Nensebo</h2>
 
-<img src="IMG/Bean/C1005.png" alt="C1005" class="bean-full-image">
+    <h4>Flavor Notes</h4>
+    <ul class="flavor-notes">
+      <li>Strawberry, Chocolate, Yogurt</li>
+      <li>Mandarin Orange, Pomegranate, Mixed Berries</li>
+    </ul>
+    <p class="flavor-summary">
+      Meticulous organic cultivation and fermentation yield juicy flavors.
+    </p>
+    <p class="flavor-summary">
+      We are truly blown away by the cup profile of this coffee. The perfect growing altitude, heirloom varietals,
+      and attention to detail from picking to drying, all combine to produce a stunningly complex and vibrant cup.
+    </p>
+  </div>
 
-<h4>Flavor Notes</h4>
-<ul class="flavor-notes">
-  <li>Strawberry, Chocolate, Yogurt</li>
-  <li>Mandarin Orange, Pomegranate, Mixed Berries</li>
-</ul>
-<p class="flavor-summary">
-  Meticulous organic cultivation and fermentation yield juicy flavors.
-</p>
-<p class="flavor-summary">
-  We are truly blown away by the cup profile of this coffee. The perfect growing altitude, heirloom varietals,
-  and attention to detail from picking to drying, all combine to produce a stunningly complex and vibrant cup.
-</p>
+  <div class="bean-hero-image">
+    <img src="IMG/Bean/C1005.png" alt="C1005" class="bean-full-image">
+  </div>
+</div>
 
 <hr>
 
@@ -27,9 +33,10 @@
     <tr><td>Washing Station:</td><td>Nensebo A.A.S.H. Washing Station</td></tr>
     <tr><td>Farmers:</td><td>Nearly 850 smallholder family farmers</td></tr>
   </table>
+
   <div class="map-embed">
     <iframe
-      src="https://www.google.com/maps?q=6.6264637,39.1464906&z=13&output=embed"
+      src="https://www.google.com/maps?q=6.6264637,39.1464906&z=13&t=k&output=embed"
       width="100%" height="220"
       allowfullscreen=""
       loading="lazy">

@@ -74,7 +74,7 @@ marquee {
 main {
   padding: 30px 5vw;
   box-sizing: border-box;
-  padding-top: 130px; /* 避開 header + navbar */
+  padding-top: 130px;
 }
 
 .card {
@@ -104,7 +104,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* ====== Hero Section ====== */
+/* ====== Hero Section (Index) ====== */
 .hero-section {
   padding-bottom: 2rem;
 }
@@ -157,7 +157,7 @@ footer a:hover {
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-/* ====== Bean Type Section ====== */
+/* ====== Bean Type Section (Index) ====== */
 .bean-type-section h2 {
   text-align: left;
   font-size: 1.6rem;
@@ -171,7 +171,7 @@ footer a:hover {
   flex-wrap: wrap;
 }
 
-/* ====== Roast Gallery ====== */
+/* ====== Roast Gallery (Index) ====== */
 .roast-gallery {
   display: flex;
   flex-wrap: wrap;
@@ -211,6 +211,31 @@ footer a:hover {
   max-width: 100%;
 }
 
+/* ====== Bean Detail: Hero Flex (Beans Page) ====== */
+.bean-hero-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.bean-hero-text {
+  flex: 1 1 300px;
+  text-align: left;
+}
+
+.bean-hero-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.bean-hero-image {
+  flex: 1 1 250px;
+  text-align: center;
+}
+
 /* ====== Bean Detail Enhancements ====== */
 .bean-full-image {
   max-width: 300px;
@@ -226,6 +251,7 @@ footer a:hover {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1rem;
+  text-align: left;
 }
 
 .flavor-summary {
@@ -233,6 +259,7 @@ footer a:hover {
   color: #666;
   font-size: 0.95rem;
   line-height: 1.6;
+  text-align: left;
 }
 
 .bean-info-section {
@@ -337,5 +364,18 @@ footer a:hover {
 
   .bean-info-section {
     flex-direction: column;
+  }
+
+  .bean-hero-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bean-hero-text {
+    text-align: left;
+  }
+
+  .bean-hero-text h2 {
+    text-align: center;
   }
 }
