@@ -1,5 +1,5 @@
 <!-- Bean Name -->
-<h2 style="font-size: 2.6rem; text-align: center; margin-bottom: 1rem;">
+<h2 class="bean-name">
   Ethiopia West Arsi, Werka Nensebo
 </h2>
 
@@ -8,20 +8,20 @@
 <!-- Flavor Notes -->
 <h4>Flavor Notes</h4>
 <div class="bean-hero-flex">
-  <div class="bean-text" style="text-align: left;">
-    <ul style="list-style: none; padding-left: 0; line-height: 1.6; font-size: 1.15rem;">
+  <div class="bean-text">
+    <ul>
       <li>Strawberry, Chocolate, Yogurt</li>
       <li>Mandarin Orange, Pomegranate, Mixed Berries</li>
     </ul>
-    <p style="font-style: italic; color: #666; font-size: 1rem;">
+    <p>
       Meticulous organic cultivation and fermentation yield juicy flavors.
       We are truly blown away by the cup profile of this coffee. The perfect growing altitude, heirloom varietals,
       and attention to detail from picking to drying, all combine to produce a stunningly complex and vibrant cup.
     </p>
   </div>
 
-  <div class="bean-image" style="text-align: right;">
-    <img src="IMG/Bean/C1005.png" alt="C1005" style="max-width: 320px; height: auto; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+  <div class="bean-image">
+    <img src="IMG/Bean/C1005.png" alt="C1005" class="bean-full-image">
   </div>
 </div>
 
@@ -38,14 +38,14 @@
     <tr><td>Washing Station:</td><td>Nensebo A.A.S.H. Washing Station</td></tr>
     <tr><td>Farmers:</td><td>Nearly 850 smallholder family farmers</td></tr>
   </table>
-  <div class="map-embed" style="text-align: right;">
+
+  <div class="map-embed">
     <iframe 
       src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4453.399788736927!2d39.14445991102601!3d6.626469021929616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMzcnMzUuMyJOIDM5wrAwOCc0OS4zIkU!5e1!3m2!1sen!2sus!4v1751853394368!5m2!1sen!2sus" 
       width="100%" height="220"
-      style="border:1px solid #ccc; border-radius:8px;" 
       allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
-    <p class="map-link" style="text-align: right; margin-top: 0.5rem;">
+    <p class="map-link">
       <a href="https://www.google.com/maps/search/?api=1&query=6.6264690,39.1444599"
          target="_blank" rel="noopener">View on Google Maps</a>
     </p>

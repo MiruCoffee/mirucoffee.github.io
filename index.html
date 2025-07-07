@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Miru Coffee - Official Website</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-shared.css">
+  <link rel="stylesheet" href="style-index.css">
 </head>
 <body>
   <!-- 共用頁首 -->
@@ -71,9 +72,7 @@
       .then(res => res.text())
       .then(text => {
         const marquee = document.getElementById('announcement-marquee');
-        if (marquee) {
-          marquee.textContent = text;
-        }
+        if (marquee) marquee.textContent = text;
         window.scrollTo(0, savedScrollY);
       });
 
@@ -84,6 +83,7 @@
       });
   </script>
 
+  <!-- Hero Text Loader -->
   <script>
     fetch('MSG/002 hero.txt')
       .then(res => res.text())
