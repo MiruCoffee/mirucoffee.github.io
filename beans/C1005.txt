@@ -30,12 +30,14 @@
     <tr><td>Farmers:</td><td>Nearly 850 smallholder family farmers</td></tr>
   </table>
   <div class="map-embed" style="margin-top: 1rem;">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4453.399788736927!2d39.14445991102601!3d6.626469021929616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMzcnMzUuMyJOIDM5wrAwOCc0OS4zIkU!5e1!3m2!1szh-TW!2us!4v1751852591411!5m2!1szh-TW!2us" 
-      width="100%" height="220"
-      style="border:1px solid #ccc; border-radius:8px;" 
-      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+    
+<iframe 
+  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4453.399788736927!2d39.14445991102601!3d6.626469021929616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMzcnMzUuMyJOIDM5wrAwOCc0OS4zIkU!5e1!3m2!1sen!2sus!4v1751853394368!5m2!1sen!2sus" 
+  width="100%" height="220"
+  style="border:1px solid #ccc; border-radius:8px;" 
+  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
     <p class="map-link" style="text-align: right; margin-top: 0.5rem;">
       <a href="https://www.google.com/maps/search/?api=1&query=6.6264690,39.1444599"
          target="_blank" rel="noopener">View on Google Maps</a>
