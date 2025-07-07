@@ -31,10 +31,10 @@
   <div class="map-embed">
     
 <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3186.254528922839!2d39.1464906!3d6.6264637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1720374400000!5m2!1sen!2sus"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.684430814992!2d39.1439113!3d6.6264751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1720379813953!5m2!1sen!2sus"
   width="100%" height="220"
-  allowfullscreen="" loading="lazy"
-  style="border:1px solid #ccc; border-radius:8px;">
+  style="border:1px solid #ccc; border-radius:8px;"
+  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
 </iframe>
 
     <p class="map-link">
