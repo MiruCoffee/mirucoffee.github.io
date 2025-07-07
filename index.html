@@ -28,18 +28,10 @@
       <section class="card bean-type-section">
         <h2>Explore Our Green Coffee Origins</h2>
         <div class="bean-type-gallery">
-          <a href="beans.html?code=C1001">
-            <img src="IMG/Bean/C1001.png" alt="C1001">
-          </a>
-          <a href="beans.html?code=C1002">
-            <img src="IMG/Bean/C1002.png" alt="C1002">
-          </a>
-          <a href="beans.html?code=C1004">
-            <img src="IMG/Bean/C1004.png" alt="C1004">
-          </a>
-          <a href="beans.html?code=C1005">
-            <img src="IMG/Bean/C1005.png" alt="C1005">
-          </a>
+          <a href="beans.html?code=C1001"><img src="IMG/Bean/C1001.png" alt="C1001"></a>
+          <a href="beans.html?code=C1002"><img src="IMG/Bean/C1002.png" alt="C1002"></a>
+          <a href="beans.html?code=C1004"><img src="IMG/Bean/C1004.png" alt="C1004"></a>
+          <a href="beans.html?code=C1005"><img src="IMG/Bean/C1005.png" alt="C1005"></a>
         </div>
       </section>
 
@@ -69,10 +61,7 @@
 
   <!-- Shared Header + Footer Loader -->
   <script>
-    // 儲存 scroll 位置（避免載入 header/footer 時跳頂部）
     const savedScrollY = window.scrollY;
-
-    // 載入 Header + Marquee
     fetch('shared/header.html')
       .then(res => res.text())
       .then(html => {
@@ -84,37 +73,22 @@
         const marquee = document.getElementById('announcement-marquee');
         if (marquee) {
           marquee.textContent = text;
-          marquee.setAttribute('scrollamount', '5');
-          marquee.style.fontSize = '20px';
         }
-
-        // ✅ 回復 scrollY 位置（避免跳頂）
         window.scrollTo(0, savedScrollY);
-      })
-      .catch(err => {
-        console.error("Failed to load header or marquee", err);
       });
 
-    // 載入 Footer
     fetch('shared/footer.html')
       .then(res => res.text())
       .then(html => {
         document.getElementById('shared-footer').innerHTML = html;
-      })
-      .catch(err => {
-        console.error("Failed to load footer", err);
       });
   </script>
 
-  <!-- Hero Text Loader -->
   <script>
     fetch('MSG/002 hero.txt')
       .then(res => res.text())
       .then(html => {
         document.getElementById('hero-content').innerHTML = html;
-      })
-      .catch(err => {
-        console.error("Failed to load hero content", err);
       });
   </script>
 

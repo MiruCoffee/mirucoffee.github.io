@@ -1,4 +1,4 @@
-/* ====== Announcement Banner (Modern marquee) ====== */
+/* ====== Announcement Banner ====== */
 .announcement-wrapper {
   position: fixed;
   top: 0;
@@ -21,15 +21,11 @@
   color: #fff;
 }
 @keyframes scroll-left {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
 }
 
-/* ====== Base ====== */
+/* ====== Base Layout ====== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -39,6 +35,20 @@ body {
 .content {
   max-width: 1200px;
   margin: 0 auto;
+}
+main {
+  padding: 30px 5vw;
+  padding-top: 145px; /* header + navbar total height */
+  box-sizing: border-box;
+}
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* ====== Navbar ====== */
@@ -50,7 +60,6 @@ body {
   z-index: 999;
   background-color: #6e4b3a;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
@@ -63,60 +72,18 @@ body {
 .navbar ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  flex: 1 1 auto;
-  justify-content: flex-end;
   gap: 25px;
   margin: 0;
   padding: 0;
-  overflow-x: auto;
 }
 .navbar ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
   font-size: 22px;
-  white-space: nowrap;
 }
 
-/* ====== Layout ====== */
-main {
-  padding: 30px 5vw;
-  box-sizing: border-box;
-  padding-top: 130px;
-}
-.card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 24px;
-  margin-bottom: 24px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  width: 100%;
-  box-sizing: border-box;
-}
-.card p {
-  margin-bottom: 0.8rem;
-  font-size: 1rem;
-  line-height: 1.6;
-  text-align: left;
-}
-
-/* ====== Footer ====== */
-footer {
-  background-color: #6e4b3a;
-  text-align: center;
-  padding: 15px 0;
-  color: #fff;
-}
-footer a {
-  color: #ffcc66;
-  text-decoration: none;
-}
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* ====== Hero Section (Index) ====== */
+/* ====== Hero Section ====== */
 .hero-section {
   padding-bottom: 2rem;
 }
@@ -162,104 +129,17 @@ footer a:hover {
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-
-
-/* ====== Flavor Flex Block ====== */
-.flavor-flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: flex-start;
-  margin-bottom: 1.5rem;
-}
-.flavor-text {
-  flex: 2 1 360px;
-  text-align: left;
-}
-.flavor-text h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-.flavor-text p {
-  margin-bottom: 0.4rem;
-  line-height: 1.6;
-}
-.flavor-image {
-  flex: 1 1 250px;
+/* ====== Footer ====== */
+footer {
+  background-color: #6e4b3a;
   text-align: center;
+  padding: 15px 0;
+  color: #fff;
 }
-.bean-full-image {
-  max-width: 300px;
-  display: block;
-  margin: 10px auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+footer a {
+  color: #ffcc66;
+  text-decoration: none;
 }
-
-/* ====== Bean Title ====== */
-.bean-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 1.2rem;
-}
-
-/* ====== Origin Details Flex ====== */
-.origin-section-flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: flex-start;
-  margin-bottom: 1.5rem;
-}
-.origin-section-flex > *:first-child {
-  flex: 3 1 60%;
-}
-.origin-section-flex > *:last-child {
-  flex: 2 1 35%;
-}
-.bean-info-table {
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-.bean-info-table td {
-  padding: 4px 8px;
-  vertical-align: top;
-}
-.bean-info-table td:first-child {
-  text-align: right;
-  font-weight: bold;
-  white-space: nowrap;
-  padding-right: 10px;
-}
-.map-embed iframe {
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  height: 180px;
-  width: 100%;
-}
-.map-link {
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
-  text-align: center;
-}
-.map-link a {
-  color: #3366cc;
+footer a:hover {
   text-decoration: underline;
-}
-
-/* ====== Responsive (Mobile) ====== */
-@media (max-width: 600px) {
-  .flavor-flex {
-    flex-direction: column;
-  }
-  .origin-section-flex {
-    flex-direction: column;
-  }
-  .bean-title {
-    font-size: 1.5rem;
-  }
-  .flavor-text p {
-    font-size: 1rem;
-  }
 }
