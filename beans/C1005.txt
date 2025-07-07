@@ -30,10 +30,9 @@
   </table>
   <div class="map-embed">
     <iframe
-      src="https://www.google.com/maps?q=6.6264637,39.1464906&z=13&output=embed&basemap=satellite"
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12647.061234!2d39.1464906!3d6.6264637!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v0000000000000&layer=c"
       width="100%" height="220"
-      allowfullscreen=""
-      loading="lazy">
+      allowfullscreen="" loading="lazy">
     </iframe>
     <p class="map-link">
       <a href="https://www.google.com/maps/search/?api=1&query=6.6264637,39.1464906"
