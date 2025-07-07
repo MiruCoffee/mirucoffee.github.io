@@ -3,12 +3,9 @@
 <div class="flavor-flex">
   <div class="flavor-text">
     <h4>Flavor Notes</h4>
-    <p>Strawberry, Chocolate, Yogurt</p>
-    <p>Mandarin Orange, Pomegranate, Mixed Berries</p>
+    <p>Strawberry, Chocolate, Yogurt, Mandarin Orange, Pomegranate, Mixed Berries</p>
     <p class="flavor-summary">
       Meticulous organic cultivation and fermentation yield juicy flavors.
-    </p>
-    <p class="flavor-summary">
       We are truly blown away by the cup profile of this coffee. The perfect growing altitude, heirloom varietals,
       and attention to detail from picking to drying, all combine to produce a stunningly complex and vibrant cup.
     </p>
