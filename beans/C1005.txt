@@ -8,7 +8,7 @@
 <!-- Flavor Notes -->
 <h4>Flavor Notes</h4>
 <div class="bean-hero-flex">
-  <div class="bean-text" style="text-align: right;">
+  <div class="bean-text" style="text-align: left;">
     <ul style="list-style: none; padding-left: 0; line-height: 1.6; font-size: 1.15rem;">
       <li>Strawberry, Chocolate, Yogurt</li>
       <li>Mandarin Orange, Pomegranate, Mixed Berries</li>
@@ -20,8 +20,8 @@
     </p>
   </div>
 
-  <div class="bean-image">
-    <img src="IMG/Bean/C1005.png" alt="C1005" style="max-width: 280px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+  <div class="bean-image" style="text-align: right;">
+    <img src="IMG/Bean/C1005.png" alt="C1005" style="max-width: 320px; height: auto; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
   </div>
 </div>
 
@@ -38,7 +38,7 @@
     <tr><td>Washing Station:</td><td>Nensebo A.A.S.H. Washing Station</td></tr>
     <tr><td>Farmers:</td><td>Nearly 850 smallholder family farmers</td></tr>
   </table>
-  <div class="map-embed" style="margin-top: 1rem;">
+  <div class="map-embed" style="text-align: right;">
     <iframe 
       src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4453.399788736927!2d39.14445991102601!3d6.626469021929616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMzcnMzUuMyJOIDM5wrAwOCc0OS4zIkU!5e1!3m2!1sen!2sus!4v1751853394368!5m2!1sen!2sus" 
       width="100%" height="220"
