@@ -1,31 +1,33 @@
-<h2 style="font-size: 2.4rem; text-align: center; margin-bottom: 1rem;">
+<!-- Bean Name -->
+<h2 style="font-size: 2.6rem; text-align: center; margin-bottom: 1rem;">
   Ethiopia West Arsi, Werka Nensebo
 </h2>
 
 <hr>
 
+<!-- Flavor Notes -->
 <h4>Flavor Notes</h4>
 <div class="bean-hero-flex">
-  <div class="bean-text">
-    <ul style="list-style: none; padding-left: 0; line-height: 1.6; font-size: 1.1rem;">
+  <div class="bean-text" style="text-align: right;">
+    <ul style="list-style: none; padding-left: 0; line-height: 1.6; font-size: 1.15rem;">
       <li>Strawberry, Chocolate, Yogurt</li>
       <li>Mandarin Orange, Pomegranate, Mixed Berries</li>
     </ul>
-    <p style="font-style: italic; color: #666; font-size: 0.95rem;">
+    <p style="font-style: italic; color: #666; font-size: 1rem;">
       Meticulous organic cultivation and fermentation yield juicy flavors.
-
       We are truly blown away by the cup profile of this coffee. The perfect growing altitude, heirloom varietals,
       and attention to detail from picking to drying, all combine to produce a stunningly complex and vibrant cup.
     </p>
   </div>
 
   <div class="bean-image">
-    <img src="IMG/Bean/C1005.png" alt="C1005" class="bean-full-image">
+    <img src="IMG/Bean/C1005.png" alt="C1005" style="max-width: 280px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
   </div>
 </div>
 
 <hr>
 
+<!-- Origin Details -->
 <h4>Origin Details</h4>
 <div class="origin-section-flex">
   <table class="bean-info-table">
@@ -52,6 +54,7 @@
 
 <hr>
 
+<!-- Producer Notes -->
 <h4>Producer Notes</h4>
 <div class="producer-notes">
   <p>

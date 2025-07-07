@@ -38,7 +38,7 @@ body {
 }
 main {
   padding: 30px 5vw;
-  padding-top: 145px; /* header + navbar total height */
+  padding-top: 145px;
   box-sizing: border-box;
 }
 .card {
@@ -155,18 +155,19 @@ footer a:hover {
 .bean-text {
   flex: 1 1 300px;
   text-align: right;
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.2rem;
+  line-height: 1.8;
 }
 .bean-text h4 {
   text-align: left;
+  margin-bottom: 0.5rem;
 }
 .bean-image {
   flex: 1 1 250px;
   text-align: center;
 }
 .bean-image img {
-  max-width: 100%;
+  width: 280px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -226,5 +227,8 @@ footer a:hover {
   }
   .map-link {
     text-align: center;
+  }
+  .bean-image img {
+    width: 100%;
   }
 }
