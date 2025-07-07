@@ -1,12 +1,12 @@
 <div class="bean-title">Ethiopia West Arsi, Werka Nensebo</div>
 
-<div class="flavor-flex">
 <h4>Flavor Notes</h4>
+<div class="flavor-flex">
   <div class="flavor-text">
     <p>Strawberry, Chocolate, Yogurt, Mandarin Orange, Pomegranate, Mixed Berries</p>
     <p class="flavor-summary">
       Meticulous organic cultivation and fermentation yield juicy flavors.
-      
+
       We are truly blown away by the cup profile of this coffee. The perfect growing altitude, heirloom varietals,
       and attention to detail from picking to drying, all combine to produce a stunningly complex and vibrant cup.
     </p>
