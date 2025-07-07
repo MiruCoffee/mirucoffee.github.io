@@ -10,8 +10,7 @@
 <div class="bean-hero-flex">
   <div class="bean-text">
     <ul>
-      <li>Strawberry, Chocolate, Yogurt</li>
-      <li>Mandarin Orange, Pomegranate, Mixed Berries</li>
+      <li>Strawberry, Chocolate, Yogurt, Mandarin Orange, Pomegranate, Mixed Berries</li>
     </ul>
     <p>
       Meticulous organic cultivation and fermentation yield juicy flavors.
