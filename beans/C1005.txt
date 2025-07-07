@@ -1,57 +1,21 @@
+<div class="bean-hero-flex">
+  <div class="bean-text">
+    <h2 style="font-size: 2.4rem; margin-bottom: 0.5rem;">Ethiopia West Arsi, Werka Nensebo</h2>
 
-<div class="bean-title">Ethiopia West Arsi, Werka Nensebo</div>
-
-<h4>Flavor Notes</h4>
-<div class="flavor-flex">
-  <div class="flavor-text">
-    <p>Strawberry, Chocolate, Yogurt, Mandarin Orange, Pomegranate, Mixed Berries</p>
-    <p class="flavor-summary">
+    <h4 style="margin-top: 1rem;">Flavor Notes:</h4>
+    <ul style="list-style: none; padding-left: 0; line-height: 1.6; font-size: 1.1rem;">
+      <li>Strawberry, Chocolate, Yogurt</li>
+      <li>Mandarin Orange, Pomegranate, Mixed Berries</li>
+    </ul>
+    <p style="font-style: italic; color: #666; font-size: 0.95rem;">
       Meticulous organic cultivation and fermentation yield juicy flavors.
 
       We are truly blown away by the cup profile of this coffee. The perfect growing altitude, heirloom varietals,
       and attention to detail from picking to drying, all combine to produce a stunningly complex and vibrant cup.
     </p>
   </div>
-  <div class="flavor-image">
+
+  <div class="bean-image">
     <img src="IMG/Bean/C1005.png" alt="C1005" class="bean-full-image">
   </div>
 </div>
-
-<hr>
-
-<h4>Origin Details</h4>
-<div class="origin-section-flex">
-  <table class="bean-info-table">
-    <tr><td>Origin:</td><td>Werka Village, Refisa Kebele, Nensebo District, West Arsi, Oromia</td></tr>
-    <tr><td>Altitude:</td><td>1950–2100 m.a.s.l.</td></tr>
-    <tr><td>Processing:</td><td>Natural (Raised Bed Dried)</td></tr>
-    <tr><td>Varieties:</td><td>Selective local heirloom varieties</td></tr>
-    <tr><td>Washing Station:</td><td>Nensebo A.A.S.H. Washing Station</td></tr>
-    <tr><td>Farmers:</td><td>Nearly 850 smallholder family farmers</td></tr>
-  </table>
-  <div class="map-embed" style="margin-top: 1rem;">
-    
-<iframe 
-  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4453.399788736927!2d39.14445991102601!3d6.626469021929616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMzcnMzUuMyJOIDM5wrAwOCc0OS4zIkU!5e1!3m2!1sen!2sus!4v1751853394368!5m2!1sen!2sus" 
-  width="100%" height="220"
-  style="border:1px solid #ccc; border-radius:8px;" 
-  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-
-    <p class="map-link" style="text-align: right; margin-top: 0.5rem;">
-      <a href="https://www.google.com/maps/search/?api=1&query=6.6264690,39.1444599"
-         target="_blank" rel="noopener">View on Google Maps</a>
-    </p>
-  </div>
-</div>
-
-<hr>
-
-<h4>Producer Notes</h4>
-<p>
-  This coffee is sourced through a U.S.-based green coffee importer who partners with the A.A.S.H. Nensebo washing station in Ethiopia’s West Arsi region. The station is managed by the Yonis family and serves a network of nearly 850 smallholder farmers in Werka village and surrounding areas.
-</p>
-<p>
-  Most contributing farmers manage 2–5 hectares of certified organic coffee and personally deliver freshly picked cherries to the station.
-  According to the importer, the coffee is naturally processed: cherries are floated in water to remove “floaters,” then dried on raised beds and rotated regularly. Any under-ripe cherries are hand-sorted. Drying takes approximately 15–18 days depending on the weather.
-</p>
