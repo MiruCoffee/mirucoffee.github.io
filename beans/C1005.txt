@@ -1,8 +1,12 @@
+<!-- Bean Name should be page-top -->
+<h2 style="font-size: 2.4rem; text-align: center; margin-bottom: 1rem;">
+  Ethiopia West Arsi, Werka Nensebo
+</h2>
+
+<!-- Flavor Notes -->
 <div class="bean-hero-flex">
   <div class="bean-text">
-    <h2 style="font-size: 2.4rem; margin-bottom: 0.5rem;">Ethiopia West Arsi, Werka Nensebo</h2>
-
-    <h4 style="margin-top: 1rem;">Flavor Notes:</h4>
+    <h4 style="margin-top: 0;">Flavor Notes:</h4>
     <ul style="list-style: none; padding-left: 0; line-height: 1.6; font-size: 1.1rem;">
       <li>Strawberry, Chocolate, Yogurt</li>
       <li>Mandarin Orange, Pomegranate, Mixed Berries</li>
@@ -22,6 +26,7 @@
 
 <hr>
 
+<!-- Origin Details -->
 <h4>Origin Details</h4>
 <div class="origin-section-flex">
   <table class="bean-info-table">
@@ -48,11 +53,14 @@
 
 <hr>
 
+<!-- Producer Notes -->
 <h4>Producer Notes</h4>
-<p>
-  This coffee is sourced through a U.S.-based green coffee importer who partners with the A.A.S.H. Nensebo washing station in Ethiopia’s West Arsi region. The station is managed by the Yonis family and serves a network of nearly 850 smallholder farmers in Werka village and surrounding areas.
-</p>
-<p>
-  Most contributing farmers manage 2–5 hectares of certified organic coffee and personally deliver freshly picked cherries to the station.
-  According to the importer, the coffee is naturally processed: cherries are floated in water to remove “floaters,” then dried on raised beds and rotated regularly. Any under-ripe cherries are hand-sorted. Drying takes approximately 15–18 days depending on the weather.
-</p>
+<div class="producer-notes">
+  <p>
+    This coffee is sourced through a U.S.-based green coffee importer who partners with the A.A.S.H. Nensebo washing station in Ethiopia’s West Arsi region. The station is managed by the Yonis family and serves a network of nearly 850 smallholder farmers in Werka village and surrounding areas.
+  </p>
+  <p>
+    Most contributing farmers manage 2–5 hectares of certified organic coffee and personally deliver freshly picked cherries to the station.
+    According to the importer, the coffee is naturally processed: cherries are floated in water to remove “floaters,” then dried on raised beds and rotated regularly. Any under-ripe cherries are hand-sorted. Drying takes approximately 15–18 days depending on the weather.
+  </p>
+</div>
