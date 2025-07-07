@@ -1,12 +1,12 @@
-<!-- Bean Name should be page-top -->
 <h2 style="font-size: 2.4rem; text-align: center; margin-bottom: 1rem;">
   Ethiopia West Arsi, Werka Nensebo
 </h2>
 
-<!-- Flavor Notes -->
+<hr>
+
+<h4>Flavor Notes</h4>
 <div class="bean-hero-flex">
   <div class="bean-text">
-    <h4 style="margin-top: 0;">Flavor Notes:</h4>
     <ul style="list-style: none; padding-left: 0; line-height: 1.6; font-size: 1.1rem;">
       <li>Strawberry, Chocolate, Yogurt</li>
       <li>Mandarin Orange, Pomegranate, Mixed Berries</li>
@@ -26,7 +26,6 @@
 
 <hr>
 
-<!-- Origin Details -->
 <h4>Origin Details</h4>
 <div class="origin-section-flex">
   <table class="bean-info-table">
@@ -53,7 +52,6 @@
 
 <hr>
 
-<!-- Producer Notes -->
 <h4>Producer Notes</h4>
 <div class="producer-notes">
   <p>
