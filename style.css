@@ -161,3 +161,105 @@ footer a:hover {
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
+
+
+
+/* ====== Flavor Flex Block ====== */
+.flavor-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+.flavor-text {
+  flex: 2 1 360px;
+  text-align: left;
+}
+.flavor-text h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+.flavor-text p {
+  margin-bottom: 0.4rem;
+  line-height: 1.6;
+}
+.flavor-image {
+  flex: 1 1 250px;
+  text-align: center;
+}
+.bean-full-image {
+  max-width: 300px;
+  display: block;
+  margin: 10px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ====== Bean Title ====== */
+.bean-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+/* ====== Origin Details Flex ====== */
+.origin-section-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+.origin-section-flex > *:first-child {
+  flex: 3 1 60%;
+}
+.origin-section-flex > *:last-child {
+  flex: 2 1 35%;
+}
+.bean-info-table {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.bean-info-table td {
+  padding: 4px 8px;
+  vertical-align: top;
+}
+.bean-info-table td:first-child {
+  text-align: right;
+  font-weight: bold;
+  white-space: nowrap;
+  padding-right: 10px;
+}
+.map-embed iframe {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  height: 180px;
+  width: 100%;
+}
+.map-link {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  text-align: center;
+}
+.map-link a {
+  color: #3366cc;
+  text-decoration: underline;
+}
+
+/* ====== Responsive (Mobile) ====== */
+@media (max-width: 600px) {
+  .flavor-flex {
+    flex-direction: column;
+  }
+  .origin-section-flex {
+    flex-direction: column;
+  }
+  .bean-title {
+    font-size: 1.5rem;
+  }
+  .flavor-text p {
+    font-size: 1rem;
+  }
+}
