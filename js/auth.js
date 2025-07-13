@@ -1,42 +1,103 @@
 // File: js/auth.js
-import app from './firebase-init.js';
+import app from "./firebase-init.js";
 import {
   getAuth,
   signInWithEmailAndPassword,
-  sendPasswordResetEmail
-} from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
+  sendPasswordResetEmail,
+  onAuthStateChanged,
+  signOut,
+  sendEmailVerification
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 const auth = getAuth(app);
 
-// 登入事件
-document.getElementById('login-form').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const email = document.getElementById('email').value.trim();
-  const password = document.getElementById('password').value;
+const loginForm = document.getElementById("login-form");
+const emailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
+const resetPasswordLink = document.getElementById("forgot-password");
+const signOutButton = document.getElementById("sign-out");
+const message = document.getElementById("account-message");
+const resendVerificationLink = document.getElementById("send-verification-link");
 
-  try {
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    alert("Login successful!");
-    // 可導向其他頁面，例如 subscriptions.html
-    window.location.href = "subscriptions.html";
-  } catch (error) {
-    alert("Login failed: " + error.message);
-  }
-});
+// 登入表單送出
+if (loginForm) {
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = emailInput.value;
+    const password = passwordInput.value;
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        if (user.emailVerified) {
+          message.textContent = `✅ Logged in as ${user.email}`;
+          loginForm.style.display = "none";
+          signOutButton.style.display = "inline-block";
+          resendVerificationLink.style.display = "none";
+        } else {
+          message.textContent = "⚠️ Please verify your email address.";
+          resendVerificationLink.style.display = "inline-block";
+        }
+      })
+      .catch((error) => {
+        message.textContent = `❌ Login failed: ${error.message}`;
+      });
+  });
+}
 
 // 忘記密碼
-document.getElementById('forgot-password').addEventListener('click', async (e) => {
-  e.preventDefault();
-  const email = document.getElementById('email').value.trim();
-  if (!email) {
-    alert("Please enter your email address first.");
-    return;
-  }
+if (resetPasswordLink) {
+  resetPasswordLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    const email = emailInput.value;
+    if (!email) {
+      message.textContent = "⚠️ Please enter your email to reset password.";
+      return;
+    }
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        message.textContent = "📧 Password reset email sent.";
+      })
+      .catch((error) => {
+        message.textContent = `❌ Error: ${error.message}`;
+      });
+  });
+}
 
-  try {
-    await sendPasswordResetEmail(auth, email);
-    alert("Password reset email sent!");
-  } catch (error) {
-    alert("Error: " + error.message);
+// 再寄一次驗證信
+if (resendVerificationLink) {
+  resendVerificationLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    const user = auth.currentUser;
+    if (user && !user.emailVerified) {
+      sendEmailVerification(user)
+        .then(() => {
+          message.textContent = "📧 Verification email sent again.";
+        })
+        .catch((error) => {
+          message.textContent = `❌ ${error.message}`;
+        });
+    }
+  });
+}
+
+// 登出
+if (signOutButton) {
+  signOutButton.addEventListener("click", () => {
+    signOut(auth)
+      .then(() => {
+        location.reload();
+      })
+      .catch((error) => {
+        message.textContent = `❌ ${error.message}`;
+      });
+  });
+}
+
+// 自動偵測登入狀態
+onAuthStateChanged(auth, (user) => {
+  if (user && user.emailVerified) {
+    message.textContent = `✅ Logged in as ${user.email}`;
+    if (loginForm) loginForm.style.display = "none";
+    if (signOutButton) signOutButton.style.display = "inline-block";
   }
 });
