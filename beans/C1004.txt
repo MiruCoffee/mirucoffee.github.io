@@ -10,7 +10,8 @@
 <div class="bean-hero-flex">
   <div class="bean-text">
     <ul>
-      <li>Cherry, Strawberry, Rose, Dark Chocolate, Chamomile, Green Grape, Syrupy</li>
+      <li>Cherry, Strawberry, Rose, Dark Chocolate</li>
+      <li>Chamomile, Green Grape, Syrupy</li>
     </ul>
     <p>
       A syrupy, fruit-forward cup layered with floral and candy-like aromatics. Grown in Western Rwanda, this natural-process Red Bourbon delivers juicy sweetness and elegant complexity.

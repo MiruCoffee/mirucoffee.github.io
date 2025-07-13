@@ -10,7 +10,8 @@
 <div class="bean-hero-flex">
   <div class="bean-text">
     <ul>
-      <li>Dark Fruit, Milk Chocolate, Brown Sugar, Lemon, Lime, Floral, Bright Acidity, Juicy</li>
+      <li>Dark Fruit, Milk Chocolate, Brown Sugar</li>
+      <li>Lemon, Lime, Floral, Bright Acidity</li>
     </ul>
     <p>
       This washed coffee shows vibrant acidity and layered sweetness. The cup is juicy and fragrant,

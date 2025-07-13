@@ -10,7 +10,8 @@
 <div class="bean-hero-flex">
   <div class="bean-text">
     <ul>
-      <li>Nougat, Cashew, Caramel, Chocolate, Cream, Dates, Sweet Nuttiness</li>
+      <li>Nougat, Cashew, Caramel, Chocolate</li>
+      <li>Cream, Dates, Sweet Nuttiness</li>
     </ul>
     <p>
       Classic and mild flavors that develop perfectly for espresso and blends.
