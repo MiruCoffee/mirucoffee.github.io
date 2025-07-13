@@ -10,7 +10,8 @@
 <div class="bean-hero-flex">
   <div class="bean-text">
     <ul>
-      <li>Black Cherry, Blueberry, Maple, Cocoa, Rose, Citrus, Silky</li>
+      <li>Black Cherry, Blueberry, Maple</li>
+      <li>Cocoa, Rose, Citrus, Silky</li>
     </ul>
     <p>
       A clean, fruit-forward cup with notes of maple syrup, black cherry, and cocoa. This natural-processed
