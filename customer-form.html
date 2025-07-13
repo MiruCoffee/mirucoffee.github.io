@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Details - Miru Coffee</title>
+  <link rel="stylesheet" href="style-shared.css" />
+  <link rel="stylesheet" href="style-index.css" />
+  <script type="module" src="js/firebase-init.js"></script>
+  <script type="module" src="js/customer-form.js"></script>
+</head>
+<body>
+  <!-- 共用頁首 -->
+  <header id="shared-header"></header>
+
+  <main>
+    <section class="card" style="max-width: 600px; margin: 0 auto;">
+      <h2 style="text-align: center;">Customer Profile</h2>
+
+      <form id="customer-form" style="display: none;">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" required />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" />
+
+        <label for="company">Company</label>
+        <input type="text" id="company" />
+
+        <label for="customerType">Customer Type</label>
+        <select id="customerType">
+          <option value="general">General</option>
+          <option value="wholesale">Wholesale</option>
+        </select>
+
+        <label for="notes">Notes</label>
+        <textarea id="notes" rows="3"></textarea>
+
+        <button type="submit" class="primary-button">Save</button>
+      </form>
+
+      <div id="not-logged-in" style="text-align: center; display: none;">
+        <p>⚠️ You must be signed in to view or edit your profile.</p>
+        <a href="account.html" class="primary-button">Go to Login</a>
+      </div>
+
+      <p id="form-message" style="text-align: center; color: #555; margin-top: 1rem;"></p>
+    </section>
+  </main>
+
+  <!-- 共用頁尾 -->
+  <footer id="shared-footer"></footer>
+
+  <!-- 載入共用頁首與頁尾 -->
+  <script>
+    fetch("shared/header.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("shared-header").innerHTML = html;
+      });
+
+    fetch("shared/footer.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("shared-footer").innerHTML = html;
+      });
+  </script>
+</body>
+</html>

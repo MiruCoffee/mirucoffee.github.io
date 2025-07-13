@@ -14,8 +14,10 @@
   <header id="shared-header"></header>
 
   <main>
-    <section class="card" style="max-width: 400px; margin: 0 auto;">
+    <section class="card" style="max-width: 420px; margin: 0 auto;">
       <h2 style="text-align: center;">Account Login</h2>
+
+      <!-- 登入表單 -->
       <form id="login-form">
         <label for="email">Email Address</label>
         <input type="email" id="email" required />
@@ -26,17 +28,19 @@
         <button type="submit" class="primary-button">Sign In</button>
       </form>
 
+      <!-- 補助功能 -->
       <div style="margin-top: 1rem; text-align: center;">
         <a href="#" id="forgot-password">Forgot your password?</a><br />
         <a href="#" id="send-verification-link" style="display: none;">Resend verification email</a>
       </div>
 
+      <!-- 登出按鈕 -->
       <hr style="margin: 2rem 0;" />
-
       <div style="text-align: center;">
         <button id="sign-out" style="display: none;">Sign Out</button>
       </div>
 
+      <!-- 顯示訊息 -->
       <p id="account-message" style="margin-top: 1rem; text-align: center; color: #555;"></p>
     </section>
   </main>
