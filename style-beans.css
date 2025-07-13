@@ -18,8 +18,9 @@
   line-height: 1.8;
 }
 .bean-text ul {
-  list-style: left;
-  padding-left: 0;
+  list-style: disc;
+  list-style-position: inside;
+  padding-left: 1rem;
   margin-bottom: 1rem;
 }
 .bean-text p {
@@ -95,6 +96,10 @@
   .map-embed {
     flex: 1 1 100%;
     text-align: center;
+  }
+  .bean-text ul {
+    text-align: left;
+    padding-left: 2rem;
   }
   .bean-info-table td:first-child {
     text-align: right;
