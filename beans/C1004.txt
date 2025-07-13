@@ -1,0 +1,66 @@
+<!-- Bean Name -->
+<h2 class="bean-name">
+  Rwanda Nyamasheke, Muhororo Natural
+</h2>
+
+<hr>
+
+<!-- Flavor Notes -->
+<h4>Flavor Notes</h4>
+<div class="bean-hero-flex">
+  <div class="bean-text">
+    <ul>
+      <li>Cherry, Strawberry, Rose, Dark Chocolate, Chamomile, Green Grape, Syrupy</li>
+    </ul>
+    <p>
+      A syrupy, fruit-forward cup layered with floral and candy-like aromatics. Grown in Western Rwanda, this natural-process Red Bourbon delivers juicy sweetness and elegant complexity.
+    </p>
+  </div>
+
+  <div class="bean-image">
+    <img src="IMG/Bean/C1004.png" alt="C1004" class="bean-full-image">
+  </div>
+</div>
+
+<hr>
+
+<!-- Origin Details -->
+<h4>Origin Details</h4>
+<div class="origin-section-flex">
+  <table class="bean-info-table">
+    <tr><td>Origin:</td><td>Nyamasheke District, Western Province, Rwanda (Near Lake Kivu)</td></tr>
+    <tr><td>Altitude:</td><td>1700–2100 m.a.s.l.</td></tr>
+    <tr><td>Processing:</td><td>Natural</td></tr>
+    <tr><td>Varieties:</td><td>Red Bourbon</td></tr>
+    <tr><td>Washing Station:</td><td>Muhororo Washing Station</td></tr>
+    <tr><td>Farmers:</td><td>Celestin and Marie Rumenenangabo + 236 smallholders</td></tr>
+  </table>
+
+  <div class="map-embed">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4479.83707673753!2d29.21214971104054!3d-2.268464637479874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMsKwMTYnMDYuNSJTIDI5wrAxMic1My4wIkU!5e1!3m2!1sen!2sus!4v1752378839512!5m2!1sen!2sus"
+      width="100%" height="220"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    <p class="map-link">
+      <a href="https://www.google.com/maps/search/?api=1&query=-2.2684646,29.2121497"
+         target="_blank" rel="noopener">View on Google Maps</a>
+    </p>
+  </div>
+</div>
+
+<hr>
+
+<!-- Producer Notes -->
+<h4>Producer Notes</h4>
+<div class="producer-notes">
+  <p>
+    Sourced through a U.S.-based importer, this coffee comes from the Muhororo Washing Station in Rwanda’s Nyamasheke region. Over 200 smallholders deliver cherries to the station, which is managed by Celestin Rumenenangabo and his family. The station operates with a strong emphasis on sustainability, transparency, and social impact.
+  </p>
+  <p>
+    The cherries are freshly pulped and fermented for 12–14 hours, followed by 12–15 days of raised bed drying. Our sourcing partner reports that Celestin’s team sorts by flavor profile to maintain consistency across lots. The station reinvests in the community by offering healthcare, education, livestock programs, and sustainability training.
+  </p>
+  <p>
+    We are honored to roast this exceptional lot, knowing that each cup supports not just quality coffee but a thriving rural ecosystem of farmers and families.
+  </p>
+</div>
