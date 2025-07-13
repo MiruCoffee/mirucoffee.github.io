@@ -3,22 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>About - Miru Coffee</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-shared.css">
+  <link rel="stylesheet" href="style-index.css">
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <a href="index.html">
-        <img class="logo" src="IMG/001 Miru Coffee Logo.png" alt="Miru Coffee Logo">
-      </a>
-      <ul>
-        <li><a href="subscriptions.html">Subscriptions</a></li>
-        <li><a href="coffee.html">Coffee</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="myaccount.html">My Account</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- 共用頁首 -->
+  <header id="shared-header"></header>
 
   <main>
     <div class="content">
@@ -37,8 +27,28 @@
     </div>
   </main>
 
-  <footer>
-    <p>Follow us on <a href="https://www.facebook.com/61576253565111/">Facebook</a> | Email: <a href="mailto:info@mirucoffee.com">info@mirucoffee.com</a></p>
-  </footer>
+  <!-- 共用頁尾 -->
+  <footer id="shared-footer"></footer>
+
+  <!-- Header + Footer 載入 -->
+  <script>
+    fetch('shared/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('shared-header').innerHTML = html;
+        return fetch('MSG/001 announcement.txt');
+      })
+      .then(res => res.text())
+      .then(text => {
+        const marquee = document.getElementById('announcement-marquee');
+        if (marquee) marquee.textContent = text;
+      });
+
+    fetch('shared/footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('shared-footer').innerHTML = html;
+      });
+  </script>
 </body>
 </html>
