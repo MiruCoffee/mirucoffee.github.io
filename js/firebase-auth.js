@@ -1,7 +1,6 @@
-// File: js/auth.js
-import app from "./firebase-init.js";
+// File: js/firebase-auth.js
+import { auth } from "./firebase-init.js";
 import {
-  getAuth,
   signInWithEmailAndPassword,
   sendPasswordResetEmail,
   onAuthStateChanged,
@@ -9,12 +8,10 @@ import {
   sendEmailVerification
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-const auth = getAuth(app);
-
 const loginForm = document.getElementById("login-form");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
-const resetPasswordLink = document.getElementById("forgot-password");
+const resetPasswordLink = document.getElementById("reset-password-link");
 const signOutButton = document.getElementById("sign-out");
 const message = document.getElementById("account-message");
 const resendVerificationLink = document.getElementById("send-verification-link");
@@ -25,6 +22,7 @@ if (loginForm) {
     e.preventDefault();
     const email = emailInput.value;
     const password = passwordInput.value;
+
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
