@@ -30,6 +30,7 @@
     }
     #bean-detail {
       text-align: center;
+      scroll-margin-top: 140px; /* 預留 header 空間 */
     }
   </style>
 </head>
@@ -95,6 +96,9 @@
         .then(html => {
           document.getElementById('bean-detail').innerHTML = html;
           refreshMainImageVersion();
+
+          // ✅ 新增自動捲動功能
+          document.getElementById('bean-detail').scrollIntoView({ behavior: 'smooth' });
         })
         .catch(() => {
           document.getElementById('bean-detail').innerHTML = '<p>❌ Bean not found.</p>';
