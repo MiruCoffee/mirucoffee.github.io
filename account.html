@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Account - Miru Coffee</title>
-  <link rel="stylesheet" href="style-shared.css">
-  <link rel="stylesheet" href="style-index.css">
-  <script type="module" src="/js/firebase-init.js"></script>
-  <script type="module" src="/js/firebase-auth.js"></script>
+  <link rel="stylesheet" href="style-shared.css" />
+  <link rel="stylesheet" href="style-index.css" />
+  <script type="module" src="js/firebase-init.js"></script>
+  <script type="module" src="js/auth.js"></script>
 </head>
 <body>
   <!-- 共用頁首 -->
@@ -18,21 +18,20 @@
       <h2 style="text-align: center;">Account Login</h2>
       <form id="login-form">
         <label for="email">Email Address</label>
-        <input type="email" id="email" required>
+        <input type="email" id="email" required />
 
         <label for="password">Password</label>
-        <input type="password" id="password" required>
+        <input type="password" id="password" required />
 
         <button type="submit" class="primary-button">Sign In</button>
       </form>
 
       <div style="margin-top: 1rem; text-align: center;">
-        <a href="#" id="reset-password-link">Forgot your password?</a>
-        <br>
+        <a href="#" id="forgot-password">Forgot your password?</a><br />
         <a href="#" id="send-verification-link" style="display: none;">Resend verification email</a>
       </div>
 
-      <hr style="margin: 2rem 0;">
+      <hr style="margin: 2rem 0;" />
 
       <div style="text-align: center;">
         <button id="sign-out" style="display: none;">Sign Out</button>
@@ -45,14 +44,19 @@
   <!-- 共用頁尾 -->
   <footer id="shared-footer"></footer>
 
-  <!-- 載入共用頁首與頁尾 -->
+  <!-- 載入共用 header 與 footer -->
   <script>
-    fetch('shared/header.html').then(r => r.text()).then(t => {
-      document.getElementById('shared-header').innerHTML = t;
-    });
-    fetch('shared/footer.html').then(r => r.text()).then(t => {
-      document.getElementById('shared-footer').innerHTML = t;
-    });
+    fetch("shared/header.html")
+      .then((res) => res.text())
+      .then((html) => {
+        document.getElementById("shared-header").innerHTML = html;
+      });
+
+    fetch("shared/footer.html")
+      .then((res) => res.text())
+      .then((html) => {
+        document.getElementById("shared-footer").innerHTML = html;
+      });
   </script>
 </body>
 </html>
