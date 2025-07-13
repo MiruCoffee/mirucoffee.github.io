@@ -1,6 +1,6 @@
 <!-- Bean Name -->
 <h2 class="bean-name">
-  Guatemala Acatenango, La Asunción Maribel
+  Guatemala Acatenango, Cooperative La Asunción Maribel
 </h2>
 
 <hr>
@@ -13,9 +13,9 @@
       <li>Dark Fruit, Milk Chocolate, Brown Sugar, Lemon, Lime, Floral, Bright Acidity, Juicy</li>
     </ul>
     <p>
-      This vibrant Guatemala profile delivers juicy acidity and layered sweetness. 
-      As a roaster, we love how this washed coffee reveals both structured clarity and a floral brightness — 
-      making it perfect for both pour-over and espresso roast development.
+      This washed coffee shows vibrant acidity and layered sweetness. The cup is juicy and fragrant,
+      with classic Central American clarity and a wide flavor arc that makes it ideal for both filter
+      and espresso applications.
     </p>
   </div>
 
@@ -34,17 +34,19 @@
     <tr><td>Altitude:</td><td>1900–2000 m.a.s.l.</td></tr>
     <tr><td>Processing:</td><td>Washed</td></tr>
     <tr><td>Varieties:</td><td>Typica, Bourbon, Caturra, Catuai</td></tr>
-    <tr><td>Farmers:</td><td>Cooperative La Asunción – Multiple smallholder farmers</td></tr>
+    <tr><td>Farm:</td><td>Cooperative La Asunción</td></tr>
+    <tr><td>Lot ID:</td><td>Maribel</td></tr>
+    <tr><td>Farmers:</td><td>Multiple families around San José Poaquil</td></tr>
   </table>
 
   <div class="map-embed">
     <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4175.082729595945!2d-45.494441388615655!3d-21.37080058470723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDIyJzE0LjkiUyA0NcKwMjknMzAuNyJX!5e1!3m2!1sen!2sus!4v1752376521104!5m2!1sen!2sus" 
+      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4333.918779590385!2d-90.9143302889039!3d14.834449571247996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDUwJzA0LjAiTiA5MMKwNTQnNDIuMyJX!5e1!3m2!1sen!2sus!4v1752378220900!5m2!1sen!2sus" 
       width="100%" height="220"
       allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
     <p class="map-link">
-      <a href="https://www.google.com/maps/search/?api=1&query=-21.3708,-45.4944"
+      <a href="https://www.google.com/maps/search/?api=1&query=14.83445,-90.91175"
          target="_blank" rel="noopener">View on Google Maps</a>
     </p>
   </div>
@@ -56,18 +58,12 @@
 <h4>Producer Notes</h4>
 <div class="producer-notes">
   <p>
-    This lot is sourced through a U.S.-based green importer who works with Cooperative La Asunción, 
-    a well-established group of smallholder farmers in the Acatenango region of Guatemala. 
-    The co-op's farmers typically manage plots between 1800–2000 meters above sea level, 
-    growing coffee under shade trees such as Grevillea, Chalum, and Avocado.
+    This coffee was sourced through one of our import partners, who works closely with La Asunción Cooperative in San José Poaquil. The cooperative brings together over 300 local coffee-producing families and manages centralized processing to ensure consistency and quality.
   </p>
   <p>
-    The coffee is fully washed: cherries are depulped, fermented in washing tanks with clean water for 24 hours, 
-    then dried on patios for 12–15 days depending on weather. Each lot is cupped and sorted to achieve 
-    consistent flavor performance.
+    All coffees are fully washed: after depulping, the beans are fermented in clean tanks with fresh water for 24 hours, and then dried on patios for 12–15 days. Each lot is cupped and sorted by flavor profile. Farms in this area grow coffee under native shade trees such as Chalum, Grevillea, and Pine, at elevations ranging from 1900 to 2000 meters.
   </p>
   <p>
-    The co-op’s long-term vision has been shaped by generations of family farming. 
-    Today, their coffees are part of our seasonal rotation for their clean profile and balanced sweetness.
+    The cooperative was officially organized to support smallholder farmers through technical assistance and access to specialty markets. We selected this particular lot, “Maribel,” for its layered sweetness and sparkling acidity — a reflection of the region’s terroir and the dedication of the farming families.
   </p>
 </div>
