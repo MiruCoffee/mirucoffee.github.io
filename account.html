@@ -2,34 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Miru Coffee - My Account</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account - Miru Coffee</title>
+  <link rel="stylesheet" href="style-shared.css">
+  <link rel="stylesheet" href="style-index.css">
+  <script type="module" src="/js/firebase-init.js"></script>
+  <script type="module" src="/js/firebase-auth.js"></script>
 </head>
 <body>
+  <!-- 共用頁首 -->
+  <header id="shared-header"></header>
 
-<header>
-  <div class="logo">
-    <a href="index.html">
-      <img src="20250516_MiruCoffee.png" alt="Miru Coffee Logo">
-    </a>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="subscriptions.html">Subscriptions</a></li>
-      <li><a href="coffee.html">Coffee</a></li>
-      <li><a href="account.html">My Account</a></li>
-    </ul>
-  </nav>
-</header>
+  <main>
+    <section class="card" style="max-width: 400px; margin: 0 auto;">
+      <h2 style="text-align: center;">Account Login</h2>
+      <form id="login-form">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required>
 
-<main>
-  <h1>My Account</h1>
-  <p>Account management feature will be available soon!</p>
-</main>
+        <label for="password">Password</label>
+        <input type="password" id="password" required>
 
-<footer>
-  <p>© 2025 Miru Coffee. All rights reserved.</p>
-</footer>
+        <button type="submit" class="primary-button">Sign In</button>
+      </form>
 
+      <div style="margin-top: 1rem; text-align: center;">
+        <a href="#" id="reset-password-link">Forgot your password?</a>
+        <br>
+        <a href="#" id="send-verification-link" style="display: none;">Resend verification email</a>
+      </div>
+
+      <hr style="margin: 2rem 0;">
+
+      <div style="text-align: center;">
+        <button id="sign-out" style="display: none;">Sign Out</button>
+      </div>
+
+      <p id="account-message" style="margin-top: 1rem; text-align: center; color: #555;"></p>
+    </section>
+  </main>
+
+  <!-- 共用頁尾 -->
+  <footer id="shared-footer"></footer>
+
+  <!-- 載入共用頁首與頁尾 -->
+  <script>
+    fetch('shared/header.html').then(r => r.text()).then(t => {
+      document.getElementById('shared-header').innerHTML = t;
+    });
+    fetch('shared/footer.html').then(r => r.text()).then(t => {
+      document.getElementById('shared-footer').innerHTML = t;
+    });
+  </script>
 </body>
 </html>
