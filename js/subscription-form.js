@@ -1,4 +1,5 @@
 // File: js/subscription-form.js
+
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import app from "./firebase-init.js";
@@ -36,6 +37,7 @@ onAuthStateChanged(auth, async (user) => {
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   if (!currentUser) return;
+
   const ref = doc(db, "subscriptions", currentUser.uid);
   try {
     await setDoc(ref, {

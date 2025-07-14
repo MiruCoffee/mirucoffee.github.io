@@ -12,54 +12,92 @@
   <header id="shared-header"></header>
 
   <main>
-    <section class="card" style="max-width: 700px; margin: 0 auto;">
+    <section class="card" style="max-width: 720px; margin: 0 auto;">
       <h2 style="text-align: center;">Coffee Subscription</h2>
 
       <!-- 訂閱說明 -->
-      <p><strong>Delivery Frequency:</strong> Choose every 2 weeks or 4 weeks.</p>
+      <p><strong>Delivery Frequency:</strong> Choose every 2, 4, or 6 weeks.</p>
       <p><strong>Coffee Selection:</strong> Roaster’s Choice – We select a rotating lineup of specialty beans, announced on our homepage.</p>
       <p><strong>Grind:</strong> Whole Bean only.</p>
       <p><strong>Roast Schedule:</strong> All coffee is roasted on the weekend. See homepage for the current roast schedule.</p>
 
       <div style="text-align: center; margin: 2rem 0;">
-        <button onclick="document.getElementById('subscription-form').style.display='block'; this.style.display='none';" class="primary-button">Subscribe</button>
+        <button onclick="document.getElementById('subscription-form').style.display='block'; this.style.display='none';" class="primary-button">
+          Subscribe
+        </button>
       </div>
 
-      <!-- 寄信表單 -->
+      <!-- 訂閱表單 -->
       <form id="subscription-form" action="https://formsubmit.co/info@mirucoffee.com" method="POST" style="display: none;">
         <input type="hidden" name="_subject" value="New Coffee Subscription Request from Website" />
         <input type="hidden" name="_template" value="box" />
         <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_autoresponse" value="Thank you for subscribing! We will follow up soon via email." />
+        <input type="hidden" name="_cc" id="cc-email" />
 
-        <label for="fullName">Full Name</label>
-        <input type="text" name="Full Name" id="fullName" required />
+        <!-- 客戶資訊 -->
+        <div class="form-grid">
+          <div>
+            <label for="fullName">Full Name</label>
+            <input type="text" name="Full Name" id="fullName" required />
+          </div>
 
-        <label for="email">Email</label>
-        <input type="email" name="Email" id="email" required />
+          <div>
+            <label for="email">Email</label>
+            <input type="email" name="Email" id="email" required />
+          </div>
 
-        <label for="phone">Phone Number (optional)</label>
-        <input type="tel" name="Phone" id="phone" />
+          <div>
+            <label for="phone">Phone Number</label>
+            <input type="tel" name="Phone" id="phone" required pattern="[0-9\-+\s()]{7,}" placeholder="e.g. 361-782-1345" />
+          </div>
+        </div>
 
+        <!-- 配送選項 -->
         <label for="delivery">Delivery Frequency</label>
         <select name="Delivery Frequency" id="delivery" required>
           <option value="Every 2 Weeks">Every 2 Weeks</option>
           <option value="Every 4 Weeks">Every 4 Weeks</option>
+          <option value="Every 6 Weeks">Every 6 Weeks</option>
         </select>
 
-        <label for="address">Shipping Address</label>
-        <textarea name="Shipping Address" id="address" rows="3" required></textarea>
+        <!-- 地址欄位 -->
+        <div class="form-grid">
+          <div>
+            <label for="street">Street Address</label>
+            <input type="text" name="Street" id="street" required />
+          </div>
+          <div>
+            <label for="city">City</label>
+            <input type="text" name="City" id="city" required />
+          </div>
+          <div>
+            <label for="state">State</label>
+            <input type="text" name="State" id="state" required />
+          </div>
+          <div>
+            <label for="zip">ZIP Code</label>
+            <input type="text" name="ZIP" id="zip" required pattern="[0-9]{5}" />
+          </div>
+        </div>
 
+        <!-- 備註 -->
         <label for="notes">Delivery Notes (optional)</label>
         <textarea name="Notes" id="notes" rows="2"></textarea>
 
-        <button type="submit" class="primary-button">Send Subscription</button>
+        <div style="text-align: center; margin-top: 2rem;">
+          <button type="submit" class="primary-button">Send Subscription</button>
+        </div>
       </form>
+
+      <p id="subscription-message" style="text-align: center; margin-top: 1rem; color: #555;"></p>
     </section>
   </main>
 
   <!-- 共用頁尾 -->
   <footer id="shared-footer"></footer>
 
+  <!-- 載入共用 header 與 footer -->
   <script>
     fetch("shared/header.html").then(r => r.text()).then(t => {
       document.getElementById("shared-header").innerHTML = t;
@@ -67,6 +105,30 @@
     fetch("shared/footer.html").then(r => r.text()).then(t => {
       document.getElementById("shared-footer").innerHTML = t;
     });
+
+    // 自動把 Email 填入 _cc 欄位以寄副本
+    document.getElementById("email").addEventListener("input", function () {
+      document.getElementById("cc-email").value = this.value;
+    });
   </script>
+
+  <style>
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    label {
+      font-weight: bold;
+      margin-top: 1rem;
+      display: block;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      box-sizing: border-box;
+    }
+  </style>
 </body>
 </html>
