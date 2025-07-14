@@ -17,8 +17,13 @@
     <section class="card" style="max-width: 420px; margin: 0 auto;">
       <h2 style="text-align: center;">Account Login</h2>
 
+      <p style="text-align: center; font-size: 0.95rem; color: #666;">
+        If you subscribed to our coffee service, we will send you an invitation email with login instructions.<br>
+        Once logged in, you can update your subscription and profile.
+      </p>
+
       <!-- 登入表單 -->
-      <form id="login-form">
+      <form id="login-form" style="margin-top: 1.5rem;">
         <label for="email">Email Address</label>
         <input type="email" id="email" required />
 
@@ -51,14 +56,14 @@
   <!-- 載入共用 header 與 footer -->
   <script>
     fetch("shared/header.html")
-      .then((res) => res.text())
-      .then((html) => {
+      .then(res => res.text())
+      .then(html => {
         document.getElementById("shared-header").innerHTML = html;
       });
 
     fetch("shared/footer.html")
-      .then((res) => res.text())
-      .then((html) => {
+      .then(res => res.text())
+      .then(html => {
         document.getElementById("shared-footer").innerHTML = html;
       });
   </script>
