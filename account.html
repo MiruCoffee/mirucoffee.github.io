@@ -14,12 +14,12 @@
   <header id="shared-header"></header>
 
   <main>
-    <section class="card" style="max-width: 420px; margin: 0 auto;">
+    <section class="card" style="max-width: 440px; margin: 0 auto;">
       <h2 style="text-align: center;">Account Login</h2>
 
       <p style="text-align: center; font-size: 0.95rem; color: #666;">
-        If you subscribed to our coffee service, we will send you an invitation email with login instructions.<br>
-        Once logged in, you can update your subscription and profile.
+        You can create your own account and manage your subscription profile.<br>
+        All customer data is securely verified and protected by Firebase Authentication.
       </p>
 
       <!-- 登入表單 -->
@@ -33,8 +33,13 @@
         <button type="submit" class="primary-button">Sign In</button>
       </form>
 
+      <!-- 註冊連結 -->
+      <p style="text-align: center; margin-top: 1rem;">
+        Don't have an account yet? <a href="#" id="create-account-link">Create Account</a>
+      </p>
+
       <!-- 補助功能 -->
-      <div style="margin-top: 1rem; text-align: center;">
+      <div style="text-align: center; margin-top: 0.5rem;">
         <a href="#" id="forgot-password">Forgot your password?</a><br />
         <a href="#" id="send-verification-link" style="display: none;">Resend verification email</a>
       </div>
@@ -55,17 +60,12 @@
 
   <!-- 載入共用 header 與 footer -->
   <script>
-    fetch("shared/header.html")
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById("shared-header").innerHTML = html;
-      });
-
-    fetch("shared/footer.html")
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById("shared-footer").innerHTML = html;
-      });
+    fetch("shared/header.html").then(res => res.text()).then(html => {
+      document.getElementById("shared-header").innerHTML = html;
+    });
+    fetch("shared/footer.html").then(res => res.text()).then(html => {
+      document.getElementById("shared-footer").innerHTML = html;
+    });
   </script>
 </body>
 </html>
