@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Account – Miru Coffee</title>
 
-  <!-- shared styles -->
+  <!-- Shared styles -->
   <link rel="stylesheet" href="style-shared.css"/>
   <link rel="stylesheet" href="style-index.css"/>
 
-  <!-- 1. initialize Firebase -->
+  <!-- 1. Initialize Firebase -->
   <script type="module" src="js/firebase-init.js"></script>
 </head>
 <body>
-  <!-- shared header -->
+  <!-- Shared header -->
   <header id="shared-header"></header>
 
   <main>
@@ -66,10 +66,10 @@
     </section>
   </main>
 
-  <!-- shared footer -->
+  <!-- Shared footer -->
   <footer id="shared-footer"></footer>
 
-  <!-- load shared header + footer -->
+  <!-- Load shared header + footer -->
   <script>
     fetch("shared/header.html")
       .then(r => r.text())
@@ -101,7 +101,7 @@
     const msgEl          = document.getElementById("account-message");
     const formTitle      = document.getElementById("form-title");
 
-    // 1. handle email verification link
+    // 1. Handle email verification link
     const params = new URLSearchParams(window.location.search);
     if (params.get("mode") === "action" && params.get("oobCode")) {
       applyActionCode(auth, params.get("oobCode"))
@@ -109,11 +109,11 @@
           msgEl.innerText = "✅ Your email has been verified. Please sign in.";
         })
         .catch(err => {
-          msgEl.innerText = "❌ Verification link invalid or expired.";
+          msgEl.innerText = "❌ Verification link is invalid or expired.";
         });
     }
 
-    // switch to register
+    // 2. Switch to register
     showRegister.addEventListener("click", e => {
       e.preventDefault();
       signinForm.style.display   = "none";
@@ -123,7 +123,7 @@
       msgEl.innerText            = "";
     });
 
-    // switch to sign-in
+    // 3. Switch to sign-in
     showSignin.addEventListener("click", e => {
       e.preventDefault();
       registerForm.style.display = "none";
@@ -133,7 +133,7 @@
       msgEl.innerText            = "";
     });
 
-    // handle sign-in
+    // 4. Handle sign-in
     signinForm.addEventListener("submit", async e => {
       e.preventDefault();
       msgEl.innerText = "";
@@ -143,14 +143,13 @@
         const { user } = await signInWithEmailAndPassword(auth, email, password);
         if (!user.emailVerified) {
           msgEl.innerText = "⚠️ Please verify your email first.";
-          // do NOT resend here to avoid rate limits
         }
       } catch (err) {
         msgEl.innerText = "❌ " + err.message;
       }
     });
 
-    // handle registration
+    // 5. Handle registration
     registerForm.addEventListener("submit", async e => {
       e.preventDefault();
       msgEl.innerText = "";
@@ -170,12 +169,12 @@
       }
     });
 
-    // handle sign-out
+    // 6. Handle sign-out
     btnSignout.addEventListener("click", () => {
       signOut(auth);
     });
 
-    // auth state listener
+    // 7. Auth state listener
     onAuthStateChanged(auth, user => {
       if (user && user.emailVerified) {
         signinForm.style.display   = "none";
