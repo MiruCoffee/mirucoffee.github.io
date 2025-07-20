@@ -101,14 +101,14 @@
     const msgEl          = document.getElementById("account-message");
     const formTitle      = document.getElementById("form-title");
 
-    // 1. Handle email verification link
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("mode") === "action" && params.get("oobCode")) {
-      applyActionCode(auth, params.get("oobCode"))
+    // 1. Handle email verification link if any oobCode present
+    const oobCode = new URLSearchParams(window.location.search).get("oobCode");
+    if (oobCode) {
+      applyActionCode(auth, oobCode)
         .then(() => {
           msgEl.innerText = "✅ Your email has been verified. Please sign in.";
         })
-        .catch(err => {
+        .catch(() => {
           msgEl.innerText = "❌ Verification link is invalid or expired.";
         });
     }
@@ -183,13 +183,7 @@
         msgEl.innerText            = "";
         userEmailSpan.innerText    = user.email;
         formTitle.innerText        = "Welcome";
-      } else if (user && !user.emailVerified) {
-        signinForm.style.display   = "block";
-        registerForm.style.display = "none";
-        userPanel.style.display    = "none";
-        formTitle.innerText        = "Account Login";
       } else {
-        // signed out
         signinForm.style.display   = "block";
         registerForm.style.display = "none";
         userPanel.style.display    = "none";
