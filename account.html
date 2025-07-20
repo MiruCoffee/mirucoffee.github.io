@@ -4,20 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Account – Miru Coffee</title>
+
   <!-- 共用樣式 -->
   <link rel="stylesheet" href="style-shared.css"/>
   <link rel="stylesheet" href="style-index.css"/>
 
   <!-- 1. 初始化 Firebase -->
-  <script type="module" src="./firebase-init.js"></script>
+  <script type="module" src="js/firebase-init.js"></script>
 
   <!-- 2. FirebaseUI 樣式 -->
   <link
-    type="text/css"
     rel="stylesheet"
     href="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.css"
   />
-
   <!-- 3. FirebaseUI 腳本 -->
   <script src="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.js"></script>
 </head>
@@ -26,64 +25,92 @@
   <header id="shared-header"></header>
 
   <main>
-    <section class="card" style="max-width: 440px; margin: 2rem auto;">
-      <h2 style="text-align: center;">Account Login</h2>
-      <p style="text-align: center; color: #666; font-size: 0.95rem;">
-        You can create your own account and manage your subscription profile.<br/>
-        All customer data is securely verified and protected by Firebase Authentication.
+    <section class="card" style="max-width:440px;margin:2rem auto">
+      <h2 style="text-align:center">Account</h2>
+      <p style="text-align:center;color:#666;font-size:.95rem">
+        You can sign in or create an account here.<br/>
+        All data is secured by Firebase Authentication.
       </p>
 
-      <!-- FirebaseUI 容器 -->
+      <!-- 登入/註冊 容器 -->
       <div id="firebaseui-auth-container"></div>
 
+      <!-- 登入後 顯示使用者資訊與登出按鈕 -->
+      <div id="user-panel" style="display:none; text-align:center; margin-top:1rem;">
+        <p>Welcome, <span id="user-email"></span></p>
+        <button id="btn-signout" class="primary-button">Sign Out</button>
+      </div>
+
       <!-- 訊息顯示 -->
-      <p id="account-message" style="text-align: center; color: #d32f2f; margin-top: 1rem;"></p>
+      <p id="account-message" style="text-align:center;color:#d32f2f;margin-top:1rem"></p>
     </section>
   </main>
 
   <!-- 共用頁尾 -->
   <footer id="shared-footer"></footer>
 
-  <!-- 載入共用 header/footer -->
+  <!-- 載入共用 header + footer -->
   <script>
     fetch("shared/header.html")
       .then(r => r.text())
-      .then(html => document.getElementById("shared-header").innerHTML = html);
+      .then(html => { document.getElementById("shared-header").innerHTML = html; });
     fetch("shared/footer.html")
       .then(r => r.text())
-      .then(html => document.getElementById("shared-footer").innerHTML = html);
+      .then(html => { document.getElementById("shared-footer").innerHTML = html; });
   </script>
 
-  <!-- 啟動 FirebaseUI -->
+  <!-- 啟動 FirebaseUI 並處理登入/登出顯示 -->
   <script type="module">
-    import { auth } from "./firebase-init.js";
+    import { auth } from "./js/firebase-init.js";
 
-    // 建立 FirebaseUI
+    // 1. 初始化 FirebaseUI
     const ui = new firebaseui.auth.AuthUI(auth);
-
     ui.start("#firebaseui-auth-container", {
       signInOptions: [
-        // 只啟用 Email/Password
         firebaseui.auth.EmailAuthProvider.PROVIDER_ID
       ],
       callbacks: {
-        // 登入／註冊成功後被呼叫
-        signInSuccessWithAuthResult: (authResult) => {
-          const user = authResult.user;
-          const msgEl = document.getElementById("account-message");
-          if (!user.emailVerified) {
-            // 尚未驗證就顯示提醒
-            msgEl.innerText = "已寄出驗證信，請至信箱點擊連結完成驗證。";
-          } else {
-            // 驗證完畢，導向訂閱頁
-            window.location.href = "/subscriptions.html";
-          }
-          // 不要 FirebaseUI 自動跳轉
+        signInSuccessWithAuthResult: (res) => {
+          // 阻止自動跳轉
           return false;
         }
       },
-      // 關閉 Smart Lock 提示
       credentialHelper: firebaseui.auth.CredentialHelper.NONE
+    });
+
+    // 2. 取得元素
+    const container   = document.getElementById("firebaseui-auth-container");
+    const panel       = document.getElementById("user-panel");
+    const emailSpan   = document.getElementById("user-email");
+    const btnSignout  = document.getElementById("btn-signout");
+    const msgEl       = document.getElementById("account-message");
+
+    // 3. 監聽登入狀態
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        if (!user.emailVerified) {
+          // 已登入但尚未驗證
+          container.style.display = "block";
+          panel.style.display     = "none";
+          msgEl.textContent        = "✅ Verification email sent. Please check your inbox.";
+        } else {
+          // 已驗證：隱藏容器，顯示使用者面板
+          container.style.display = "none";
+          msgEl.textContent        = "";
+          panel.style.display      = "block";
+          emailSpan.textContent    = user.email;
+        }
+      } else {
+        // 登出狀態：顯示登入容器，隱藏面板
+        container.style.display = "block";
+        panel.style.display     = "none";
+        msgEl.textContent        = "";
+      }
+    });
+
+    // 4. 登出按鈕
+    btnSignout.addEventListener("click", () => {
+      auth.signOut();
     });
   </script>
 </body>
