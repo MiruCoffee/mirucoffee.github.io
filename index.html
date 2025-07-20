@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Miru Coffee - Official Website</title>
   <link rel="stylesheet" href="style-shared.css">
   <link rel="stylesheet" href="style-index.css">
+
+  <!-- 初始化 Firebase，使 shared/header 能使用 auth -->
+  <script type="module" src="js/firebase-init.js"></script>
 </head>
 <body>
   <!-- 共用頁首 -->
@@ -74,7 +78,9 @@
       .then(res => res.text())
       .then(text => {
         const marquee = document.getElementById('announcement-marquee');
-        if (marquee) marquee.textContent = text;
+        if (marquee) {
+          marquee.textContent = text;
+        }
         window.scrollTo(0, savedScrollY);
       });
 

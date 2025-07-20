@@ -1,54 +1,101 @@
 // File: js/subscription-form.js
 
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-import app from "./firebase-init.js";
+import { auth, db } from "./firebase-init.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import {
+  doc,
+  getDoc,
+  setDoc,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-const auth = getAuth(app);
-const db = getFirestore(app);
+// 表單與訊息顯示元素
+const form  = document.getElementById("subscription-form");
+const msgEl = document.getElementById("subscription-message");
 
-const form = document.getElementById("subscription-form");
-const statusField = document.getElementById("status");
-const frequencyField = document.getElementById("frequency");
-const addressField = document.getElementById("deliveryAddress");
-const notesField = document.getElementById("notes");
-const message = document.getElementById("form-message");
+// 對應到 HTML 中的欄位
+const fullNameField = document.getElementById("fullName");
+const emailField    = document.getElementById("email");
+const phoneField    = document.getElementById("phone");
+const deliveryField = document.getElementById("delivery");
+const streetField   = document.getElementById("street");
+const cityField     = document.getElementById("city");
+const stateField    = document.getElementById("state");
+const zipField      = document.getElementById("zip");
+const notesField    = document.getElementById("notes");
 
-let currentUser = null;
+// 預設隱藏表單，待驗證後再顯示
+form.style.display = "none";
 
-onAuthStateChanged(auth, async (user) => {
-  if (user && user.emailVerified) {
-    currentUser = user;
-    const ref = doc(db, "subscriptions", user.uid);
-    const snap = await getDoc(ref);
-    if (snap.exists()) {
-      const data = snap.data();
-      frequencyField.value = data.frequency || "2weeks";
-      addressField.value = data.deliveryAddress || "";
-      notesField.value = data.notes || "";
-      statusField.textContent = `Current status: ${data.status || "Active"}`;
-    }
+let hasSubscription = false;
+
+// 監聽登入&驗證狀態
+onAuthStateChanged(auth, async user => {
+  if (!user || !user.emailVerified) {
+    // 未登入或未驗證，自動跳轉到登入頁
+    window.location.href = "account.html";
+    return;
+  }
+
+  // 已驗證：顯示表單
+  form.style.display = "block";
+  msgEl.textContent = "";
+
+  // 預填 email 欄位
+  emailField.value = user.email;
+
+  // 嘗試讀取既有訂閱
+  const ref  = doc(db, "subscriptions", user.uid);
+  const snap = await getDoc(ref);
+  if (snap.exists()) {
+    hasSubscription = true;
+    const data = snap.data();
+    fullNameField.value = data.fullName || "";
+    phoneField.value    = data.phone    || "";
+    deliveryField.value = data.delivery || "Every 2 Weeks";
+    streetField.value   = data.street   || "";
+    cityField.value     = data.city     || "";
+    stateField.value    = data.state    || "";
+    zipField.value      = data.zip      || "";
+    notesField.value    = data.notes    || "";
   } else {
-    message.textContent = "⚠️ Please log in and verify your email first.";
-    form.style.display = "none";
+    hasSubscription = false;
   }
 });
 
-form.addEventListener("submit", async (e) => {
+// 處理表單送出
+form.addEventListener("submit", async e => {
   e.preventDefault();
-  if (!currentUser) return;
+  const user = auth.currentUser;
+  if (!user) return;
 
-  const ref = doc(db, "subscriptions", currentUser.uid);
+  const ref = doc(db, "subscriptions", user.uid);
+
+  // 準備要寫入的資料
+  const payload = {
+    userId:    user.uid,
+    fullName:  fullNameField.value.trim(),
+    email:     emailField.value.trim(),
+    phone:     phoneField.value.trim(),
+    delivery:  deliveryField.value,
+    street:    streetField.value.trim(),
+    city:      cityField.value.trim(),
+    state:     stateField.value.trim(),
+    zip:       zipField.value.trim(),
+    notes:     notesField.value.trim(),
+    updatedAt: serverTimestamp()
+  };
+  // 若首次建立，加入 createdAt
+  if (!hasSubscription) {
+    payload.createdAt = serverTimestamp();
+  }
+
   try {
-    await setDoc(ref, {
-      email: currentUser.email,
-      frequency: frequencyField.value,
-      deliveryAddress: addressField.value,
-      notes: notesField.value,
-      status: "Active"
-    });
-    message.textContent = "✅ Subscription info saved.";
+    await setDoc(ref, payload, { merge: true });
+    hasSubscription = true;
+    msgEl.textContent = "✅ Subscription info saved.";
   } catch (err) {
-    message.textContent = `❌ Error: ${err.message}`;
+    console.error(err);
+    msgEl.textContent = "❌ Error: " + err.message;
   }
 });

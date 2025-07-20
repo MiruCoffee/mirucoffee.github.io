@@ -1,70 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Account - Miru Coffee</title>
-  <link rel="stylesheet" href="style-shared.css" />
-  <link rel="stylesheet" href="style-index.css" />
-  <script type="module" src="js/firebase-init.js"></script>
-  <script type="module" src="js/firebase-auth.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Account – Miru Coffee</title>
+  <!-- 共用樣式 -->
+  <link rel="stylesheet" href="style-shared.css"/>
+  <link rel="stylesheet" href="style-index.css"/>
+
+  <!-- 1. 初始化 Firebase -->
+  <script type="module" src="./firebase-init.js"></script>
+
+  <!-- 2. FirebaseUI 樣式 -->
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.css"
+  />
+
+  <!-- 3. FirebaseUI 腳本 -->
+  <script src="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.js"></script>
 </head>
 <body>
   <!-- 共用頁首 -->
   <header id="shared-header"></header>
 
   <main>
-    <section class="card" style="max-width: 440px; margin: 0 auto;">
+    <section class="card" style="max-width: 440px; margin: 2rem auto;">
       <h2 style="text-align: center;">Account Login</h2>
-
-      <p style="text-align: center; font-size: 0.95rem; color: #666;">
-        You can create your own account and manage your subscription profile.<br>
+      <p style="text-align: center; color: #666; font-size: 0.95rem;">
+        You can create your own account and manage your subscription profile.<br/>
         All customer data is securely verified and protected by Firebase Authentication.
       </p>
 
-      <!-- 登入表單 -->
-      <form id="login-form" style="margin-top: 1.5rem;">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" required />
+      <!-- FirebaseUI 容器 -->
+      <div id="firebaseui-auth-container"></div>
 
-        <label for="password">Password</label>
-        <input type="password" id="password" required />
-
-        <button type="submit" class="primary-button">Sign In</button>
-      </form>
-
-      <!-- 註冊連結 -->
-      <p style="text-align: center; margin-top: 1rem;">
-        Don't have an account yet? <a href="#" id="create-account-link">Create Account</a>
-      </p>
-
-      <!-- 補助功能 -->
-      <div style="text-align: center; margin-top: 0.5rem;">
-        <a href="#" id="forgot-password">Forgot your password?</a><br />
-        <a href="#" id="send-verification-link" style="display: none;">Resend verification email</a>
-      </div>
-
-      <!-- 登出按鈕 -->
-      <hr style="margin: 2rem 0;" />
-      <div style="text-align: center;">
-        <button id="sign-out" style="display: none;">Sign Out</button>
-      </div>
-
-      <!-- 顯示訊息 -->
-      <p id="account-message" style="margin-top: 1rem; text-align: center; color: #555;"></p>
+      <!-- 訊息顯示 -->
+      <p id="account-message" style="text-align: center; color: #d32f2f; margin-top: 1rem;"></p>
     </section>
   </main>
 
   <!-- 共用頁尾 -->
   <footer id="shared-footer"></footer>
 
-  <!-- 載入共用 header 與 footer -->
+  <!-- 載入共用 header/footer -->
   <script>
-    fetch("shared/header.html").then(res => res.text()).then(html => {
-      document.getElementById("shared-header").innerHTML = html;
-    });
-    fetch("shared/footer.html").then(res => res.text()).then(html => {
-      document.getElementById("shared-footer").innerHTML = html;
+    fetch("shared/header.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("shared-header").innerHTML = html);
+    fetch("shared/footer.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("shared-footer").innerHTML = html);
+  </script>
+
+  <!-- 啟動 FirebaseUI -->
+  <script type="module">
+    import { auth } from "./firebase-init.js";
+
+    // 建立 FirebaseUI
+    const ui = new firebaseui.auth.AuthUI(auth);
+
+    ui.start("#firebaseui-auth-container", {
+      signInOptions: [
+        // 只啟用 Email/Password
+        firebaseui.auth.EmailAuthProvider.PROVIDER_ID
+      ],
+      callbacks: {
+        // 登入／註冊成功後被呼叫
+        signInSuccessWithAuthResult: (authResult) => {
+          const user = authResult.user;
+          const msgEl = document.getElementById("account-message");
+          if (!user.emailVerified) {
+            // 尚未驗證就顯示提醒
+            msgEl.innerText = "已寄出驗證信，請至信箱點擊連結完成驗證。";
+          } else {
+            // 驗證完畢，導向訂閱頁
+            window.location.href = "/subscriptions.html";
+          }
+          // 不要 FirebaseUI 自動跳轉
+          return false;
+        }
+      },
+      // 關閉 Smart Lock 提示
+      credentialHelper: firebaseui.auth.CredentialHelper.NONE
     });
   </script>
 </body>

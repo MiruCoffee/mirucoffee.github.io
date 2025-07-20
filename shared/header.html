@@ -1,3 +1,5 @@
+<!-- file: shared/header.html -->
+
 <div class="announcement-wrapper">
   <div class="announcement-text" id="announcement-marquee"></div>
 </div>
@@ -7,9 +9,53 @@
     <img class="logo" src="IMG/001 Miru Coffee Logo.png" alt="Miru Coffee Logo">
   </a>
   <ul>
-    <li><a href="subscriptions.html">Subscriptions</a></li>
-    <li><a href="beans.html">Beans</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="account.html">Account</a></li>
+    <!-- 根據登入狀態顯示/隱藏 -->
+    <li id="li-subscriptions"><a href="subscriptions.html">Subscriptions</a></li>
+    <li id="li-beans"><a href="beans.html">Beans</a></li>
+    <li id="li-about"><a href="about.html">About</a></li>
+
+    <!-- 未登入時顯示 -->
+    <li id="li-login"><a href="account.html">Login</a></li>
+    <!-- 登入後顯示 -->
+    <li id="li-account"><a href="account.html">Account</a></li>
+    <li id="li-logout"><button id="btn-logout" class="link-button">Logout</button></li>
   </ul>
 </nav>
+
+<script type="module">
+  import { auth } from "../js/firebase-init.js";
+
+  const liLogin         = document.getElementById("li-login");
+  const liAccount       = document.getElementById("li-account");
+  const liSubscriptions = document.getElementById("li-subscriptions");
+  const liLogout        = document.getElementById("li-logout");
+  const btnLogout       = document.getElementById("btn-logout");
+
+  // 預設隱藏所有選單項目
+  liLogin.style.display         = "none";
+  liAccount.style.display       = "none";
+  liSubscriptions.style.display = "none";
+  liLogout.style.display        = "none";
+
+  // 監聽登入狀態，切換選單
+  auth.onAuthStateChanged(user => {
+    if (user) {
+      // 已登入：顯示 Subscriptions、Account、Logout
+      liSubscriptions.style.display = "inline-block";
+      liAccount.style.display       = "inline-block";
+      liLogout.style.display        = "inline-block";
+      liLogin.style.display         = "none";
+    } else {
+      // 未登入：顯示 Login，其餘隱藏
+      liLogin.style.display         = "inline-block";
+      liSubscriptions.style.display = "none";
+      liAccount.style.display       = "none";
+      liLogout.style.display        = "none";
+    }
+  });
+
+  // 登出按鈕
+  btnLogout.addEventListener("click", () => {
+    auth.signOut();
+  });
+</script>

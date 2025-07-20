@@ -1,10 +1,11 @@
 // File: firebase-init.js
 
-// 初始化 Firebase SDK
+// 1. 匯入所需的 Firebase SDK
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getAuth }          from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getFirestore }     from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-// Firebase 設定（來自你的 Firebase 控制台）
+// 2. 你的 Firebase 專案設定（從控制台複製）
 const firebaseConfig = {
   apiKey: "AIzaSyANBt_Iu5eow5eQ8racvqtXDbqV1cP8b6Y",
   authDomain: "miru-coffee.firebaseapp.com",
@@ -14,9 +15,12 @@ const firebaseConfig = {
   appId: "1:478375119822:web:b29ca2b1686b2ab59af99f"
 };
 
-// 初始化 Firebase App
+// 3. 初始化 Firebase App
 const app = initializeApp(firebaseConfig);
 
-// 初始化 Auth 並導出
-export const auth = getAuth(app);
-export default app;
+// 4. 初始化各項服務
+const auth = getAuth(app);
+const db   = getFirestore(app);
+
+// 5. 匯出給外部使用
+export { app, auth, db };

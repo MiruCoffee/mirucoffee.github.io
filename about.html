@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About - Miru Coffee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About – Miru Coffee</title>
   <link rel="stylesheet" href="style-shared.css">
   <link rel="stylesheet" href="style-index.css">
 </head>
@@ -15,7 +16,7 @@
       <section class="card">
         <h2>About Miru Coffee</h2>
         <p>
-          At Miru Coffee, we are passionate about flavor and craftsmanship. We select only premium specialty-grade beans from trusted producers across the globe. Using our air roasting method, we unlock clean, vibrant flavors without smokiness.
+          At Miru Coffee, we are passionate about flavor and craftsmanship. We select only premium specialty-grade beans from trusted producers across the globe. Using our air-roasting method, we unlock clean, vibrant flavors without smokiness.
         </p>
         <p>
           Every roast is crafted in small batches, typically every two weeks, and shipped within two days to ensure freshness. Our roasting style is guided by curiosity, sensory testing, and a deep respect for origin and process.
@@ -30,7 +31,7 @@
   <!-- 共用頁尾 -->
   <footer id="shared-footer"></footer>
 
-  <!-- Header + Footer 載入 -->
+  <!-- 載入共用 header + 跑馬燈 + footer -->
   <script>
     fetch('shared/header.html')
       .then(res => res.text())
@@ -41,7 +42,11 @@
       .then(res => res.text())
       .then(text => {
         const marquee = document.getElementById('announcement-marquee');
-        if (marquee) marquee.textContent = text;
+        if (marquee) {
+          marquee.textContent = text;
+          marquee.setAttribute('scrollamount', '5');
+          marquee.style.fontSize = '20px';
+        }
       });
 
     fetch('shared/footer.html')

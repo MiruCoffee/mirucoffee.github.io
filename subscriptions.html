@@ -24,13 +24,17 @@
       box-sizing: border-box;
     }
   </style>
+  <!-- 載入 Firebase App/Auth/Firestore 初始化 -->
+  <script type="module" src="js/firebase-init.js"></script>
+  <!-- 載入訂閱表單邏輯 -->
+  <script type="module" src="js/subscription-form.js"></script>
 </head>
 <body>
   <!-- 共用頁首 -->
   <header id="shared-header"></header>
 
   <main>
-    <section class="card" style="max-width: 720px; margin: 0 auto;">
+    <section class="card" style="max-width: 720px; margin: 2rem auto;">
       <h2 style="text-align: center;">Coffee Subscription</h2>
 
       <!-- 訂閱方案說明 -->
@@ -51,70 +55,59 @@
 
       <p><strong>Security:</strong> Your information is securely stored and used only for order processing. We use Firebase Authentication and never share your data with third parties.</p>
 
-      <!-- 訂閱表單 -->
-      <form id="subscription-form" action="https://formsubmit.co/info@mirucoffee.com" method="POST">
-        <input type="hidden" name="_subject" value="New Coffee Subscription Request from Website" />
-        <input type="hidden" name="_template" value="box" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_autoresponse" value="Thank you for subscribing to Miru Coffee! We will follow up soon via email." />
-        <input type="hidden" name="_cc" id="cc-email" />
-
-        <!-- 基本資訊 -->
+      <!-- 訂閱表單（改由 subscription-form.js 處理） -->
+      <form id="subscription-form">
+        <!-- 隱藏欄位都移除，改以 JS 撰寫 Firestore -->
         <div class="form-grid">
           <div>
             <label for="fullName">Full Name</label>
-            <input type="text" name="Full Name" id="fullName" required />
+            <input type="text" name="fullName" id="fullName" required />
           </div>
-
           <div>
             <label for="email">Email</label>
-            <input type="email" name="Email" id="email" required />
+            <input type="email" name="email" id="email" required />
           </div>
-
           <div>
             <label for="phone">Phone Number</label>
-            <input type="tel" name="Phone" id="phone" required pattern="[0-9\-+\s()]{7,}" placeholder="e.g. 361-782-1345" />
+            <input type="tel" name="phone" id="phone" required pattern="[0-9\-+\s()]{7,}" placeholder="e.g. 361-782-1345" />
           </div>
         </div>
 
-        <!-- 配送設定 -->
         <label for="delivery">Delivery Frequency</label>
-        <select name="Delivery Frequency" id="delivery" required>
+        <select name="delivery" id="delivery" required>
           <option value="Every 2 Weeks">Every 2 Weeks</option>
           <option value="Every 4 Weeks">Every 4 Weeks</option>
           <option value="Every 6 Weeks">Every 6 Weeks</option>
         </select>
 
-        <!-- 地址 -->
         <div class="form-grid">
           <div>
             <label for="street">Street Address</label>
-            <input type="text" name="Street" id="street" required />
+            <input type="text" name="street" id="street" required />
           </div>
           <div>
             <label for="city">City</label>
-            <input type="text" name="City" id="city" required />
+            <input type="text" name="city" id="city" required />
           </div>
           <div>
             <label for="state">State</label>
-            <input type="text" name="State" id="state" required />
+            <input type="text" name="state" id="state" required />
           </div>
           <div>
             <label for="zip">ZIP Code</label>
-            <input type="text" name="ZIP" id="zip" required pattern="[0-9]{5}" />
+            <input type="text" name="zip" id="zip" required pattern="[0-9]{5}" />
           </div>
         </div>
 
-        <!-- 備註 -->
         <label for="notes">Delivery Notes (optional)</label>
-        <textarea name="Notes" id="notes" rows="2"></textarea>
+        <textarea name="notes" id="notes" rows="2"></textarea>
 
-        <!-- 提交 -->
         <div style="text-align: center; margin-top: 2rem;">
           <button type="submit" class="primary-button">Send Subscription</button>
         </div>
       </form>
 
+      <!-- 用 JS 顯示訊息 -->
       <p id="subscription-message" style="text-align: center; margin-top: 1rem; color: #555;"></p>
     </section>
   </main>
@@ -124,16 +117,11 @@
 
   <!-- 載入共用 header 與 footer -->
   <script>
-    fetch("shared/header.html").then(r => r.text()).then(t => {
-      document.getElementById("shared-header").innerHTML = t;
+    fetch("shared/header.html").then(r => r.text()).then(html => {
+      document.getElementById("shared-header").innerHTML = html;
     });
-    fetch("shared/footer.html").then(r => r.text()).then(t => {
-      document.getElementById("shared-footer").innerHTML = t;
-    });
-
-    // 自動將 email 填入 _cc 作為副本收件人
-    document.getElementById("email").addEventListener("input", function () {
-      document.getElementById("cc-email").value = this.value;
+    fetch("shared/footer.html").then(r => r.text()).then(html => {
+      document.getElementById("shared-footer").innerHTML = html;
     });
   </script>
 </body>
