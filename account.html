@@ -1,55 +1,75 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Account – Miru Coffee</title>
 
-  <!-- 共用樣式 -->
+  <!-- shared styles -->
   <link rel="stylesheet" href="style-shared.css"/>
   <link rel="stylesheet" href="style-index.css"/>
 
-  <!-- 1. 初始化 Firebase -->
+  <!-- 1. initialize Firebase -->
   <script type="module" src="js/firebase-init.js"></script>
-
-  <!-- 2. FirebaseUI 樣式 -->
-  <link
-    rel="stylesheet"
-    href="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.css"
-  />
-  <!-- 3. FirebaseUI 腳本 -->
-  <script src="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.js"></script>
 </head>
 <body>
-  <!-- 共用頁首 -->
+  <!-- shared header -->
   <header id="shared-header"></header>
 
   <main>
     <section class="card" style="max-width:440px;margin:2rem auto">
-      <h2 style="text-align:center">Account</h2>
+      <h2 id="form-title" style="text-align:center">Account Login</h2>
       <p style="text-align:center;color:#666;font-size:.95rem">
-        You can sign in or create an account here.<br/>
+        Sign in or create an account below.<br/>
         All data is secured by Firebase Authentication.
       </p>
 
-      <!-- 登入/註冊 容器 -->
-      <div id="firebaseui-auth-container"></div>
+      <!-- sign-in form -->
+      <form id="signin-form">
+        <label for="signin-email">Email</label>
+        <input type="email" id="signin-email" required />
 
-      <!-- 登入後 顯示使用者資訊與登出按鈕 -->
+        <label for="signin-password">Password</label>
+        <input type="password" id="signin-password" required />
+
+        <button type="submit" class="primary-button">Sign In</button>
+        <p style="text-align:right; margin-top:0.5rem;">
+          <a href="#" id="show-register">Don't have an account? Create one</a>
+        </p>
+      </form>
+
+      <!-- registration form -->
+      <form id="register-form" style="display:none;">
+        <label for="reg-email">Email</label>
+        <input type="email" id="reg-email" required />
+
+        <label for="reg-password">Password</label>
+        <input type="password" id="reg-password" required />
+
+        <label for="reg-password-confirm">Confirm Password</label>
+        <input type="password" id="reg-password-confirm" required />
+
+        <button type="submit" class="primary-button">Create Account</button>
+        <p style="text-align:right; margin-top:0.5rem;">
+          <a href="#" id="show-signin">Already have an account? Sign in</a>
+        </p>
+      </form>
+
+      <!-- after sign-in panel -->
       <div id="user-panel" style="display:none; text-align:center; margin-top:1rem;">
         <p>Welcome, <span id="user-email"></span></p>
         <button id="btn-signout" class="primary-button">Sign Out</button>
       </div>
 
-      <!-- 訊息顯示 -->
+      <!-- messages -->
       <p id="account-message" style="text-align:center;color:#d32f2f;margin-top:1rem"></p>
     </section>
   </main>
 
-  <!-- 共用頁尾 -->
+  <!-- shared footer -->
   <footer id="shared-footer"></footer>
 
-  <!-- 載入共用 header + footer -->
+  <!-- load shared header + footer -->
   <script>
     fetch("shared/header.html")
       .then(r => r.text())
@@ -59,58 +79,110 @@
       .then(html => { document.getElementById("shared-footer").innerHTML = html; });
   </script>
 
-  <!-- 啟動 FirebaseUI 並處理登入/登出顯示 -->
+  <!-- Firebase auth logic -->
   <script type="module">
     import { auth } from "./js/firebase-init.js";
+    import {
+      signInWithEmailAndPassword,
+      createUserWithEmailAndPassword,
+      sendEmailVerification,
+      onAuthStateChanged,
+      signOut
+    } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-    // 1. 初始化 FirebaseUI
-    const ui = new firebaseui.auth.AuthUI(auth);
-    ui.start("#firebaseui-auth-container", {
-      signInOptions: [
-        firebaseui.auth.EmailAuthProvider.PROVIDER_ID
-      ],
-      callbacks: {
-        signInSuccessWithAuthResult: (res) => {
-          // 阻止自動跳轉
-          return false;
-        }
-      },
-      credentialHelper: firebaseui.auth.CredentialHelper.NONE
+    const signinForm     = document.getElementById("signin-form");
+    const registerForm   = document.getElementById("register-form");
+    const showRegister   = document.getElementById("show-register");
+    const showSignin     = document.getElementById("show-signin");
+    const userPanel      = document.getElementById("user-panel");
+    const btnSignout     = document.getElementById("btn-signout");
+    const userEmailSpan  = document.getElementById("user-email");
+    const msgEl          = document.getElementById("account-message");
+    const formTitle      = document.getElementById("form-title");
+
+    // switch to register
+    showRegister.addEventListener("click", e => {
+      e.preventDefault();
+      signinForm.style.display   = "none";
+      registerForm.style.display = "block";
+      userPanel.style.display    = "none";
+      formTitle.innerText        = "Create Account";
+      msgEl.innerText            = "";
     });
 
-    // 2. 取得元素
-    const container   = document.getElementById("firebaseui-auth-container");
-    const panel       = document.getElementById("user-panel");
-    const emailSpan   = document.getElementById("user-email");
-    const btnSignout  = document.getElementById("btn-signout");
-    const msgEl       = document.getElementById("account-message");
+    // switch to sign-in
+    showSignin.addEventListener("click", e => {
+      e.preventDefault();
+      registerForm.style.display = "none";
+      signinForm.style.display   = "block";
+      userPanel.style.display    = "none";
+      formTitle.innerText        = "Account Login";
+      msgEl.innerText            = "";
+    });
 
-    // 3. 監聽登入狀態
-    auth.onAuthStateChanged(user => {
-      if (user) {
+    // handle sign-in
+    signinForm.addEventListener("submit", async e => {
+      e.preventDefault();
+      msgEl.innerText = "";
+      const email    = document.getElementById("signin-email").value;
+      const password = document.getElementById("signin-password").value;
+      try {
+        const { user } = await signInWithEmailAndPassword(auth, email, password);
         if (!user.emailVerified) {
-          // 已登入但尚未驗證
-          container.style.display = "block";
-          panel.style.display     = "none";
-          msgEl.textContent        = "✅ Verification email sent. Please check your inbox.";
-        } else {
-          // 已驗證：隱藏容器，顯示使用者面板
-          container.style.display = "none";
-          msgEl.textContent        = "";
-          panel.style.display      = "block";
-          emailSpan.textContent    = user.email;
+          msgEl.innerText = "⚠️ Please verify your email first.";
+          await sendEmailVerification(user);
         }
-      } else {
-        // 登出狀態：顯示登入容器，隱藏面板
-        container.style.display = "block";
-        panel.style.display     = "none";
-        msgEl.textContent        = "";
+      } catch (err) {
+        msgEl.innerText = "❌ " + err.message;
       }
     });
 
-    // 4. 登出按鈕
+    // handle registration
+    registerForm.addEventListener("submit", async e => {
+      e.preventDefault();
+      msgEl.innerText = "";
+      const email    = document.getElementById("reg-email").value;
+      const password = document.getElementById("reg-password").value;
+      const confirm  = document.getElementById("reg-password-confirm").value;
+      if (password !== confirm) {
+        msgEl.innerText = "❌ Passwords do not match";
+        return;
+      }
+      try {
+        const { user } = await createUserWithEmailAndPassword(auth, email, password);
+        await sendEmailVerification(user);
+        msgEl.innerText = "✅ Verification email sent. Please check your inbox.";
+      } catch (err) {
+        msgEl.innerText = "❌ " + err.message;
+      }
+    });
+
+    // handle sign-out
     btnSignout.addEventListener("click", () => {
-      auth.signOut();
+      signOut(auth);
+    });
+
+    // auth state listener
+    onAuthStateChanged(auth, user => {
+      if (user && user.emailVerified) {
+        signinForm.style.display   = "none";
+        registerForm.style.display = "none";
+        userPanel.style.display    = "block";
+        msgEl.innerText            = "";
+        userEmailSpan.innerText    = user.email;
+        formTitle.innerText        = "Welcome";
+      } else if (user && !user.emailVerified) {
+        signinForm.style.display   = "block";
+        registerForm.style.display = "none";
+        userPanel.style.display    = "none";
+        formTitle.innerText        = "Account Login";
+      } else {
+        // signed out
+        signinForm.style.display   = "block";
+        registerForm.style.display = "none";
+        userPanel.style.display    = "none";
+        formTitle.innerText        = "Account Login";
+      }
     });
   </script>
 </body>
