@@ -80,6 +80,8 @@
         const marquee = document.getElementById('announcement-marquee');
         if (marquee) {
           marquee.textContent = text;
+          marquee.setAttribute('scrollamount','5');
+          marquee.style.fontSize = '20px';
         }
         window.scrollTo(0, savedScrollY);
       });
