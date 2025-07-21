@@ -9,10 +9,13 @@
     <img class="logo" src="IMG/001 Miru Coffee Logo.png" alt="Miru Coffee Logo">
   </a>
   <ul>
-    <li id="li-subscriptions"><a href="subscriptions.html">Subscriptions</a></li>
-    <li><a href="beans.html">Beans</a></li>
-    <li><a href="about.html">About</a></li>
+    <li id="li-plans"><a href="plans.html">Plans</a></li>
+    <li id="li-beans"><a href="beans.html">Beans</a></li>
+    <li id="li-about"><a href="about.html">About</a></li>
+    <li id="li-subscribe"><a href="subscribe.html">My Subscription</a></li>
+    <li id="li-login"><a href="account.html">Login</a></li>
     <li id="li-account"><a href="account.html">Account</a></li>
+    <li id="li-logout"><button id="btn-logout" class="link-button">Logout</button></li>
   </ul>
 </nav>
 
@@ -20,23 +23,40 @@
   import { auth } from "../js/firebase-init.js";
   import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-  const liSubscriptions = document.getElementById("li-subscriptions");
-  const liAccount       = document.getElementById("li-account");
+  const liPlans     = document.getElementById("li-plans");
+  const liBeans     = document.getElementById("li-beans");
+  const liAbout     = document.getElementById("li-about");
+  const liSubscribe = document.getElementById("li-subscribe");
+  const liLogin     = document.getElementById("li-login");
+  const liAccount   = document.getElementById("li-account");
+  const liLogout    = document.getElementById("li-logout");
+  const btnLogout   = document.getElementById("btn-logout");
 
-  // 初始隱藏「Subscriptions」與「Account」
-  liSubscriptions.style.display = "none";
-  liAccount.style.display       = "none";
+  // 初始隱藏動態項目
+  liLogin.style.display     = "none";
+  liAccount.style.display   = "none";
+  liLogout.style.display    = "none";
+  liSubscribe.style.display = "none";
 
-  // 根據登入狀態顯示/隱藏
+  // 根據登入狀態切換顯示
   onAuthStateChanged(auth, user => {
     if (user && user.emailVerified) {
-      // 已登入：顯示訂閱與帳戶
-      liSubscriptions.style.display = "inline-block";
-      liAccount.style.display       = "inline-block";
+      liLogin.style.display     = "none";
+      liAccount.style.display   = "inline-block";
+      liLogout.style.display    = "inline-block";
+      liSubscribe.style.display = "inline-block";
     } else {
-      // 未登入：隱藏訂閱與帳戶
-      liSubscriptions.style.display = "none";
-      liAccount.style.display       = "none";
+      liLogin.style.display     = "inline-block";
+      liAccount.style.display   = "none";
+      liLogout.style.display    = "none";
+      liSubscribe.style.display = "none";
     }
+    // Plans / Beans / About 固定顯示
+    liPlans.style.display =
+    liBeans.style.display =
+    liAbout.style.display = "inline-block";
   });
+
+  // 登出按鈕行為
+  btnLogout.addEventListener("click", () => auth.signOut());
 </script>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plans – Miru Coffee</title>
+  <link rel="stylesheet" href="style-shared.css" />
+  <link rel="stylesheet" href="style-index.css" />
+  <style>
+    /* if you want to keep the old form-grid styles for a future FAQ section, you can leave this */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    label {
+      font-weight: bold;
+      margin-top: 1rem;
+      display: block;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <!-- shared header -->
+  <header id="shared-header"></header>
+
+  <main>
+    <section class="card" style="max-width:720px; margin:2rem auto;">
+      <h2 style="text-align:center;">Subscription Plans</h2>
+
+      <!-- 方案說明 -->
+      <p><strong>Delivery Frequency:</strong> Choose every 2, 4, or 6 weeks.</p>
+      <p><strong>Coffee Selection:</strong> Roaster’s Choice – We select a rotating lineup of specialty beans, announced on our homepage.</p>
+      <p><strong>Grind:</strong> Whole Bean only.</p>
+      <p><strong>Roast Schedule:</strong> All coffee is roasted on the weekend. See homepage for the current roast schedule.</p>
+
+      <!-- 流程說明 -->
+      <h3>What Happens After You Subscribe</h3>
+      <ol>
+        <li>Click the button below to create your account.</li>
+        <li>Check your email for a verification link and verify your address.</li>
+        <li>Log in and complete your profile & subscription preferences.</li>
+        <li>Before each roast, you’ll receive an invoice. Once paid, we roast & ship your coffee.</li>
+      </ol>
+
+      <p><strong>Security:</strong> Your information is securely stored and used only for order processing. We use Firebase Authentication and never share your data with third parties.</p>
+
+      <!-- CTA 按鈕：跳至 account.html 建立帳號並進入訂閱設定 -->
+      <div style="text-align:center; margin-top:2rem;">
+        <a href="account.html?next=subscribe.html" class="primary-button">Subscribe Now</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- shared footer -->
+  <footer id="shared-footer"></footer>
+
+  <!-- 載入共用 header 與 footer -->
+  <script>
+    fetch("shared/header.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("shared-header").innerHTML = html);
+
+    fetch("shared/footer.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("shared-footer").innerHTML = html);
+  </script>
+</body>
+</html>

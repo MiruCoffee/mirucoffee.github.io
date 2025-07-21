@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Subscribe – Miru Coffee</title>
+
+  <!-- Shared styles -->
+  <link rel="stylesheet" href="style-shared.css"/>
+  <link rel="stylesheet" href="style-index.css"/>
+
+  <!-- Firebase init -->
+  <script type="module" src="js/firebase-init.js"></script>
+  <!-- Subscription logic -->
+  <script type="module" src="js/subscription-form.js"></script>
+</head>
+<body>
+  <!-- Shared header -->
+  <header id="shared-header"></header>
+
+  <main>
+    <section class="card" style="max-width:720px; margin:2rem auto;">
+      <h2 style="text-align:center;">Complete Your Subscription</h2>
+      <p style="text-align:center; color:#666; font-size:.95rem;">
+        Please fill out the form below to set up your coffee subscription preferences.
+      </p>
+
+      <form id="subscription-form">
+        <div class="form-grid">
+          <div>
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" required />
+          </div>
+          <div>
+            <label for="phone">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              required
+              pattern="[0-9\-+\s()]{7,}"
+              placeholder="e.g. 361-782-1345"
+            />
+          </div>
+        </div>
+
+        <label for="delivery">Delivery Frequency</label>
+        <select id="delivery" required>
+          <option value="Every 2 Weeks">Every 2 Weeks</option>
+          <option value="Every 4 Weeks">Every 4 Weeks</option>
+          <option value="Every 6 Weeks">Every 6 Weeks</option>
+        </select>
+
+        <div class="form-grid">
+          <div>
+            <label for="street">Street Address</label>
+            <input type="text" id="street" required />
+          </div>
+          <div>
+            <label for="city">City</label>
+            <input type="text" id="city" required />
+          </div>
+          <div>
+            <label for="state">State</label>
+            <input type="text" id="state" required />
+          </div>
+          <div>
+            <label for="zip">ZIP Code</label>
+            <input type="text" id="zip" required pattern="[0-9]{5}" />
+          </div>
+        </div>
+
+        <label for="notes">Delivery Notes (optional)</label>
+        <textarea id="notes" rows="2"></textarea>
+
+        <div style="text-align:center; margin-top:2rem;">
+          <button type="submit" class="primary-button">Save Subscription</button>
+        </div>
+      </form>
+
+      <p
+        id="subscription-message"
+        style="text-align:center; margin-top:1rem; color:#555;"
+      ></p>
+    </section>
+  </main>
+
+  <!-- Shared footer -->
+  <footer id="shared-footer"></footer>
+
+  <!-- Load shared header & footer -->
+  <script>
+    fetch("shared/header.html")
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById("shared-header").innerHTML = html;
+      });
+
+    fetch("shared/footer.html")
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById("shared-footer").innerHTML = html;
+      });
+  </script>
+</body>
+</html>

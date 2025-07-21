@@ -1,7 +1,10 @@
 // File: js/subscription-form.js
 
 import { auth, db } from "./firebase-init.js";
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import {
+  onAuthStateChanged,
+  // note: we don’t need signOut here
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import {
   doc,
   getDoc,
@@ -9,71 +12,76 @@ import {
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-// 表單與訊息顯示元素
-const form  = document.getElementById("subscription-form");
-const msgEl = document.getElementById("subscription-message");
+// Elements
+const form           = document.getElementById("subscription-form");
+const msgEl          = document.getElementById("subscription-message");
+const fullNameField  = document.getElementById("fullName");
+const emailField     = document.getElementById("email");
+const phoneField     = document.getElementById("phone");
+const deliveryField  = document.getElementById("delivery");
+const streetField    = document.getElementById("street");
+const cityField      = document.getElementById("city");
+const stateField     = document.getElementById("state");
+const zipField       = document.getElementById("zip");
+const notesField     = document.getElementById("notes");
 
-// 對應到 HTML 中的欄位
-const fullNameField = document.getElementById("fullName");
-const emailField    = document.getElementById("email");
-const phoneField    = document.getElementById("phone");
-const deliveryField = document.getElementById("delivery");
-const streetField   = document.getElementById("street");
-const cityField     = document.getElementById("city");
-const stateField    = document.getElementById("state");
-const zipField      = document.getElementById("zip");
-const notesField    = document.getElementById("notes");
+// Track whether user already has a subscription
+let subscriptionExists = false;
 
-// 預設隱藏表單，待驗證後再顯示
+// Hide form until we confirm auth state
 form.style.display = "none";
+msgEl.textContent  = "";
 
-let hasSubscription = false;
-
-// 監聽登入&驗證狀態
+// 1️⃣ Check auth on load
 onAuthStateChanged(auth, async user => {
   if (!user || !user.emailVerified) {
-    // 未登入或未驗證，自動跳轉到登入頁
+    // Not signed in or email not verified → redirect to account page
     window.location.href = "account.html";
     return;
   }
 
-  // 已驗證：顯示表單
+  // Signed in and verified → show form
   form.style.display = "block";
-  msgEl.textContent = "";
+  msgEl.textContent  = "";
+  emailField.value   = user.email;
 
-  // 預填 email 欄位
-  emailField.value = user.email;
-
-  // 嘗試讀取既有訂閱
-  const ref  = doc(db, "subscriptions", user.uid);
-  const snap = await getDoc(ref);
-  if (snap.exists()) {
-    hasSubscription = true;
-    const data = snap.data();
-    fullNameField.value = data.fullName || "";
-    phoneField.value    = data.phone    || "";
-    deliveryField.value = data.delivery || "Every 2 Weeks";
-    streetField.value   = data.street   || "";
-    cityField.value     = data.city     || "";
-    stateField.value    = data.state    || "";
-    zipField.value      = data.zip      || "";
-    notesField.value    = data.notes    || "";
-  } else {
-    hasSubscription = false;
+  // Pre-fill existing subscription if any
+  try {
+    const ref  = doc(db, "subscriptions", user.uid);
+    const snap = await getDoc(ref);
+    if (snap.exists()) {
+      subscriptionExists = true;
+      const data = snap.data();
+      fullNameField.value = data.fullName || "";
+      phoneField.value    = data.phone    || "";
+      deliveryField.value = data.delivery || "Every 2 Weeks";
+      streetField.value   = data.street   || "";
+      cityField.value     = data.city     || "";
+      stateField.value    = data.state    || "";
+      zipField.value      = data.zip      || "";
+      notesField.value    = data.notes    || "";
+    }
+  } catch (error) {
+    console.error("Error loading subscription:", error);
+    msgEl.style.color   = "red";
+    msgEl.textContent   = "❌ Failed to load your subscription.";
   }
 });
 
-// 處理表單送出
+// 2️⃣ Handle form submission
 form.addEventListener("submit", async e => {
   e.preventDefault();
+  msgEl.textContent = "";
+  msgEl.style.color = "";
+
   const user = auth.currentUser;
-  if (!user) return;
+  if (!user || !user.emailVerified) {
+    window.location.href = "account.html";
+    return;
+  }
 
-  const ref = doc(db, "subscriptions", user.uid);
-
-  // 準備要寫入的資料
+  // Gather payload
   const payload = {
-    userId:    user.uid,
     fullName:  fullNameField.value.trim(),
     email:     emailField.value.trim(),
     phone:     phoneField.value.trim(),
@@ -85,17 +93,20 @@ form.addEventListener("submit", async e => {
     notes:     notesField.value.trim(),
     updatedAt: serverTimestamp()
   };
-  // 若首次建立，加入 createdAt
-  if (!hasSubscription) {
+  if (!subscriptionExists) {
     payload.createdAt = serverTimestamp();
   }
 
+  // Write to Firestore
   try {
+    const ref = doc(db, "subscriptions", user.uid);
     await setDoc(ref, payload, { merge: true });
-    hasSubscription = true;
-    msgEl.textContent = "✅ Subscription info saved.";
-  } catch (err) {
-    console.error(err);
-    msgEl.textContent = "❌ Error: " + err.message;
+    subscriptionExists   = true;
+    msgEl.style.color    = "green";
+    msgEl.textContent    = "✅ Subscription saved.";
+  } catch (error) {
+    console.error("Error saving subscription:", error);
+    msgEl.style.color    = "red";
+    msgEl.textContent    = `❌ ${error.message}`;
   }
 });
