@@ -11,13 +11,27 @@
 
   <!-- 1. Initialize Firebase -->
   <script type="module" src="js/firebase-init.js"></script>
+  <style>
+    /* ensure the card is positioned for absolute sign-out */
+    .card { position: relative; }
+    /* sign-out button styling */
+    #btn-signout-main {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <!-- Shared header -->
   <header id="shared-header"></header>
 
   <main>
-    <section class="card" style="max-width:440px;margin:2rem auto">
+    <section class="card" style="max-width:440px; margin:2rem auto;">
+      <!-- Sign-out button, top-right -->
+      <button id="btn-signout-main" class="primary-button">Sign Out</button>
+
       <h2 id="form-title" style="text-align:center">Account Login</h2>
       <p style="text-align:center;color:#666;font-size:.95rem">
         Sign in or create an account below.<br/>
@@ -67,24 +81,13 @@
         </p>
       </form>
 
-      <!-- New-password form (after clicking reset link) -->
+      <!-- New-password form -->
       <form id="reset-password-form" style="display:none">
         <label for="new-password">New Password</label>
         <input type="password" id="new-password" required />
 
         <button type="submit" class="primary-button">Save New Password</button>
       </form>
-
-      <!-- Logged-in panel -->
-      <div id="user-panel" style="display:none; text-align:center; margin-top:1rem">
-        <p>Welcome, <span id="user-email"></span></p>
-        <button id="btn-signout" class="primary-button">Sign Out</button>
-        <div>
-          <button id="btn-resend" class="link-button" style="margin-top:.5rem; display:none">
-            Resend Verification Email
-          </button>
-        </div>
-      </div>
 
       <!-- Messages -->
       <p id="account-message" style="text-align:center;color:#d32f2f;margin-top:1rem"></p>
@@ -96,15 +99,15 @@
 
   <!-- Load shared header + footer -->
   <script>
-    fetch("shared/header.html")
-      .then(r => r.text())
-      .then(html => { document.getElementById("shared-header").innerHTML = html; });
-    fetch("shared/footer.html")
-      .then(r => r.text())
-      .then(html => { document.getElementById("shared-footer").innerHTML = html; });
+    fetch("shared/header.html").then(r=>r.text()).then(html=>{
+      document.getElementById("shared-header").innerHTML = html;
+    });
+    fetch("shared/footer.html").then(r=>r.text()).then(html=>{
+      document.getElementById("shared-footer").innerHTML = html;
+    });
   </script>
 
-  <!-- Firebase auth logic with redirect support -->
+  <!-- Firebase auth + auto-logout logic -->
   <script type="module">
     import { auth } from "./js/firebase-init.js";
     import {
@@ -118,16 +121,11 @@
       signOut
     } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-    // read redirect target from URL
-    const params    = new URLSearchParams(window.location.search);
-    const nextPage  = params.get("next"); // e.g. "subscribe.html"
-
     // Elements
     const signinForm        = document.getElementById("signin-form");
     const registerForm      = document.getElementById("register-form");
     const resetRequestForm  = document.getElementById("reset-request-form");
     const resetPasswordForm = document.getElementById("reset-password-form");
-    const userPanel         = document.getElementById("user-panel");
     const msgEl             = document.getElementById("account-message");
     const formTitle         = document.getElementById("form-title");
     const btnResend         = document.getElementById("btn-resend");
@@ -135,16 +133,20 @@
     const showSignin        = document.getElementById("show-signin");
     const showSignin2       = document.getElementById("show-signin2");
     const showReset         = document.getElementById("show-reset");
-    const userEmailSpan     = document.getElementById("user-email");
+    const signOutMain       = document.getElementById("btn-signout-main");
 
-    // Handle email verification & password reset codes
-    const mode = params.get("mode");
-    const oob  = params.get("oobCode");
+    // Read query params
+    const params   = new URLSearchParams(window.location.search);
+    const mode     = params.get("mode");
+    const oob      = params.get("oobCode");
+    const nextPage = params.get("next");
+
+    // Handle email verification / password reset oobCode
     if (mode === "verifyEmail" && oob) {
       applyActionCode(auth, oob)
         .then(() => {
           msgEl.style.color = "green";
-          msgEl.innerText   = "✅ Email verified! Please sign in.";
+          msgEl.innerText   = "✅ Email verified! You can now sign in.";
         })
         .catch(() => {
           msgEl.innerText = "❌ Verification link invalid or expired.";
@@ -157,151 +159,130 @@
       formTitle.innerText            = "Choose New Password";
     }
 
-    // Navigation between forms
-    showRegister.addEventListener("click", e => {
+    // Navigation handlers
+    showRegister.onclick = e => {
       e.preventDefault();
       signinForm.style.display       = "none";
       registerForm.style.display     = "block";
-      resetRequestForm.style.display = "none";
-      resetPasswordForm.style.display= "none";
-      userPanel.style.display        = "none";
+      resetRequestForm.style.display = resetPasswordForm.style.display = "none";
       formTitle.innerText            = "Create Account";
       msgEl.innerText                = "";
-    });
-    showSignin.addEventListener("click", e => {
+    };
+    showSignin.onclick = e => {
       e.preventDefault();
       registerForm.style.display     = "none";
       signinForm.style.display       = "block";
-      resetRequestForm.style.display = "none";
-      resetPasswordForm.style.display= "none";
-      userPanel.style.display        = "none";
+      resetRequestForm.style.display = resetPasswordForm.style.display = "none";
       formTitle.innerText            = "Account Login";
       msgEl.innerText                = "";
-    });
-    showSignin2.addEventListener("click", e => {
+    };
+    showSignin2.onclick = e => { e.preventDefault(); showSignin.click() };
+    showReset.onclick = e => {
       e.preventDefault();
-      showSignin.click();
-    });
-    showReset.addEventListener("click", e => {
-      e.preventDefault();
-      signinForm.style.display       = "none";
-      registerForm.style.display     = "none";
+      signinForm.style.display       = registerForm.style.display = "none";
       resetRequestForm.style.display = "block";
       resetPasswordForm.style.display= "none";
-      userPanel.style.display        = "none";
       formTitle.innerText            = "Reset Password";
       msgEl.innerText                = "";
-    });
+    };
 
-    // Sign-in handler
-    signinForm.addEventListener("submit", async e => {
-      e.preventDefault();
-      msgEl.innerText = "";
+    // Auth action handlers
+    signinForm.onsubmit = async e => {
+      e.preventDefault(); msgEl.innerText = "";
       const email = signinForm["signin-email"].value;
       const pass  = signinForm["signin-password"].value;
       try {
         const { user } = await signInWithEmailAndPassword(auth, email, pass);
         if (!user.emailVerified) {
           msgEl.innerText = "⚠️ Please verify your email first.";
-          btnResend.style.display = "inline-block";
         }
       } catch (err) {
         msgEl.innerText = "❌ " + err.message;
       }
-    });
-
-    // Registration handler
-    registerForm.addEventListener("submit", async e => {
-      e.preventDefault();
-      msgEl.innerText = "";
+    };
+    registerForm.onsubmit = async e => {
+      e.preventDefault(); msgEl.innerText = "";
       const email = registerForm["reg-email"].value;
       const pass  = registerForm["reg-password"].value;
       const conf  = registerForm["reg-password-confirm"].value;
-      if (pass !== conf) {
-        msgEl.innerText = "❌ Passwords do not match";
-        return;
-      }
+      if (pass !== conf) { msgEl.innerText = "❌ Passwords do not match"; return; }
       try {
         const { user } = await createUserWithEmailAndPassword(auth, email, pass);
         await sendEmailVerification(user);
         msgEl.style.color = "green";
-        msgEl.innerText   = "✅ Verification email sent. Please check your inbox.";
+        msgEl.innerText   = "✅ Verification email sent.";
       } catch (err) {
         msgEl.innerText = "❌ " + err.message;
       }
-    });
-
-    // Password-reset request
-    resetRequestForm.addEventListener("submit", async e => {
-      e.preventDefault();
-      msgEl.style.color = "";
-      msgEl.innerText   = "";
+    };
+    resetRequestForm.onsubmit = async e => {
+      e.preventDefault(); msgEl.style.color=""; msgEl.innerText="";
       const email = resetRequestForm["reset-email"].value;
       try {
         await sendPasswordResetEmail(auth, email);
         msgEl.style.color = "green";
-        msgEl.innerText   = "✅ Check your inbox for reset link.";
+        msgEl.innerText   = "✅ Reset link sent.";
       } catch (err) {
         msgEl.innerText = "❌ " + err.message;
       }
-    });
-
-    // Confirm new password
-    resetPasswordForm.addEventListener("submit", async e => {
-      e.preventDefault();
-      msgEl.innerText = "";
+    };
+    resetPasswordForm.onsubmit = async e => {
+      e.preventDefault(); msgEl.innerText="";
       const newPass = resetPasswordForm["new-password"].value;
       try {
         await confirmPasswordReset(auth, oob, newPass);
         msgEl.style.color = "green";
-        msgEl.innerText   = "✅ Password has been reset. Please sign in.";
+        msgEl.innerText   = "✅ Password reset. Please sign in.";
         showSignin.click();
       } catch (err) {
         msgEl.innerText = "❌ " + err.message;
       }
-    });
-
-    // Resend verification email
-    btnResend.addEventListener("click", async () => {
-      const user = auth.currentUser;
-      if (user) {
-        await sendEmailVerification(user);
-        msgEl.style.color = "green";
-        msgEl.innerText   = "✅ Verification email resent.";
-      }
-    });
+    };
 
     // Sign-out handler
-    document.getElementById("btn-signout")
-      .addEventListener("click", () => signOut(auth));
+    signOutMain.addEventListener("click", () => {
+      signOut(auth);
+    });
 
-    // Auth state listener + redirect logic
+    // Idle timeout auto-signout (15 minutes)
+    const IDLE_TIMEOUT = 15 * 60 * 1000;
+    let idleTimer;
+    const resetIdleTimer = () => {
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(() => {
+        signOut(auth);
+        alert("You have been automatically signed out due to inactivity.");
+        window.location.href = "account.html";
+      }, IDLE_TIMEOUT);
+    };
+    ["mousemove","keydown","touchstart"].forEach(evt =>
+      window.addEventListener(evt, resetIdleTimer)
+    );
+
+    // Auth state listener + redirect
     onAuthStateChanged(auth, user => {
       if (user && user.emailVerified) {
-        // if a nextPage was specified, redirect there
+        signOutMain.style.display    = "inline-block";
+        signinForm.style.display     =
+        registerForm.style.display   =
+        resetRequestForm.style.display =
+        resetPasswordForm.style.display = "none";
+        formTitle.innerText          = "Welcome";
+        msgEl.innerText              = "";
         if (nextPage) {
           window.location.href = nextPage;
           return;
         }
-        // otherwise show the logged-in panel
-        userPanel.style.display = "block";
-        signinForm.style.display =
-        registerForm.style.display =
+        // start idle timer once authenticated
+        resetIdleTimer();
+      } else {
+        signOutMain.style.display    = "none";
+        signinForm.style.display     = "block";
+        registerForm.style.display   =
         resetRequestForm.style.display =
         resetPasswordForm.style.display = "none";
-        formTitle.innerText = "Welcome";
-        msgEl.innerText     = "";
-        userEmailSpan.innerText = user.email;
-        btnResend.style.display = "none";
-      } else {
-        // signed out or not verified
-        signinForm.style.display       = "block";
-        registerForm.style.display     =
-        resetRequestForm.style.display =
-        resetPasswordForm.style.display =
-        userPanel.style.display        = "none";
-        formTitle.innerText = "Account Login";
-        msgEl.innerText     = "";
+        formTitle.innerText          = "Account Login";
+        msgEl.innerText              = "";
       }
     });
   </script>
