@@ -12,4 +12,4 @@
   <strong>subscribe</strong> to receive a rotating selection every 2, 4, or 6 weeks.
 </p>
 
-<a href="subscriptions.html" class="subscribe-button">☕ Subscribe Now</a>
+<a href="subscribe.html" class="subscribe-button">☕ Subscribe Now</a>
