@@ -8,8 +8,7 @@
 </p>
 
 <p>
-  We roast fresh every two weeks. You can <strong>buy one bag</strong> or 
-  <strong>subscribe</strong> to receive a rotating selection every 2, 4, or 6 weeks.
+  We roast fresh every two weeks. You can <strong>subscribe</strong> to receive a rotating selection every 2, 4, or 6 weeks.
 </p>
 
 <a href="subscribe.html" class="subscribe-button">☕ Subscribe Now</a>
