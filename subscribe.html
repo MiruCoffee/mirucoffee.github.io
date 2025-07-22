@@ -6,52 +6,22 @@
   <title>Subscribe – Miru Coffee</title>
   <link rel="stylesheet" href="style-shared.css" />
   <link rel="stylesheet" href="style-index.css" />
-  <style>
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    label {
-      font-weight: bold;
-      margin-top: 1rem;
-      display: block;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 0.5rem;
-      box-sizing: border-box;
-    }
-  </style>
+  <link rel="stylesheet" href="style-subscribe.css" />
 </head>
 <body>
   <!-- shared header -->
   <header id="shared-header"></header>
 
   <main>
-    <!-- Plans 說明區 -->
-    <section class="card" style="max-width:720px; margin:2rem auto;">
-      <h2 style="text-align:center;">Subscription Plans</h2>
-
-      <p><strong>Delivery Frequency:</strong> Choose every 2, 4, or 6 weeks.</p>
-      <p><strong>Coffee Selection:</strong> Roaster’s Choice – We select a rotating lineup of specialty beans, announced on our homepage.</p>
-      <p><strong>Grind:</strong> Whole Bean only.</p>
-      <p><strong>Roast Schedule:</strong> All coffee is roasted on the weekend. See homepage for the current roast schedule.</p>
-
-      <h3>What Happens After You Subscribe</h3>
-      <ol>
-        <li>Fill out the form below and click “Send Subscription Request.”</li>
-        <li>We will review your information and reply via email with next steps.</li>
-        <li>Enjoy fresh, specialty-roasted coffee delivered on your schedule.</li>
-      </ol>
-
-      <p><strong>Security:</strong> Your information is sent securely over HTTPS and stored only in our inbox. We do not share your data with any third parties.</p>
+    <!-- Plans 說明區（從 MSG/003 plans.txt 載入） -->
+    <section id="plans" class="card">
+      <div id="plans-content"></div>
     </section>
 
     <!-- Subscribe 表單區 -->
-    <section id="subscribe" class="card" style="max-width:720px; margin:2rem auto;">
-      <h2 style="text-align:center;">Subscribe Now</h2>
+    <section id="subscribe" class="card">
+      <h2>Subscribe Now</h2>
+      <p><strong>Unit Price:</strong> $20 per 12 oz bag. Shipping cost calculated separately.</p>
 
       <form action="https://formsubmit.co/info@mirucoffee.com" method="POST">
         <!-- FormSubmit 參數 -->
@@ -62,6 +32,9 @@
         <input type="hidden" name="_captcha"      value="true">
         <!-- honeypot 隱藏欄位 -->
         <input type="text"   name="_honey" style="display:none" autocomplete="off">
+        <!-- 價格與運費註記（Email 收到時備註） -->
+        <input type="hidden" name="Price per 12oz Bag" value="$20">
+        <input type="hidden" name="Shipping Cost Note" value="Shipping cost calculated separately">
 
         <div class="form-grid">
           <div>
@@ -75,6 +48,14 @@
           <div>
             <label for="phone">Phone Number</label>
             <input type="tel" id="phone" name="Phone Number" placeholder="e.g. 361-782-1345" required>
+          </div>
+        </div>
+
+        <!-- 訂購包數 -->
+        <div class="form-grid">
+          <div>
+            <label for="quantity">Quantity (12 oz bags)</label>
+            <input type="number" id="quantity" name="Quantity" min="1" value="1" required>
           </div>
         </div>
 
@@ -117,15 +98,40 @@
   <!-- shared footer -->
   <footer id="shared-footer"></footer>
 
-  <!-- 載入共用 header/footer -->
+  <!-- 載入 shared header、announcement、footer -->
   <script>
-    fetch("shared/header.html")
+    const savedScrollY = window.scrollY;
+    fetch('shared/header.html')
       .then(r => r.text())
-      .then(html => document.getElementById("shared-header").innerHTML = html);
+      .then(html => {
+        document.getElementById('shared-header').innerHTML = html;
+        return fetch('MSG/001 announcement.txt');
+      })
+      .then(r => r.text())
+      .then(text => {
+        const m = document.getElementById('announcement-marquee');
+        if (m) {
+          m.textContent = text;
+          m.setAttribute('scrollamount','5');
+          m.style.fontSize = '20px';
+        }
+        window.scrollTo(0, savedScrollY);
+      });
 
-    fetch("shared/footer.html")
+    fetch('shared/footer.html')
       .then(r => r.text())
-      .then(html => document.getElementById("shared-footer").innerHTML = html);
+      .then(html => {
+        document.getElementById('shared-footer').innerHTML = html;
+      });
+  </script>
+
+  <!-- Plans 內容載入 -->
+  <script>
+    fetch('MSG/003 plans.txt')
+      .then(r => r.text())
+      .then(txt => {
+        document.getElementById('plans-content').innerHTML = txt;
+      });
   </script>
 </body>
 </html>

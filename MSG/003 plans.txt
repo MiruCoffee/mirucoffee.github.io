@@ -1,0 +1,17 @@
+<h2 style="text-align:center;">Subscription Plans</h2>
+
+<p><strong>Delivery Frequency:</strong> Choose every 2, 4, or 6 weeks.</p>
+<p><strong>Coffee Selection:</strong> Roaster’s Choice – We select a rotating lineup of specialty beans, announced on our homepage.</p>
+<p><strong>Grind:</strong> Whole Bean only.</p>
+<p><strong>Roast Schedule:</strong> All coffee is roasted on the weekend. See homepage for the current roast schedule.</p>
+
+<p><strong>Price:</strong> 12 oz bag – $20 (shipping cost calculated separately)</p>
+
+<h3>What Happens After You Subscribe</h3>
+<ol>
+  <li>Fill out the form below and click “Send Subscription Request.”</li>
+  <li>We will review your information and reply via email with next steps.</li>
+  <li>Enjoy fresh, specialty-roasted coffee delivered on your schedule.</li>
+</ol>
+
+<p><strong>Security:</strong> Your information is sent securely over HTTPS and stored only in our inbox. We do not share your data with any third parties.</p>
