@@ -2,53 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Subscribe – Miru Coffee</title>
-
-  <!-- Shared styles -->
-  <link rel="stylesheet" href="style-shared.css"/>
-  <link rel="stylesheet" href="style-index.css"/>
-
-  <!-- Firebase init -->
-  <script type="module" src="js/firebase-init.js"></script>
-  <!-- Subscription logic -->
-  <script type="module" src="js/subscription-form.js"></script>
+  <link rel="stylesheet" href="style-shared.css" />
+  <link rel="stylesheet" href="style-index.css" />
+  <style>
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    label {
+      font-weight: bold;
+      margin-top: 1rem;
+      display: block;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      box-sizing: border-box;
+    }
+  </style>
 </head>
 <body>
-  <!-- Shared header -->
+  <!-- shared header -->
   <header id="shared-header"></header>
 
   <main>
+    <!-- Plans 說明區 -->
     <section class="card" style="max-width:720px; margin:2rem auto;">
-      <h2 style="text-align:center;">Complete Your Subscription</h2>
-      <p style="text-align:center; color:#666; font-size:.95rem;">
-        Please fill out the form below to set up your coffee subscription preferences.
-      </p>
+      <h2 style="text-align:center;">Subscription Plans</h2>
 
-      <form id="subscription-form">
+      <p><strong>Delivery Frequency:</strong> Choose every 2, 4, or 6 weeks.</p>
+      <p><strong>Coffee Selection:</strong> Roaster’s Choice – We select a rotating lineup of specialty beans, announced on our homepage.</p>
+      <p><strong>Grind:</strong> Whole Bean only.</p>
+      <p><strong>Roast Schedule:</strong> All coffee is roasted on the weekend. See homepage for the current roast schedule.</p>
+
+      <h3>What Happens After You Subscribe</h3>
+      <ol>
+        <li>Fill out the form below and click “Send Subscription Request.”</li>
+        <li>We will review your information and reply via email with next steps.</li>
+        <li>Enjoy fresh, specialty-roasted coffee delivered on your schedule.</li>
+      </ol>
+
+      <p><strong>Security:</strong> Your information is sent securely over HTTPS and stored only in our inbox. We do not share your data with any third parties.</p>
+    </section>
+
+    <!-- Subscribe 表單區 -->
+    <section id="subscribe" class="card" style="max-width:720px; margin:2rem auto;">
+      <h2 style="text-align:center;">Subscribe Now</h2>
+
+      <form action="https://formsubmit.co/info@mirucoffee.com" method="POST">
+        <!-- FormSubmit 參數 -->
+        <input type="hidden" name="_subject"      value="New Subscription Request">
+        <input type="hidden" name="_template"     value="table">
+        <input type="hidden" name="_autoresponse" value="Thank you for subscribing to Miru Coffee! We’ll be in touch soon via email.">
+        <!-- reCAPTCHA -->
+        <input type="hidden" name="_captcha"      value="true">
+        <!-- honeypot 隱藏欄位 -->
+        <input type="text"   name="_honey" style="display:none" autocomplete="off">
+
         <div class="form-grid">
           <div>
             <label for="fullName">Full Name</label>
-            <input type="text" id="fullName" required />
+            <input type="text" id="fullName" name="Full Name" required>
           </div>
           <div>
-            <label for="email">Email</label>
-            <input type="email" id="email" required />
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="Email" required>
           </div>
           <div>
             <label for="phone">Phone Number</label>
-            <input
-              type="tel"
-              id="phone"
-              required
-              pattern="[0-9\-+\s()]{7,}"
-              placeholder="e.g. 361-782-1345"
-            />
+            <input type="tel" id="phone" name="Phone Number" placeholder="e.g. 361-782-1345" required>
           </div>
         </div>
 
-        <label for="delivery">Delivery Frequency</label>
-        <select id="delivery" required>
+        <label for="frequency">Delivery Frequency</label>
+        <select id="frequency" name="Delivery Frequency" required>
           <option value="Every 2 Weeks">Every 2 Weeks</option>
           <option value="Every 4 Weeks">Every 4 Weeks</option>
           <option value="Every 6 Weeks">Every 6 Weeks</option>
@@ -57,53 +88,44 @@
         <div class="form-grid">
           <div>
             <label for="street">Street Address</label>
-            <input type="text" id="street" required />
+            <input type="text" id="street" name="Street Address" required>
           </div>
           <div>
             <label for="city">City</label>
-            <input type="text" id="city" required />
+            <input type="text" id="city" name="City" required>
           </div>
           <div>
-            <label for="state">State</label>
-            <input type="text" id="state" required />
+            <label for="state">State/Province</label>
+            <input type="text" id="state" name="State/Province" required>
           </div>
           <div>
-            <label for="zip">ZIP Code</label>
-            <input type="text" id="zip" required pattern="[0-9]{5}" />
+            <label for="zip">ZIP/Postal Code</label>
+            <input type="text" id="zip" name="ZIP/Postal Code" pattern="[0-9A-Za-z\- ]{3,10}" required>
           </div>
         </div>
 
-        <label for="notes">Delivery Notes (optional)</label>
-        <textarea id="notes" rows="2"></textarea>
+        <label for="notes">Additional Notes (optional)</label>
+        <textarea id="notes" name="Notes" rows="3"></textarea>
 
         <div style="text-align:center; margin-top:2rem;">
-          <button type="submit" class="primary-button">Save Subscription</button>
+          <button type="submit" class="primary-button">Send Subscription Request</button>
         </div>
       </form>
-
-      <p
-        id="subscription-message"
-        style="text-align:center; margin-top:1rem; color:#555;"
-      ></p>
     </section>
   </main>
 
-  <!-- Shared footer -->
+  <!-- shared footer -->
   <footer id="shared-footer"></footer>
 
-  <!-- Load shared header & footer -->
+  <!-- 載入共用 header/footer -->
   <script>
     fetch("shared/header.html")
       .then(r => r.text())
-      .then(html => {
-        document.getElementById("shared-header").innerHTML = html;
-      });
+      .then(html => document.getElementById("shared-header").innerHTML = html);
 
     fetch("shared/footer.html")
       .then(r => r.text())
-      .then(html => {
-        document.getElementById("shared-footer").innerHTML = html;
-      });
+      .then(html => document.getElementById("shared-footer").innerHTML = html);
   </script>
 </body>
 </html>
