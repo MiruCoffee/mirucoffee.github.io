@@ -5,29 +5,31 @@
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 1.5rem;
+  padding: 2rem;
   margin: 2rem auto;
+  max-width: 960px;
+  width: 90%;
 }
 
 /* 標題置中 */
 .card h2 {
   text-align: center;
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
 }
 
 /* 表單欄位網格 */
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 /* 標籤 */
 label {
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-top: 1rem;
   display: block;
 }
@@ -43,18 +45,21 @@ textarea {
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
+  min-height: 2.5em;
 }
 
 /* 主要按鈕 */
 .primary-button {
   background-color: #6b4f3f;
   color: #fff;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   border: none;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
   text-decoration: none;
+  display: inline-block;
+  margin-top: 1.5rem;
 }
 
 /* 按鈕 hover */
