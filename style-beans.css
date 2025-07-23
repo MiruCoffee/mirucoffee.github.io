@@ -1,117 +1,87 @@
-/* ====== Bean Detail Section ====== */
-.bean-name {
-  font-size: 2.6rem;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-.bean-hero-flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.bean-text {
-  flex: 1 1 50%;
-  text-align: left;
-  font-size: 1.2rem;
-  line-height: 1.8;
-}
-.bean-text ul {
-  list-style: disc;
-  list-style-position: inside;
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
-  text-align: left;
-  max-width: 100%;
-}
-.bean-text p {
-  font-style: italic;
-  color: #666;
-  font-size: 1rem;
-}
-.bean-image {
-  flex: 1 1 40%;
-  text-align: right;
-}
-.bean-full-image {
-  max-width: 280px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+/* style-beans.css */
+
+/* container 一致左右留白 */
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
-/* ====== Origin Section ====== */
-.origin-section-flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.bean-info-table {
-  flex: 1 1 50%;
-  font-size: 1rem;
-  line-height: 1.6;
-  border-collapse: collapse;
-}
-.bean-info-table td {
-  padding: 4px 8px;
-  vertical-align: top;
-}
-.bean-info-table td:first-child {
-  font-weight: bold;
-  width: 140px;
+/* 主要區塊文字預設左對齊 */
+#bean-detail {
+  scroll-margin-top: 140px; /* 預留 header 空間 */
   text-align: left;
-  white-space: nowrap;
 }
-.map-embed {
-  flex: 1 1 40%;
+
+/* Flavor Notes 左文右圖 */
+#bean-detail .flavor-notes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+#bean-detail .flavor-notes .text {
   text-align: right;
 }
-.map-embed iframe {
-  max-width: 280px;
+#bean-detail .flavor-notes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* 隱藏多餘的空項目 */
+#bean-detail .flavor-notes ul li:empty {
+  display: none;
+}
+
+/* Origin Details 文字表格 + 地圖並排 */
+#bean-detail .origin-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+/* 左側標籤–值對齊 */
+#bean-detail .origin-details .labels {
+  display: grid;
+  grid-template-columns: max-content auto;
+  gap: 0.5rem 1rem;
+}
+/* 地圖寬度控制 */
+#bean-detail .origin-details iframe {
   width: 100%;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  max-width: 100%;
+  height: auto;
 }
-.map-link {
-  text-align: right;
+/* “View on Google Maps” 置左 */
+#bean-detail .view-map {
+  text-align: left;
   margin-top: 0.5rem;
 }
 
-/* ====== Producer Notes ====== */
-.producer-notes {
-  text-align: left;
-  font-size: 1rem;
-  line-height: 1.7;
+/* 主圖樣式 */
+.bean-full-image {
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
 }
 
-/* ====== Responsive (Mobile) ====== */
-@media (max-width: 700px) {
-  .bean-hero-flex,
-  .origin-section-flex {
-    flex-direction: column;
-  }
-  .bean-text,
-  .bean-image,
-  .map-embed {
-    flex: 1 1 100%;
-    text-align: center;
-  }
-  .bean-text ul {
-    text-align: left;
-    padding-left: 2rem;
-  }
-  .bean-info-table td:first-child {
-    text-align: right;
-  }
-  .map-link {
-    text-align: center;
-  }
-  .bean-full-image,
-  .map-embed iframe {
-    width: 100%;
-    max-width: 280px;
-  }
+/* 縮圖區 */
+.bean-thumbnails {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 2rem;
+}
+.bean-thumbnails img {
+  width: 100px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+.bean-thumbnails img:hover {
+  transform: scale(1.05);
 }

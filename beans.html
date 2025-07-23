@@ -1,42 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Miru Coffee – Our Beans</title>
-  <link rel="stylesheet" href="style-shared.css">
-  <link rel="stylesheet" href="style-index.css">
-  <style>
-    .bean-full-image {
-      max-width: 300px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-bottom: 1rem;
-    }
-    .bean-thumbnails img {
-      width: 100px;
-      margin: 5px;
-      cursor: pointer;
-      border-radius: 8px;
-      transition: transform 0.2s;
-    }
-    .bean-thumbnails img:hover {
-      transform: scale(1.05);
-    }
-    .bean-thumbnails {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 2rem;
-    }
-    #bean-detail {
-      text-align: center;
-      scroll-margin-top: 140px; /* 預留 header 空間 */
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Miru Coffee – Beans Detail</title>
+  <link rel="stylesheet" href="style-shared.css" />
+  <link rel="stylesheet" href="style-index.css" />
+  <link rel="stylesheet" href="style-beans.css" />
 
-  <!-- 載入 Firebase 初始化，供 shared/header 使用 -->
+  <!-- 載入 Firebase 初始化 -->
   <script type="module" src="js/firebase-init.js"></script>
 </head>
 <body>
@@ -45,20 +17,18 @@
 
   <main>
     <div class="content">
-      <!-- 上方：詳細介紹 -->
-      <section class="card" id="bean-detail">
-        <!-- 這裡會載入 beans/Cxxxx.txt 的內容 -->
-      </section>
+      <!-- Bean 詳細內容（動態載入） -->
+      <section class="card" id="bean-detail"></section>
 
-      <!-- 下方：豆子縮圖列表 -->
+      <!-- Other Origins 縮圖列表 -->
       <section class="card">
         <h3>Other Origins</h3>
         <div class="bean-thumbnails">
-          <img src="IMG/Bean/C1001.png" data-code="C1001" alt="C1001">
-          <img src="IMG/Bean/C1002.png" data-code="C1002" alt="C1002">
-          <img src="IMG/Bean/C1003.png" data-code="C1003" alt="C1003">
-          <img src="IMG/Bean/C1004.png" data-code="C1004" alt="C1004">
-          <img src="IMG/Bean/C1005.png" data-code="C1005" alt="C1005">
+          <img src="IMG/Bean/C1001.png" data-code="C1001" alt="C1001" />
+          <img src="IMG/Bean/C1002.png" data-code="C1002" alt="C1002" />
+          <img src="IMG/Bean/C1003.png" data-code="C1003" alt="C1003" />
+          <img src="IMG/Bean/C1004.png" data-code="C1004" alt="C1004" />
+          <img src="IMG/Bean/C1005.png" data-code="C1005" alt="C1005" />
         </div>
       </section>
     </div>
@@ -67,85 +37,82 @@
   <!-- 共用頁尾 -->
   <footer id="shared-footer"></footer>
 
-  <!-- 版本控制變數 -->
+  <!-- 圖片版本控制 & Utility -->
   <script>
     const version = Date.now();
-
     function addVersionToImage(img) {
-      const src = img.getAttribute('src');
-      if (src && !src.includes('?v=')) {
-        img.src = `${src}?v=${version}`;
-      }
+      const src = img.getAttribute("src");
+      if (src && !src.includes("?v=")) img.src = `${src}?v=${version}`;
     }
-
     function refreshAllImages() {
-      document.querySelectorAll('img').forEach(addVersionToImage);
+      document.querySelectorAll("img").forEach(addVersionToImage);
     }
-
     function refreshMainImageVersion() {
-      const mainImg = document.querySelector('.bean-full-image');
+      const mainImg = document.querySelector(".bean-full-image");
       if (mainImg) addVersionToImage(mainImg);
     }
-
     function getBeanCodeFromURL() {
-      const params = new URLSearchParams(window.location.search);
-      return params.get("code") || "C1001";
+      return new URLSearchParams(location.search).get("code") || "C1001";
     }
   </script>
 
-  <!-- 載入豆子介紹內容 -->
+  <!-- 動態載入 Bean 內容 -->
   <script>
     function loadBean(code) {
-      fetch('beans/' + code + '.txt')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('bean-detail').innerHTML = html;
+      fetch(`beans/${code}.txt`)
+        .then((res) => res.text())
+        .then((html) => {
+          const container = document.getElementById("bean-detail");
+          container.innerHTML = html;
           refreshMainImageVersion();
-          document.getElementById('bean-detail').scrollIntoView({ behavior: 'smooth' });
+          container.scrollIntoView({ behavior: "smooth" });
         })
         .catch(() => {
-          document.getElementById('bean-detail').innerHTML = '<p>❌ Bean not found.</p>';
+          document.getElementById("bean-detail").innerHTML =
+            "<p>❌ Bean not found.</p>";
         });
     }
 
-    const initialCode = getBeanCodeFromURL();
-    loadBean(initialCode);
+    document.addEventListener("DOMContentLoaded", () => {
+      const initial = getBeanCodeFromURL();
+      loadBean(initial);
 
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.bean-thumbnails img').forEach(img => {
-        img.addEventListener('click', () => {
-          const code = img.dataset.code;
-          loadBean(code);
-          history.replaceState(null, '', '?code=' + code);
+      document
+        .querySelectorAll(".bean-thumbnails img")
+        .forEach((img) => {
+          img.addEventListener("click", () => {
+            const code = img.dataset.code;
+            loadBean(code);
+            history.replaceState(null, "", `?code=${code}`);
+          });
         });
-      });
 
       refreshAllImages();
     });
   </script>
 
-  <!-- 載入共用 header + footer + 跑馬燈 -->
+  <!-- 載入共用 header、跑馬燈 與 footer -->
   <script>
-    fetch('shared/header.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('shared-header').innerHTML = html;
-        return fetch('MSG/001 announcement.txt');
+    fetch("shared/header.html")
+      .then((r) => r.text())
+      .then((html) => {
+        document.getElementById("shared-header").innerHTML = html;
+        return fetch("MSG/001 announcement.txt");
       })
-      .then(res => res.text())
-      .then(text => {
-        const marquee = document.getElementById('announcement-marquee');
-        if (marquee) {
-          marquee.textContent = text;
-          marquee.setAttribute('scrollamount', '5');
-          marquee.style.fontSize = '20px';
+      .then((r) => r.text())
+      .then((text) => {
+        const m = document.getElementById("announcement-marquee");
+        if (m) {
+          m.textContent = text;
+          m.setAttribute("scrollamount", "5");
+          m.style.fontSize = "20px";
         }
       });
 
-    fetch('shared/footer.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('shared-footer').innerHTML = html;
+    fetch("shared/footer.html")
+      .then((r) => r.text())
+      .then((html) => {
+        document.getElementById("shared-footer").innerHTML = html;
       });
   </script>
 </body>
