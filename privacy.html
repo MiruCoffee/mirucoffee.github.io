@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Miru Coffee – 隱私權政策</title>
+  <link rel="stylesheet" href="style-shared.css" />
+  <link rel="stylesheet" href="style-index.css" />
+</head>
+<body>
+  <!-- 共用頁首 -->
+  <header id="shared-header"></header>
+
+  <main>
+    <div class="content">
+      <h1>隱私權政策</h1>
+      <p><em>最後更新：2025 年 7 月</em></p>
+
+      <h2>1. 適用範圍</h2>
+      <p>本隱私權政策（以下稱「本政策」）說明 Miru Coffee（以下稱「本公司」、「我們」）如何蒐集、使用、儲存及保護您的個人資料。凡您使用本網站（以下稱「本網站」）及其相關服務（以下合稱「服務」），即適用本政策。</p>
+
+      <h2>2. 蒐集的資訊</h2>
+      <ul>
+        <li><strong>聯絡資訊：</strong>姓名、電子郵件、地址、電話，用於訂單處理及客服聯絡。</li>
+        <li><strong>訂單資訊：</strong>商品明細、購買日期、付款狀態及運送紀錄。</li>
+        <li><strong>付款資訊：</strong>由 QuickBooks Payments 處理，本公司不儲存完整卡號或銀行帳戶資訊。</li>
+        <li><strong>技術資訊：</strong>瀏覽器類型、裝置資訊與 Cookie，僅用於網站功能及使用體驗優化，不做個人識別。</li>
+      </ul>
+
+      <h2>3. 資訊使用</h2>
+      <p>我們將蒐集的資訊用於：</p>
+      <ul>
+        <li>處理與完成您的訂單並與您聯絡。</li>
+        <li>提供客服與售後服務。</li>
+        <li>改善網站功能及使用者體驗。</li>
+        <li>依法保存會計與稅務所需資料。</li>
+      </ul>
+
+      <h2>4. 資訊分享</h2>
+      <p>您之個人資訊僅會在下列情況分享：</p>
+      <ul>
+        <li>與 QuickBooks Payments 及物流合作夥伴，共同完成付款與出貨。</li>
+        <li>法律要求或經您同意之其他用途。</li>
+      </ul>
+
+      <h2>5. 資料保存</h2>
+      <p>我們將依相關法令及營運需求，在必要期間內保留您的個人資料，以完成本政策所述之目的。</p>
+
+      <h2>6. 資料安全</h2>
+      <p>我們採取適當的技術及組織措施保護您的資訊安全，防止未經授權之存取、竄改、散布或破壞。</p>
+
+      <h2>7. 您的權利</h2>
+      <p>您可隨時透過 Email（<a href="mailto:info@mirucoffee.com">info@mirucoffee.com</a>）或電話／語音信箱（+1 (361) 553-9659）查詢、更正或刪除您的個人資料。</p>
+
+      <h2>8. Cookie 設定</h2>
+      <p>本網站使用 Cookie 以維持功能與提升使用體驗。您可自行在瀏覽器中停用 Cookie，但可能影響網站部分功能。</p>
+
+      <h2>9. 政策修訂</h2>
+      <p>本政策如有修訂，將於本頁公告更新，更新自公告日起生效，請定期查閱。</p>
+
+      <h2>10. 聯絡方式</h2>
+      <p>如對本政策有任何疑問，歡迎與我們聯絡：</p>
+      <ul>
+        <li><strong>Email：</strong><a href="mailto:info@mirucoffee.com">info@mirucoffee.com</a></li>
+        <li><strong>電話／語音信箱：</strong>+1 (361) 553-9659</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- 共用頁尾 -->
+  <footer id="shared-footer"></footer>
+
+  <script>
+    fetch("shared/header.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("shared-header").innerHTML = html);
+
+    fetch("shared/footer.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("shared-footer").innerHTML = html);
+  </script>
+</body>
+</html>
