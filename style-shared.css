@@ -72,6 +72,7 @@ body {
   font-size: 22px;
 }
 
+/* footer */
 footer {
   background-color: #6e4b3a;
   text-align: center;
@@ -88,12 +89,14 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* main content spacing */
 main {
   padding: 30px 5vw;
   padding-top: 145px;
   box-sizing: border-box;
 }
 
+/* card style */
 .card {
   background-color: #fff;
   border-radius: 10px;
