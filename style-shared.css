@@ -28,6 +28,7 @@ body {
   /* 使用 <marquee> 原生滾動，不需 keyframe 動畫 */
 }
 
+/* ====== Navbar ====== */
 .navbar {
   position: fixed;
   top: 48px;
@@ -40,6 +41,10 @@ body {
   align-items: center;
   padding: 10px 30px;
   box-sizing: border-box;
+
+  /* allow horizontal scroll on small screens */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .logo {
@@ -53,6 +58,10 @@ body {
   gap: 25px;
   margin: 0;
   padding: 0;
+
+  /* prevent wrapping and allow scroll */
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
 .navbar ul li a {
@@ -62,7 +71,7 @@ body {
   font-size: 22px;
 }
 
-/* footer */
+/* ====== Footer ====== */
 footer {
   background-color: #6e4b3a;
   text-align: center;
@@ -79,14 +88,14 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* main content spacing */
+/* ====== Main Content Spacing ====== */
 main {
   padding: 30px 5vw;
-  padding-top: 145px;
+  padding-top: 145px; /* height of announcement + navbar */
   box-sizing: border-box;
 }
 
-/* card style */
+/* ====== Card Style ====== */
 .card {
   background-color: #fff;
   border-radius: 10px;
@@ -96,4 +105,15 @@ main {
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
+}
+
+/* ====== Mobile Nav Font & Spacing Adjustment ====== */
+@media (max-width: 600px) {
+  .navbar ul {
+    gap: 12px;
+  }
+  .navbar ul li a {
+    font-size: 16px;
+    padding: 4px 6px;
+  }
 }
