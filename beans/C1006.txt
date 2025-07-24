@@ -1,0 +1,66 @@
+<!-- Bean Name -->
+<h2 class="bean-name">
+  Burundi Ngozi Rama Women's Association Natural
+</h2>
+
+<hr>
+
+<!-- Flavor Notes -->
+<h4>Flavor Notes</h4>
+<div class="bean-hero-flex">
+  <div class="bean-text">
+    <ul>
+      <li>Apricot, Floral</li>
+      <li>Chocolate, Elderberry</li>
+      <li>Green Apple, Pomegranate, Juicy</li>
+    </ul>
+    <p>
+      The natural processing and meticulous sorting yield a cup bursting with bright apricot and floral aromas,
+      complemented by rich chocolate and elderberry sweetness, finishing with lively green apple acidity and lush pomegranate juiciness.
+      As roasters, we appreciate how this coffee’s clarity and depth shine through both light and medium roasts,
+      offering a dynamic and balanced experience.
+    </p>
+  </div>
+
+  <div class="bean-image">
+    <img src="IMG/Bean/C1006.png" alt="C1006" class="bean-full-image">
+  </div>
+</div>
+
+<hr>
+
+<!-- Origin Details -->
+<h4>Origin Details</h4>
+<div class="origin-section-flex">
+  <table class="bean-info-table">
+    <tr><td>Origin:</td><td>Ngozi Province, Burundi</td></tr>
+    <tr><td>Altitude:</td><td>1660–1700 m.a.s.l.</td></tr>
+    <tr><td>Processing:</td><td>Natural</td></tr>
+    <tr><td>Varieties:</td><td>Red Bourbon</td></tr>
+    <tr><td>Washing Station:</td><td>Mubuga</td></tr>
+    <tr><td>Farmers:</td><td>120+ female growers of the Rama Women’s Association</td></tr>
+  </table>
+
+  <div class="map-embed">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d276640.5033401642!2d29.72228839368052!3d-2.921709478463587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMsKwNTcnMjguMCJTIDI5wrA1MSc1MS4wIkU!5e1!3m2!1sen!2sus!4v1753333466985!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>
+
+<hr>
+
+<!-- Producer Notes -->
+<h4>Producer Notes</h4>
+<div class="producer-notes">
+  <p>
+    The Rama Women’s Association members underwent extensive Good Agricultural Practices training with Greenco,
+    establishing a model farm in 2017 and diversifying into coffee, beans, vegetables, and livestock.
+    Through improved cultivation techniques and support from Bugestad—providing ISABU seedlings and organic compost—
+    yields have increased from 0.7 kg to 2 kg per plant, benefiting over 120 female smallholders.
+  </p>
+  <p>
+    During harvest, cherries are handpicked and delivered to Mubuga washing station for strict quality control:
+    wet processing with floatation, multiple hand-sorting steps, and slow drying on raised beds for 3–4 weeks under tarps.
+    After warehouse assessments by Greenco’s expert cuppers, final milling at Budeca involves meticulous hand sorting under UV light,
+    ensuring only flawless beans are selected for roasting.
+  </p>
+</div>
