@@ -14,7 +14,8 @@
       <li>Honey, Balck Tea, Rose, Juicy</li>
     </ul>
     <p>
-      A clean, fruit-forward cup with above notes. This natural-processed heirloom variety from Shakiso is grown at high elevations and dried carefully to preserve a silky mouthfeel and
+      A clean, fruit-forward cup with above notes. This natural-processed heirloom variety from Shakiso
+      is grown at high elevations and dried carefully to preserve a silky mouthfeel and
       vibrant aromatics.
     </p>
   </div>
