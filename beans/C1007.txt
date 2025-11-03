@@ -1,0 +1,60 @@
+<!-- Bean Name -->
+<h2 class="bean-name">
+  Guatemala Antigua Jauja,Washed
+</h2>
+
+<hr>
+
+<!-- Flavor Notes -->
+<h4>Flavor Notes</h4>
+<div class="bean-hero-flex">
+  <div class="bean-text">
+    <ul>
+      <li>Dark Chocolate, Elderberry</li>
+      <li>CLemongrass, Citrus Fruit</li>
+      <li>Cream, Grape, Pomegranate</li>
+    </ul>
+    <p>
+     The developed profile is ultimately “juicy" with great up front classic 
+     sweetness, bright acidity and a heavy body. The Jauja profile is intended 
+     to be a perfect omniroast option that can elevate blends or hold its own 
+     as an espresso or pour over.
+    </p>
+  </div>
+
+  <div class="bean-image">
+    <img src="IMG/Bean/C1007.png" alt="C1007" class="bean-full-image">
+  </div>
+</div>
+
+<hr>
+
+<!-- Origin Details -->
+<h4>Origin Details</h4>
+<div class="origin-section-flex">
+  <table class="bean-info-table">
+    <tr><td>Origin:</td><td>Antigua Jauja, Guatemala</td></tr>
+    <tr><td>Altitude:</td><td>1550–1650 m.a.s.l.</td></tr>
+    <tr><td>Processing:</td><td>Washed</td></tr>
+    <tr><td>Varieties:</td><td>Various</td></tr>
+    <tr><td>Washing Station:</td><td>El Pesadero</td></tr>
+    <tr><td>Farmers:</td><td>Stuardo Coto</td></tr>
+  </table>
+
+  <div class="map-embed">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d272.17261459293394!2d-90.7233732!3d14.5442981!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85890e664f590175%3A0xa761f3429d1d5f00!2sSan%20Crist%C3%B3bal%20El%20Bajo%2C%20Guatemala!5e1!3m2!1sen!2sus!4v1762139315580!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>
+
+<hr>
+
+<!-- Producer Notes -->
+<h4>Producer Notes</h4>
+<div class="producer-notes">
+  <p>
+    The Jauja Blend from El Pesadero was created by the Coto family.
+  </p>
+  <p>
+    El Pesadero is centrally located in the municipality of Antigua. Antigua is surrounded by 3 volcanoes, Volcan de Agua, Volcan de Acatenango, and Volcan de Fuego. The rich volcanic soil, warm days and cool nights and high winds give Antigua its unique microclimate that has been highly sought after for many years and provides perfect conditions for processing coffees.
+  </p>
+</div>
