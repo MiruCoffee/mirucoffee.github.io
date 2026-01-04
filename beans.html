@@ -53,8 +53,9 @@
       const mainImg = document.querySelector(".bean-full-image");
       if (mainImg) addVersionToImage(mainImg);
     }
+    <!-- 按Bean會顯示的頁次  記得要修改 -->
     function getBeanCodeFromURL() {
-      return new URLSearchParams(location.search).get("code") || "C1001";
+      return new URLSearchParams(location.search).get("code") || "C1003";
     }
   </script>
 
