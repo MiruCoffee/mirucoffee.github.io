@@ -20,17 +20,18 @@
       <!-- Bean 詳細內容（動態載入） -->
       <section class="card" id="bean-detail"></section>
 
-      <!-- Other Origins 縮圖列表 -->
+      <!-- Other Origins 縮圖列表 加新豆要改這裏 -->
       <section class="card">
         <h3>Other Origins</h3>
         <div class="bean-thumbnails">
           <!-- <img src="IMG/Bean/C1001.png" data-code="C1001" alt="C1001" /> -->
           <!-- <img src="IMG/Bean/C1002.png" data-code="C1002" alt="C1002" /> -->
           <img src="IMG/Bean/C1003.png" data-code="C1003" alt="C1003" />
-          <img src="IMG/Bean/C1004.png" data-code="C1004" alt="C1004" />
+          <!-- <img src="IMG/Bean/C1004.png" data-code="C1004" alt="C1004" /> -->
           <img src="IMG/Bean/C1005.png" data-code="C1005" alt="C1005" />
           <img src="IMG/Bean/C1006.png" data-code="C1006" alt="C1006" />
           <img src="IMG/Bean/C1007.png" data-code="C1007" alt="C1007" />
+          <img src="IMG/Bean/C1008.png" data-code="C1008" alt="C1008" />
         </div>
       </section>
     </div>
@@ -53,7 +54,7 @@
       const mainImg = document.querySelector(".bean-full-image");
       if (mainImg) addVersionToImage(mainImg);
     }
-    <!-- 按Bean會顯示的頁次  記得要修改 -->
+    <!-- 按Bean會顯示的頁次  記得要修改 用存在最前號碼的豆子 -->
     function getBeanCodeFromURL() {
       return new URLSearchParams(location.search).get("code") || "C1003";
     }
