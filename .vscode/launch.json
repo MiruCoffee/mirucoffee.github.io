@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "pwa-chrome",
+      "request": "launch",
+      "name": "Launch Miru Coffee locally",
+      "url": "http://localhost:5500/index.html",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "pwa-chrome",
+      "request": "launch",
+      "name": "Launch current HTML file",
+      "file": "${file}",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}
