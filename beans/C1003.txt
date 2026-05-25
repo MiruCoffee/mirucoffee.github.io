@@ -11,10 +11,10 @@
   <div class="bean-text">
     <ul>
       <li>Chocolate, Strawberry, Floral, Grape</li>
-      <li>Honey, Balck Tea, Rose, Juicy</li>
+      <li>Honey, Black Tea, Rose, Juicy</li>
     </ul>
     <p>
-      A clean, fruit-forward cup with above notes. This natural-processed heirloom variety from Shakiso
+      A clean, fruit-forward cup with the notes above. This natural-processed heirloom variety from Shakiso
       is grown at high elevations and dried carefully to preserve a silky mouthfeel and
       vibrant aromatics.
     </p>

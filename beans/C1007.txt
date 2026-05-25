@@ -1,6 +1,6 @@
 <!-- Bean Name -->
 <h2 class="bean-name">
-  Guatemala Antigua Jauja,Washed
+  Guatemala Antigua Jauja, Washed
 </h2>
 
 <hr>
@@ -11,7 +11,7 @@
   <div class="bean-text">
     <ul>
       <li>Dark Chocolate, Elderberry</li>
-      <li>CLemongrass, Citrus Fruit</li>
+      <li>Lemongrass, Citrus Fruit</li>
       <li>Cream, Grape, Pomegranate</li>
     </ul>
     <p>
