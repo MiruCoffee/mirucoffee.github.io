@@ -11,7 +11,8 @@
   }
 
   async function loadBeanCatalog() {
-    const response = await fetch(catalogUrl);
+    const version = window.MIRU_ASSET_VERSION || Date.now();
+    const response = await fetch(`${catalogUrl}?v=${version}`, { cache: "no-store" });
     if (!response.ok) {
       throw new Error(`Unable to load ${catalogUrl}`);
     }
