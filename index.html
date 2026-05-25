@@ -29,15 +29,8 @@
       <!-- Bean Type Category Section 這裏要加新豆修改 -->
       <section class="card bean-type-section">
         <h2>Explore Our Green Coffee Origins</h2>
-        <div class="bean-type-gallery">
-          <!-- <a href="beans.html?code=C1001"><img src="IMG/Bean/C1001.png" alt="C1001"></a> -->
-          <!-- <a href="beans.html?code=C1002"><img src="IMG/Bean/C1002.png" alt="C1002"></a> -->
-          <a href="beans.html?code=C1003"><img src="IMG/Bean/C1003.png" alt="C1003"></a>
-          <!-- <a href="beans.html?code=C1004"><img src="IMG/Bean/C1004.png" alt="C1004"></a> -->
-          <a href="beans.html?code=C1005"><img src="IMG/Bean/C1005.png" alt="C1005"></a>
-          <a href="beans.html?code=C1006"><img src="IMG/Bean/C1006.png" alt="C1006"></a>
-          <a href="beans.html?code=C1007"><img src="IMG/Bean/C1007.png" alt="C1007"></a>
-          <a href="beans.html?code=C1008"><img src="IMG/Bean/C1008.png" alt="C1008"></a>
+        <div class="bean-type-gallery" id="bean-gallery">
+          <!-- Active beans are loaded from beans/catalog.json -->
         </div>
       </section>
 
@@ -102,13 +95,27 @@
       });
   </script>
 
+  <script src="js/bean-catalog.js"></script>
+  <script>
+    window.MIRU_ASSET_VERSION = Date.now();
+
+    MiruBeanCatalog.load()
+      .then(MiruBeanCatalog.activeBeans)
+      .then((beans) => {
+        MiruBeanCatalog.renderGallery(document.getElementById('bean-gallery'), beans);
+      })
+      .catch(() => {
+        document.getElementById('bean-gallery').innerHTML =
+          '<p>Unable to load coffee origins right now.</p>';
+      });
+  </script>
+
   <!-- Image Auto-Versioning (Cache Bypass) -->
   <script>
-    const version = Date.now();
     document.querySelectorAll('img').forEach(img => {
       const src = img.getAttribute('src');
       if (src && !src.includes('?v=')) {
-        img.src = `${src}?v=${version}`;
+        img.src = `${src}?v=${window.MIRU_ASSET_VERSION || Date.now()}`;
       }
     });
   </script>

@@ -1,0 +1,58 @@
+[
+  {
+    "code": "C1001",
+    "name": "Brazil Minas Gerais, Luzia Natural",
+    "image": "IMG/Bean/C1001.png",
+    "detail": "beans/C1001.txt",
+    "active": false
+  },
+  {
+    "code": "C1002",
+    "name": "Guatemala Acatenango, Cooperative La Asunción Maribel",
+    "image": "IMG/Bean/C1002.png",
+    "detail": "beans/C1002.txt",
+    "active": false
+  },
+  {
+    "code": "C1003",
+    "name": "Ethiopia Guji Shakiso Gigesa Natural",
+    "image": "IMG/Bean/C1003.png",
+    "detail": "beans/C1003.txt",
+    "active": true
+  },
+  {
+    "code": "C1004",
+    "name": "Rwanda Nyamasheke, Muhororo Natural",
+    "image": "IMG/Bean/C1004.png",
+    "detail": "beans/C1004.txt",
+    "active": false
+  },
+  {
+    "code": "C1005",
+    "name": "Ethiopia West Arsi, Werka Nensebo",
+    "image": "IMG/Bean/C1005.png",
+    "detail": "beans/C1005.txt",
+    "active": true
+  },
+  {
+    "code": "C1006",
+    "name": "Burundi Ngozi Rama Women's Association Natural",
+    "image": "IMG/Bean/C1006.png",
+    "detail": "beans/C1006.txt",
+    "active": true
+  },
+  {
+    "code": "C1007",
+    "name": "Guatemala Antigua Jauja, Washed",
+    "image": "IMG/Bean/C1007.png",
+    "detail": "beans/C1007.txt",
+    "active": true
+  },
+  {
+    "code": "C1008",
+    "name": "Costa Rica Tarrazú San Diego Jaguar Honey",
+    "image": "IMG/Bean/C1008.png",
+    "detail": "beans/C1008.txt",
+    "active": true
+  }
+]

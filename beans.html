@@ -20,15 +20,8 @@
       <!-- Other Origins 縮圖列表 加新豆要改這裏 -->
       <section class="card">
         <h3>Other Origins</h3>
-        <div class="bean-thumbnails">
-          <!-- <img src="IMG/Bean/C1001.png" data-code="C1001" alt="C1001" /> -->
-          <!-- <img src="IMG/Bean/C1002.png" data-code="C1002" alt="C1002" /> -->
-          <img src="IMG/Bean/C1003.png" data-code="C1003" alt="C1003" />
-          <!-- <img src="IMG/Bean/C1004.png" data-code="C1004" alt="C1004" /> -->
-          <img src="IMG/Bean/C1005.png" data-code="C1005" alt="C1005" />
-          <img src="IMG/Bean/C1006.png" data-code="C1006" alt="C1006" />
-          <img src="IMG/Bean/C1007.png" data-code="C1007" alt="C1007" />
-          <img src="IMG/Bean/C1008.png" data-code="C1008" alt="C1008" />
+        <div class="bean-thumbnails" id="bean-thumbnails">
+          <!-- Active beans are loaded from beans/catalog.json -->
         </div>
       </section>
     </div>
@@ -38,8 +31,12 @@
   <footer id="shared-footer"></footer>
 
   <!-- 圖片版本控制 & Utility -->
+  <script src="js/bean-catalog.js"></script>
   <script>
     const version = Date.now();
+    window.MIRU_ASSET_VERSION = version;
+    let activeBeanList = [];
+
     function addVersionToImage(img) {
       const src = img.getAttribute("src");
       if (src && !src.includes("?v=")) img.src = `${src}?v=${version}`;
@@ -51,16 +48,25 @@
       const mainImg = document.querySelector(".bean-full-image");
       if (mainImg) addVersionToImage(mainImg);
     }
-    <!-- 按Bean會顯示的頁次  記得要修改 用存在最前號碼的豆子 -->
-    function getBeanCodeFromURL() {
-      return new URLSearchParams(location.search).get("code") || "C1003";
+    function getRequestedBeanCode() {
+      return new URLSearchParams(location.search).get("code");
+    }
+
+    function getDefaultBeanCode() {
+      return activeBeanList.length ? activeBeanList[0].code : null;
     }
   </script>
 
   <!-- 動態載入 Bean 內容 -->
   <script>
-    function loadBean(code) {
-      fetch(`beans/${code}.txt`)
+    function loadBean(bean) {
+      if (!bean) {
+        document.getElementById("bean-detail").innerHTML =
+          "<p>No coffee origins are currently available.</p>";
+        return;
+      }
+
+      fetch(bean.detail)
         .then((res) => res.text())
         .then((html) => {
           const container = document.getElementById("bean-detail");
@@ -70,25 +76,35 @@
         })
         .catch(() => {
           document.getElementById("bean-detail").innerHTML =
-            "<p>❌ Bean not found.</p>";
+            "<p>Bean not found.</p>";
         });
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      const initial = getBeanCodeFromURL();
-      loadBean(initial);
+      MiruBeanCatalog.load()
+        .then((catalog) => {
+          activeBeanList = MiruBeanCatalog.activeBeans(catalog);
+          const requested = getRequestedBeanCode();
+          const initialCode = activeBeanList.some((bean) => bean.code === requested)
+            ? requested
+            : getDefaultBeanCode();
 
-      document
-        .querySelectorAll(".bean-thumbnails img")
-        .forEach((img) => {
-          img.addEventListener("click", () => {
-            const code = img.dataset.code;
-            loadBean(code);
-            history.replaceState(null, "", `?code=${code}`);
-          });
+          MiruBeanCatalog.renderThumbnails(
+            document.getElementById("bean-thumbnails"),
+            activeBeanList,
+            (bean) => {
+              loadBean(bean);
+              history.replaceState(null, "", `?code=${bean.code}`);
+            }
+          );
+
+          loadBean(activeBeanList.find((bean) => bean.code === initialCode));
+          refreshAllImages();
+        })
+        .catch(() => {
+          document.getElementById("bean-detail").innerHTML =
+            "<p>Unable to load coffee origins right now.</p>";
         });
-
-      refreshAllImages();
     });
   </script>
 
