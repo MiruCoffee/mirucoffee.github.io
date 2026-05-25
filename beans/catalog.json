@@ -4,7 +4,7 @@
     "name": "Brazil Minas Gerais, Luzia Natural",
     "image": "IMG/Bean/C1001.png",
     "detail": "beans/C1001.txt",
-    "active": false
+    "active": true
   },
   {
     "code": "C1002",
