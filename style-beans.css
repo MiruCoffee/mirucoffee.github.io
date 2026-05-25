@@ -85,3 +85,43 @@
 .bean-thumbnails img:hover {
   transform: scale(1.05);
 }
+
+@media (max-width: 600px) {
+  .content {
+    padding: 0;
+  }
+
+  #bean-detail {
+    scroll-margin-top: 156px;
+  }
+
+  #bean-detail .bean-name {
+    font-size: 1.45rem;
+    line-height: 1.25;
+  }
+
+  #bean-detail .bean-hero-flex,
+  #bean-detail .origin-section-flex {
+    display: block;
+  }
+
+  .bean-full-image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .bean-info-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .map-embed iframe {
+    height: 220px;
+  }
+
+  .bean-thumbnails img {
+    width: calc(50% - 8px);
+    max-width: 130px;
+  }
+}

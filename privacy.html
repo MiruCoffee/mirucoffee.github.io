@@ -73,7 +73,19 @@
   <script>
     fetch("shared/header.html")
       .then(r => r.text())
-      .then(html => document.getElementById("shared-header").innerHTML = html);
+      .then(html => {
+        document.getElementById("shared-header").innerHTML = html;
+        return fetch("MSG/001 announcement.txt");
+      })
+      .then(r => r.text())
+      .then(text => {
+        const m = document.getElementById("announcement-marquee");
+        if (m) {
+          m.textContent = text;
+          m.setAttribute("scrollamount", "5");
+          m.style.fontSize = "20px";
+        }
+      });
     fetch("shared/footer.html")
       .then(r => r.text())
       .then(html => document.getElementById("shared-footer").innerHTML = html);

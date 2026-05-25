@@ -66,3 +66,30 @@ textarea {
 .primary-button:hover {
   opacity: 0.9;
 }
+
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .card h2 {
+    font-size: 1.35rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  label {
+    font-size: 1rem;
+  }
+
+  .primary-button {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+  }
+}
