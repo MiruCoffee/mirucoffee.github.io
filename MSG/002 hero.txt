@@ -11,4 +11,4 @@
   We roast fresh every two weeks. You can <strong>reserve the next roast</strong> for a single order or subscribe to receive a rotating selection every 2, 4, or 6 weeks.
 </p>
 
-<a href="subscribe.html" cl
+<a href="subscribe.html" class="subscribe-button">Reserve or Subscribe</a>

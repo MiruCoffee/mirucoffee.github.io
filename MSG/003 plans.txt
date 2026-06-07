@@ -12,4 +12,8 @@
 <ol>
   <li>Choose “Reserve Next Roast” for a single order or “Subscribe” for recurring delivery.</li>
   <li>Select either a 12 oz bag or a 2 lb package.</li>
-  <li>We will review your information an
+  <li>We will review your information and reply via email with next steps.</li>
+  <li>Enjoy fresh, specialty-roasted coffee from the next roast or on your selected schedule.</li>
+</ol>
+
+<p><strong>Security:</strong> Your information is sent securely over HTTPS and stored only in our inbox. We do not share your data with any third parties.</p>
