@@ -1,17 +1,15 @@
-<h2 style="text-align:center;">Subscription Plans</h2>
+<h2 style="text-align:center;">Reserve or Subscribe</h2>
 
-<p><strong>Delivery Frequency:</strong> Choose every 2, 4, or 6 weeks.</p>
+<p><strong>Reserve Next Roast:</strong> A single order from the upcoming roast. Best for trying Miru Coffee before setting up recurring delivery.</p>
+<p><strong>Subscribe:</strong> Recurring coffee delivered every 2, 4, or 6 weeks.</p>
 <p><strong>Coffee Selection:</strong> Roaster’s Choice – We select a rotating lineup of specialty beans, announced on our homepage.</p>
 <p><strong>Grind:</strong> Whole Bean only.</p>
 <p><strong>Roast Schedule:</strong> All coffee is roasted on the weekend. See homepage for the current roast schedule.</p>
 
-<p><strong>Price:</strong> 12 oz bag – $20 (shipping cost calculated separately)</p>
+<p><strong>Package Options:</strong> 12 oz bag – $20. 2 lb package – $48. Shipping cost calculated separately.</p>
 
-<h3>What Happens After You Subscribe</h3>
+<h3>What Happens After You Send a Request</h3>
 <ol>
-  <li>Fill out the form below and click “Send Subscription Request.”</li>
-  <li>We will review your information and reply via email with next steps.</li>
-  <li>Enjoy fresh, specialty-roasted coffee delivered on your schedule.</li>
-</ol>
-
-<p><strong>Security:</strong> Your information is sent securely over HTTPS and stored only in our inbox. We do not share your data with any third parties.</p>
+  <li>Choose “Reserve Next Roast” for a single order or “Subscribe” for recurring delivery.</li>
+  <li>Select either a 12 oz bag or a 2 lb package.</li>
+  <li>We will review your information an

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Subscribe – Miru Coffee</title>
+  <title>Reserve or Subscribe – Miru Coffee</title>
   <link rel="stylesheet" href="style-shared.css" />
   <link rel="stylesheet" href="style-index.css" />
   <link rel="stylesheet" href="style-subscribe.css" />
@@ -18,23 +18,63 @@
       <div id="plans-content"></div>
     </section>
 
-    <!-- Subscribe 表單區 -->
+    <!-- Reserve / Subscribe 表單區 -->
     <section id="subscribe" class="card">
-      <h2>Subscribe Now</h2>
-      <p><strong>Unit Price:</strong> $20 per 12 oz bag. Shipping cost calculated separately.</p>
+      <h2>Reserve or Subscribe</h2>
+      <p class="intro-copy">
+        Try the next roast once, or set up recurring coffee every 2, 4, or 6 weeks.
+      </p>
+      <p><strong>Package Options:</strong> 12 oz bag – $20. 2 lb package – $48. Shipping cost calculated separately.</p>
 
       <form id="subscribe-form" action="https://formsubmit.co/info@mirucoffee.com" method="POST">
         <!-- FormSubmit 參數 -->
-        <input type="hidden" name="_subject"      value="New Subscription Request">
+        <input type="hidden" name="_subject"      value="New Miru Coffee Request">
         <input type="hidden" name="_template"     value="table">
-        <input type="hidden" name="_autoresponse" value="Thank you for subscribing to Miru Coffee! We’ll be in touch soon via email.">
+        <input type="hidden" name="_autoresponse" value="Thank you for your Miru Coffee request! We’ll be in touch soon via email.">
         <!-- reCAPTCHA -->
         <input type="hidden" name="_captcha"      value="true">
         <!-- honeypot 隱藏欄位 -->
         <input type="text"   name="_honey" style="display:none" autocomplete="off">
         <!-- 價格與運費註記 -->
-        <input type="hidden" name="Price per 12oz Bag" value="$20">
+        <input type="hidden" name="12oz Bag Price" value="$20">
+        <input type="hidden" name="2lb Package Price" value="$48">
         <input type="hidden" name="Shipping Cost Note" value="Shipping cost calculated separately">
+
+        <fieldset class="order-type-options">
+          <legend>Choose your order type</legend>
+          <label class="order-type-card" for="orderTypeReserve">
+            <input type="radio" id="orderTypeReserve" name="Order Type" value="Reserve Next Roast" checked>
+            <span>
+              <strong>Reserve Next Roast</strong>
+              <small>Single order for the upcoming roast. A good first taste before subscribing.</small>
+            </span>
+          </label>
+          <label class="order-type-card" for="orderTypeSubscribe">
+            <input type="radio" id="orderTypeSubscribe" name="Order Type" value="Subscribe">
+            <span>
+              <strong>Subscribe</strong>
+              <small>Recurring coffee delivered every 2, 4, or 6 weeks.</small>
+            </span>
+          </label>
+        </fieldset>
+
+        <fieldset class="package-options">
+          <legend>Choose package size</legend>
+          <label class="package-card" for="package12oz">
+            <input type="radio" id="package12oz" name="Package Size" value="12 oz bag - $20" checked>
+            <span>
+              <strong>12 oz bag</strong>
+              <small>$20 per bag</small>
+            </span>
+          </label>
+          <label class="package-card" for="package2lb">
+            <input type="radio" id="package2lb" name="Package Size" value="2 lb package - $48">
+            <span>
+              <strong>2 lb package</strong>
+              <small>$48 per package</small>
+            </span>
+          </label>
+        </fieldset>
 
         <div class="form-grid">
           <div>
@@ -53,7 +93,7 @@
 
         <div class="form-grid">
           <div>
-            <label for="quantity">Quantity (12 oz bags)</label>
+            <label for="quantity">Quantity (packages)</label>
             <input 
               type="number" 
               id="quantity" 
@@ -64,17 +104,21 @@
               required
             >
             <p style="font-size:0.9rem; color:#555; margin-top:0.5rem;">
-              Max 3 bags per order. For more than 3 bags, please contact us directly.
+              Max 3 packages per order. For more than 3 packages, please contact us directly.
             </p>
           </div>
         </div>
 
-        <label for="frequency">Delivery Frequency</label>
-        <select id="frequency" name="Delivery Frequency" required>
-          <option value="Every 2 Weeks">Every 2 Weeks</option>
-          <option value="Every 4 Weeks">Every 4 Weeks</option>
-          <option value="Every 6 Weeks">Every 6 Weeks</option>
-        </select>
+        <input type="hidden" id="single-frequency" name="Delivery Frequency" value="Single Next Roast">
+
+        <div id="frequency-group">
+          <label for="frequency">Delivery Frequency</label>
+          <select id="frequency" name="Delivery Frequency" disabled>
+            <option value="Every 2 Weeks">Every 2 Weeks</option>
+            <option value="Every 4 Weeks">Every 4 Weeks</option>
+            <option value="Every 6 Weeks">Every 6 Weeks</option>
+          </select>
+        </div>
 
         <div class="form-grid">
           <div>
@@ -99,7 +143,7 @@
         <textarea id="notes" name="Notes" rows="3"></textarea>
 
         <div style="text-align:center; margin-top:2rem;">
-          <button type="submit" class="primary-button">Send Subscription Request</button>
+          <button type="submit" class="primary-button" id="submit-button">Send Reservation Request</button>
         </div>
       </form>
     </section>
@@ -146,13 +190,36 @@
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('subscribe-form');
       const qtyInput = document.getElementById('quantity');
+      const orderTypeInputs = document.querySelectorAll('input[name="Order Type"]');
+      const singleFrequencyInput = document.getElementById('single-frequency');
+      const frequencySelect = document.getElementById('frequency');
+      const frequencyGroup = document.getElementById('frequency-group');
+      const submitButton = document.getElementById('submit-button');
+
+      const updateOrderType = () => {
+        const selected = document.querySelector('input[name="Order Type"]:checked').value;
+        const isSubscription = selected === 'Subscribe';
+
+        frequencyGroup.classList.toggle('is-subscription', isSubscription);
+        singleFrequencyInput.disabled = isSubscription;
+        frequencySelect.disabled = !isSubscription;
+        frequencySelect.value = 'Every 2 Weeks';
+        submitButton.textContent = isSubscription
+          ? 'Send Subscription Request'
+          : 'Send Reservation Request';
+      };
+
+      orderTypeInputs.forEach(input => {
+        input.addEventListener('change', updateOrderType);
+      });
+      updateOrderType();
 
       form.addEventListener('submit', e => {
         const qty = parseInt(qtyInput.value, 10);
         if (qty > 3) {
           e.preventDefault();
           alert(
-            'Our system only supports orders up to 3 bags. ' +
+            'Our system only supports orders up to 3 packages. ' +
             'For larger orders, please email info@mirucoffee.com to discuss availability.'
           );
         }

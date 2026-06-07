@@ -18,78 +18,68 @@
   font-size: 1.5rem;
 }
 
-/* 表單欄位網格 */
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+.intro-copy {
+  text-align: center;
+  font-size: 1.08rem;
+  margin: -0.5rem auto 1.5rem;
+  max-width: 620px;
+  color: #333;
 }
 
-/* 標籤 */
-label {
+.order-type-options,
+.package-options {
+  border: 0;
+  padding: 0;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.order-type-options legend,
+.package-options legend {
+  grid-column: 1 / -1;
   font-weight: bold;
   font-size: 1.1rem;
-  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.order-type-card,
+.package-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  border: 1px solid #d5c7bd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0;
+  cursor: pointer;
+  background: #fffaf5;
+}
+
+.order-type-card:has(input:checked),
+.package-card:has(input:checked) {
+  border-color: #6b4f3f;
+  box-shadow: 0 0 0 2px rgba(107, 79, 63, 0.14);
+}
+
+.order-type-card input,
+.package-card input {
+  width: auto;
+  min-height: 0;
+  margin-top: 0.2rem;
+}
+
+.order-type-card strong,
+.order-type-card small,
+.package-card strong,
+.package-card small {
   display: block;
 }
 
-/* 輸入元件 */
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 0.75rem;
-  font-size: 1rem;
-  line-height: 1.4;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  min-height: 2.5em;
-}
-
-/* 主要按鈕 */
-.primary-button {
-  background-color: #6b4f3f;
-  color: #fff;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 1.5rem;
-}
-
-/* 按鈕 hover */
-.primary-button:hover {
-  opacity: 0.9;
-}
-
-@media (max-width: 600px) {
-  .card {
-    width: 100%;
-    padding: 18px;
-  }
-
-  .card h2 {
-    font-size: 1.35rem;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-bottom: 1.25rem;
-  }
-
-  label {
-    font-size: 1rem;
-  }
-
-  .primary-button {
-    width: 100%;
-    padding: 0.9rem 1rem;
-    font-size: 1rem;
-  }
-}
+.order-type-card small,
+.package-card small {
+  margin-top: 0.35rem;
+  color: #555;
+  font-weight: normal;
+  
