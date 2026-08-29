@@ -37,6 +37,7 @@
     <tr><td>Varieties:</td><td>Local Heirloom</td></tr>
     <tr><td>Washing Station:</td><td>Gigesa Washing Station</td></tr>
     <tr><td>Farmers:</td><td>500+ smallholder farmers</td></tr>
+    <tr><td>Cup Score:</td><td>85.88</td></tr>
   </table>
 
   <div class="map-embed">

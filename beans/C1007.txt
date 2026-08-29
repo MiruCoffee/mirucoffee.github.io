@@ -39,6 +39,7 @@
     <tr><td>Varieties:</td><td>Various</td></tr>
     <tr><td>Washing Station:</td><td>El Pesadero</td></tr>
     <tr><td>Farmers:</td><td>Stuardo Coto</td></tr>
+    <tr><td>Cup Score:</td><td>86.00</td></tr>
   </table>
 
   <div class="map-embed">
