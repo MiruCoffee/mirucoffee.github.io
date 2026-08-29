@@ -39,7 +39,7 @@
     "name": "Burundi Ngozi Rama Women's Association Natural",
     "image": "IMG/Bean/C1006.png",
     "detail": "beans/C1006.txt",
-    "active": true
+    "active": false
   },
   {
     "code": "C1007",
@@ -53,6 +53,13 @@
     "name": "Costa Rica Tarrazú San Diego Jaguar Honey",
     "image": "IMG/Bean/C1008.png",
     "detail": "beans/C1008.txt",
+    "active": true
+  },
+  {
+    "code": "C1009",
+    "name": "Kenya Embu Gikirima, Washed",
+    "image": "IMG/Bean/C1009.png",
+    "detail": "beans/C1009.txt",
     "active": true
   }
 ]

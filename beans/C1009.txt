@@ -1,0 +1,79 @@
+<!-- Bean Name -->
+<h2 class="bean-name">
+  Kenya Embu Gikirima, Washed
+</h2>
+
+<hr>
+
+<!-- Flavor Notes -->
+<h4>Flavor Notes</h4>
+<div class="bean-hero-flex">
+  <div class="bean-text">
+    <ul>
+      <li>Peach, Apricot, Honey</li>
+      <li>Black Tea, Green Apple</li>
+      <li>Bright, Clean, Elegant</li>
+    </ul>
+    <p>
+      A beautifully structured washed Kenya from Embu County, grown on the southeastern
+      slopes of Mount Kenya. This cup opens with peach and apricot sweetness, settles
+      into a honey-like roundness, and finishes with a refined black tea character.
+      Bright and expressive, yet clean and balanced, this is a vibrant single origin
+      for those who enjoy clarity, fruit, and a graceful tea-like finish.
+    </p>
+  </div>
+
+  <div class="bean-image">
+    <img src="IMG/Bean/C1009.png" alt="C1009" class="bean-full-image">
+  </div>
+</div>
+
+<hr>
+
+<!-- Origin Details -->
+<h4>Origin Details</h4>
+<div class="origin-section-flex">
+  <table class="bean-info-table">
+    <tr><td>Origin:</td><td>Gicherori, Embu County, Kenya</td></tr>
+    <tr><td>Altitude:</td><td>1800-1900 m.a.s.l.</td></tr>
+    <tr><td>Processing:</td><td>Washed</td></tr>
+    <tr><td>Varieties:</td><td>SL28, SL34</td></tr>
+    <tr><td>Grade:</td><td>AB</td></tr>
+    <tr><td>Producer:</td><td>Kibugu Farmers Cooperative Society</td></tr>
+    <tr><td>Washing Station:</td><td>Gikirima Factory</td></tr>
+    <tr><td>Cup Score:</td><td>86.25</td></tr>
+  </table>
+
+  <div class="map-embed">
+    <iframe
+      src="https://www.google.com/maps?q=Gikirima%20Factory%2C%20Gicherori%2C%20Embu%20County%2C%20Kenya&output=embed"
+      width="100%" height="220"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    <p class="map-link">
+      <a href="https://www.google.com/maps/search/?api=1&query=Gikirima%20Factory%2C%20Gicherori%2C%20Embu%20County%2C%20Kenya"
+         target="_blank" rel="noopener">View on Google Maps</a>
+    </p>
+  </div>
+</div>
+
+<hr>
+
+<!-- Producer Notes -->
+<h4>Producer Notes</h4>
+<div class="producer-notes">
+  <p>
+    Gikirima Factory is part of Kibugu Farmers Cooperative Society in Embu County,
+    a celebrated coffee-growing region shaped by high elevation, volcanic soil,
+    steady rainfall, and cool mountain temperatures. These conditions allow coffee
+    cherries to ripen slowly, building the layered sweetness and lively structure
+    that make Kenyan coffees so distinctive.
+  </p>
+  <p>
+    The farmers supplying Gikirima primarily grow SL28 and SL34, two classic Kenyan
+    varieties prized for their fruit character, clarity, and elegant acidity. After
+    selective handpicking, the coffee is washed, density sorted, and dried on raised
+    beds with careful attention throughout processing. The result is a polished cup
+    with stone fruit sweetness, honeyed balance, and a clean black tea finish.
+  </p>
+</div>
