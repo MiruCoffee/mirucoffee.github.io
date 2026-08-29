@@ -39,6 +39,7 @@
     <tr><td>Varieties:</td><td>Caturra, Catuai</td></tr>
     <tr><td>Mill:</td><td>Beneficio San Diego</td></tr>
     <tr><td>Producer:</td><td>Beneficio San Diego, various smallholders</td></tr>
+    <tr><td>Cup Score:</td><td>85.25</td></tr>
   </table>
 
   <div class="map-embed">

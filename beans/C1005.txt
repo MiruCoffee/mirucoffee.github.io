@@ -38,6 +38,7 @@
     <tr><td>Varieties:</td><td>Selective local heirloom varieties</td></tr>
     <tr><td>Washing Station:</td><td>Nensebo A.A.S.H. Washing Station</td></tr>
     <tr><td>Farmers:</td><td>Nearly 850 smallholder family farmers</td></tr>
+    <tr><td>Cup Score:</td><td>86.25</td></tr>
   </table>
 
   <div class="map-embed">
