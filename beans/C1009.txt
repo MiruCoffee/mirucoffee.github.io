@@ -46,7 +46,7 @@
 
   <div class="map-embed">
     <iframe
-      src="https://www.google.com/maps?q=Gikirima%20Factory%2C%20Gicherori%2C%20Embu%20County%2C%20Kenya&output=embed"
+      src="https://www.google.com/maps?q=Gikirima%20Factory%2C%20Gicherori%2C%20Embu%20County%2C%20Kenya&t=k&z=12&output=embed"
       width="100%" height="220"
       allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
