@@ -21,7 +21,7 @@
             <!-- Content will be loaded from MSG/002 hero.txt -->
           </div>
           <div class="hero-image">
-            <img src="IMG/Equipment/EQ002 Air Roaster.png" alt="Miru Air Roaster">
+            <img src="IMG/Equipment/EQ002 Air Roaster.png?v=20260905" alt="Miru Air Roaster" fetchpriority="high">
           </div>
         </div>
       </section>
@@ -38,10 +38,10 @@
       <section class="card">
         <h2>Recent Roasts</h2>
         <div class="roast-gallery">
-          <img src="IMG/Product/PROD-1.png" alt="Previous" class="coffee-pack">
-          <img src="IMG/Product/PROD-2.png" alt="Previous 2nd" class="coffee-pack">
-          <img src="IMG/Product/PROD-3.png" alt="Previous 3rd" class="coffee-pack">
-          <img src="IMG/Product/PROD-4.png" alt="Previous 4th" class="coffee-pack">
+          <img src="IMG/Product/PROD-1.png?v=20260905" alt="Previous" class="coffee-pack" loading="lazy">
+          <img src="IMG/Product/PROD-2.png?v=20260905" alt="Previous 2nd" class="coffee-pack" loading="lazy">
+          <img src="IMG/Product/PROD-3.png?v=20260905" alt="Previous 3rd" class="coffee-pack" loading="lazy">
+          <img src="IMG/Product/PROD-4.png?v=20260905" alt="Previous 4th" class="coffee-pack" loading="lazy">
         </div>
       </section>
 
@@ -49,7 +49,7 @@
       <section class="card">
         <h2>Next Roast Preview</h2>
         <div class="roast-preview">
-          <img src="IMG/Product/PROD-0.png" alt="Coming Roast" class="coffee-pack-large">
+          <img src="IMG/Product/PROD-0.png?v=20260905" alt="Coming Roast" class="coffee-pack-large" loading="lazy">
         </div>
       </section>
 
@@ -97,7 +97,7 @@
 
   <script src="js/bean-catalog.js"></script>
   <script>
-    window.MIRU_ASSET_VERSION = Date.now();
+    window.MIRU_ASSET_VERSION = "20260905";
 
     MiruBeanCatalog.load()
       .then(MiruBeanCatalog.activeBeans)
@@ -108,16 +108,6 @@
         document.getElementById('bean-gallery').innerHTML =
           '<p>Unable to load coffee origins right now.</p>';
       });
-  </script>
-
-  <!-- Image Auto-Versioning (Cache Bypass) -->
-  <script>
-    document.querySelectorAll('img').forEach(img => {
-      const src = img.getAttribute('src');
-      if (src && !src.includes('?v=')) {
-        img.src = `${src}?v=${window.MIRU_ASSET_VERSION || Date.now()}`;
-      }
-    });
   </script>
 </body>
 </html>

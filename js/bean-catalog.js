@@ -3,7 +3,7 @@
 
   function withVersion(src) {
     if (!src || src.includes("?v=")) return src;
-    return `${src}?v=${window.MIRU_ASSET_VERSION || Date.now()}`;
+    return `${src}?v=${window.MIRU_ASSET_VERSION || "20260905"}`;
   }
 
   function activeBeans(beans) {
@@ -11,8 +11,8 @@
   }
 
   async function loadBeanCatalog() {
-    const version = window.MIRU_ASSET_VERSION || Date.now();
-    const response = await fetch(`${catalogUrl}?v=${version}`, { cache: "no-store" });
+    const version = window.MIRU_ASSET_VERSION || "20260905";
+    const response = await fetch(`${catalogUrl}?v=${version}`);
     if (!response.ok) {
       throw new Error(`Unable to load ${catalogUrl}`);
     }
@@ -35,6 +35,7 @@
       const image = document.createElement("img");
       image.src = withVersion(bean.image);
       image.alt = bean.name || bean.code;
+      image.loading = "lazy";
 
       link.appendChild(image);
       container.appendChild(link);
@@ -54,7 +55,9 @@
       image.src = withVersion(bean.image);
       image.dataset.code = bean.code;
       image.alt = bean.name || bean.code;
+      image.loading = "lazy";
       image.title = bean.name || bean.code;
+
       image.addEventListener("click", () => onSelect(bean));
       container.appendChild(image);
     });
