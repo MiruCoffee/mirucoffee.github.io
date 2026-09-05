@@ -38,10 +38,10 @@
       <section class="card">
         <h2>Recent Roasts</h2>
         <div class="roast-gallery">
-          <img src="IMG/Product/PROD-1.png?v=20260905" alt="Previous" class="coffee-pack" loading="lazy">
-          <img src="IMG/Product/PROD-2.png?v=20260905" alt="Previous 2nd" class="coffee-pack" loading="lazy">
-          <img src="IMG/Product/PROD-3.png?v=20260905" alt="Previous 3rd" class="coffee-pack" loading="lazy">
-          <img src="IMG/Product/PROD-4.png?v=20260905" alt="Previous 4th" class="coffee-pack" loading="lazy">
+          <img src="IMG/Product/PROD-1.png?v=20260905" alt="Previous" class="coffee-pack expandable-image" loading="lazy">
+          <img src="IMG/Product/PROD-2.png?v=20260905" alt="Previous 2nd" class="coffee-pack expandable-image" loading="lazy">
+          <img src="IMG/Product/PROD-3.png?v=20260905" alt="Previous 3rd" class="coffee-pack expandable-image" loading="lazy">
+          <img src="IMG/Product/PROD-4.png?v=20260905" alt="Previous 4th" class="coffee-pack expandable-image" loading="lazy">
         </div>
       </section>
 
@@ -49,7 +49,7 @@
       <section class="card">
         <h2>Next Roast Preview</h2>
         <div class="roast-preview">
-          <img src="IMG/Product/PROD-0.png?v=20260905" alt="Coming Roast" class="coffee-pack-large" loading="lazy">
+          <img src="IMG/Product/PROD-0.png?v=20260905" alt="Coming Roast" class="coffee-pack-large expandable-image" loading="lazy">
         </div>
       </section>
 
@@ -58,6 +58,11 @@
 
   <!-- 共用頁尾 -->
   <footer id="shared-footer"></footer>
+
+  <div class="image-lightbox" id="image-lightbox" aria-hidden="true">
+    <button class="image-lightbox-close" type="button" aria-label="Close enlarged image">&times;</button>
+    <img src="" alt="" id="image-lightbox-img">
+  </div>
 
   <!-- Shared Header + Footer Loader -->
   <script>
@@ -108,6 +113,38 @@
         document.getElementById('bean-gallery').innerHTML =
           '<p>Unable to load coffee origins right now.</p>';
       });
+  </script>
+
+  <script>
+    const lightbox = document.getElementById('image-lightbox');
+    const lightboxImg = document.getElementById('image-lightbox-img');
+    const closeLightbox = document.querySelector('.image-lightbox-close');
+
+    function hideLightbox() {
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.removeAttribute('src');
+      lightboxImg.removeAttribute('alt');
+    }
+
+    document.querySelectorAll('.expandable-image').forEach((img) => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.currentSrc || img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    closeLightbox.addEventListener('click', hideLightbox);
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) hideLightbox();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
+        hideLightbox();
+      }
+    });
   </script>
 </body>
 </html>
