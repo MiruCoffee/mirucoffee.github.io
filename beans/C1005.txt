@@ -15,9 +15,8 @@
       <li>Mixed Berries</li>
     </ul>
     <p>
-      Careful cultivation and fermentation yield juicy flavors.
-      High elevation, heirloom varieties, and careful handling from picking to
-      drying come together in a complex and vibrant cup.
+      High elevation, local heirloom varieties, and careful handling from picking
+      to drying come together in a juicy, complex, and vibrant cup.
     </p>
   </div>
 

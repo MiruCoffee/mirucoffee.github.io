@@ -15,10 +15,9 @@
       <li>Green Apple, Pomegranate, Juicy</li>
     </ul>
     <p>
-      The natural processing and meticulous sorting yield a cup bursting with bright apricot and floral aromas,
-      complemented by rich chocolate and elderberry sweetness, finishing with lively green apple acidity and lush pomegranate juiciness.
-      As roasters, we appreciate how this coffee’s clarity and depth shine through both light and medium roasts,
-      offering a dynamic and balanced experience.
+      Natural processing and careful sorting bring out bright apricot and floral
+      aromas, supported by chocolate and elderberry sweetness. Green apple acidity
+      and pomegranate-like juiciness give the finish a lively, balanced feel.
     </p>
   </div>
 
@@ -52,15 +51,14 @@
 <h4>Producer Notes</h4>
 <div class="producer-notes">
   <p>
-    The Rama Women’s Association members underwent extensive Good Agricultural Practices training with Greenco,
-    establishing a model farm in 2017 and diversifying into coffee, beans, vegetables, and livestock.
-    Through improved cultivation techniques and support from Bugestad—providing ISABU seedlings and organic compost—
-    yields have increased from 0.7 kg to 2 kg per plant, benefiting over 120 female smallholders.
+    The Rama Women's Association brings together more than 120 female smallholder
+    farmers in Burundi's Ngozi Province. Their work focuses on careful cultivation,
+    improved farm practices, and steady quality growth across the community.
   </p>
   <p>
-    During harvest, cherries are handpicked and delivered to Mubuga washing station for strict quality control:
-    wet processing with floatation, multiple hand-sorting steps, and slow drying on raised beds for 3–4 weeks under tarps.
-    After warehouse assessments by Greenco’s expert cuppers, final milling at Budeca involves meticulous hand sorting under UV light,
-    supporting a clean, quality-focused selection for roasting.
+    During harvest, cherries are handpicked and delivered to Mubuga washing
+    station, then sorted and dried slowly on raised beds for 3-4 weeks. This
+    patient natural process helps build the coffee's fruit sweetness, floral
+    aroma, and clean finish.
   </p>
 </div>

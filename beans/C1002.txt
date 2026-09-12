@@ -14,9 +14,9 @@
       <li>Lemon, Lime, Floral, Bright Acidity</li>
     </ul>
     <p>
-      This washed coffee shows vibrant acidity and layered sweetness. The cup is juicy and fragrant,
-      with classic Central American clarity and a wide flavor arc that makes it ideal for both filter
-      and espresso applications.
+      This washed Guatemala shows vibrant acidity and layered sweetness. The cup
+      is juicy and fragrant, with classic Central American clarity that works
+      beautifully as filter coffee or espresso.
     </p>
   </div>
 
@@ -59,12 +59,19 @@
 <h4>Producer Notes</h4>
 <div class="producer-notes">
   <p>
-    This coffee was sourced through one of our import partners, who works closely with La Asunción Cooperative in San José Poaquil. The cooperative brings together over 300 local coffee-producing families and manages centralized processing to ensure consistency and quality.
+    This coffee comes from La Asuncion Cooperative in San Jose Poaquil. The
+    cooperative brings together over 300 local coffee-producing families and
+    manages centralized processing to support consistency and quality.
   </p>
   <p>
-    All coffees are fully washed: after depulping, the beans are fermented in clean tanks with fresh water for 24 hours, and then dried on patios for 12–15 days. Each lot is cupped and sorted by flavor profile. Farms in this area grow coffee under native shade trees such as Chalum, Grevillea, and Pine, at elevations ranging from 1900 to 2000 meters.
+    After depulping, the coffee is fermented in clean tanks with fresh water for
+    24 hours, then dried on patios for 12-15 days. Farms in this area grow coffee
+    under native shade trees such as Chalum, Grevillea, and pine at elevations
+    ranging from 1900 to 2000 meters.
   </p>
   <p>
-    The cooperative was officially organized to support smallholder farmers through technical assistance and access to specialty markets. We selected this particular lot, “Maribel,” for its layered sweetness and sparkling acidity — a reflection of the region’s terroir and the dedication of the farming families.
+    The Maribel lot was selected for its layered sweetness and sparkling acidity,
+    a reflection of the region's high elevation, shade-grown farms, and dedicated
+    farming families.
   </p>
 </div>

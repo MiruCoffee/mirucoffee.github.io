@@ -56,12 +56,17 @@
 <h4>Producer Notes</h4>
 <div class="producer-notes">
   <p>
-    Cocatel is one of the largest cooperatives in Brazil with nearly 7,000 members. With five years of collaboration, our Luzia Blend reflects their dedication to sustainability and traceability.
+    This coffee comes from Cocatel, one of Brazil's large coffee cooperatives,
+    with nearly 7,000 members across Minas Gerais. The Luzia profile highlights
+    the region's easy-drinking sweetness and smooth nutty character.
   </p>
   <p>
-    The cooperative was founded in 1961 and is headquartered in Tres Pontas, Minas Gerais. Inventory management is fully integrated with the cooperative’s quality control lab to ensure traceability and consistency.
+    The cooperative was founded in 1961 and is headquartered in Tres Pontas,
+    Minas Gerais. Careful selection and quality control help create a consistent
+    cup with caramel, chocolate, cream, and sweet nuttiness.
   </p>
   <p>
-    Their direct-trade specialty division focuses on microlots and blends that reflect the best of Minas Gerais. All coffees are grown around the town of Tres Pontas and selected by their expert quality team.
+    Coffees from this area are known for approachable balance, making this a
+    comforting choice for espresso, milk drinks, or a mellow daily cup.
   </p>
 </div>
