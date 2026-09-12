@@ -16,4 +16,4 @@
   <li>Enjoy fresh, specialty-roasted coffee from the next roast or on your selected schedule.</li>
 </ol>
 
-<p><strong>Security:</strong> Your information is sent securely over HTTPS and stored only in our inbox. We do not share your data with any third parties.</p>
+<p><strong>Privacy:</strong> Your request is sent securely over HTTPS and used only to respond to your order or subscription request. We do not sell your information.</p>

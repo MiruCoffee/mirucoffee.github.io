@@ -15,9 +15,9 @@
       <li>Mixed Berries</li>
     </ul>
     <p>
-      Meticulous organic cultivation and fermentation yield juicy flavors.
-      We are truly blown away by the cup profile of this coffee. The perfect growing altitude, heirloom varietals,
-      and attention to detail from picking to drying, all combine to produce a stunningly complex and vibrant cup.
+      Careful cultivation and fermentation yield juicy flavors.
+      High elevation, heirloom varieties, and careful handling from picking to
+      drying come together in a complex and vibrant cup.
     </p>
   </div>
 
@@ -60,10 +60,16 @@
 <h4>Producer Notes</h4>
 <div class="producer-notes">
   <p>
-    This coffee is sourced through a U.S.-based green coffee importer who partners with the A.A.S.H. Nensebo washing station in Ethiopia’s West Arsi region. The station is managed by the Yonis family and serves a network of nearly 850 smallholder farmers in Werka village and surrounding areas.
+    This coffee comes from the A.A.S.H. Nensebo washing station in Ethiopia's
+    West Arsi region. The station is managed by the Yonis family and serves a
+    network of nearly 850 smallholder farmers in Werka village and the surrounding
+    area.
   </p>
   <p>
-    Most contributing farmers manage 2–5 hectares of certified organic coffee and personally deliver freshly picked cherries to the station.
-    According to the importer, the coffee is naturally processed: cherries are floated in water to remove “floaters,” then dried on raised beds and rotated regularly. Any under-ripe cherries are hand-sorted. Drying takes approximately 15–18 days depending on the weather.
+    Most contributing farmers manage small 2-5 hectare farms and personally
+    deliver freshly picked cherries to the station.
+    In processing, cherries are floated in water to remove lower-density fruit,
+    then dried on raised beds and rotated regularly. Any under-ripe cherries are
+    hand-sorted. Drying takes approximately 15-18 days depending on the weather.
   </p>
 </div>

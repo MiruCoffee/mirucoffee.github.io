@@ -56,12 +56,16 @@
 <h4>Producer Notes</h4>
 <div class="producer-notes">
   <p>
-    Sourced through a U.S.-based importer, this coffee comes from the Muhororo Washing Station in Rwanda’s Nyamasheke region. Over 200 smallholders deliver cherries to the station, which is managed by Celestin Rumenenangabo and his family. The station operates with a strong emphasis on sustainability, transparency, and social impact.
+    This coffee comes from the Muhororo Washing Station in Rwanda's Nyamasheke
+    region. Over 200 smallholders deliver cherries to the station, which is
+    managed by Celestin Rumenenangabo and his family. The station operates with
+    a strong emphasis on sustainability, transparency, and social impact.
   </p>
   <p>
     The cherries are freshly pulped and fermented for 12–14 hours, followed by 12–15 days of raised bed drying. Our sourcing partner reports that Celestin’s team sorts by flavor profile to maintain consistency across lots. The station reinvests in the community by offering healthcare, education, livestock programs, and sustainability training.
   </p>
   <p>
-    We are honored to roast this exceptional lot, knowing that each cup supports not just quality coffee but a thriving rural ecosystem of farmers and families.
+    We appreciate the care behind this coffee: each cup reflects both thoughtful
+    processing and the farming community that makes it possible.
   </p>
 </div>

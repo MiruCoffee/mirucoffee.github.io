@@ -15,10 +15,10 @@
       <li>Cream, Grape, Pomegranate</li>
     </ul>
     <p>
-     The developed profile is ultimately “juicy" with great up front classic 
-     sweetness, bright acidity and a heavy body. The Jauja profile is intended 
-     to be a perfect omniroast option that can elevate blends or hold its own 
-     as an espresso or pour over.
+      This washed Guatemala brings classic sweetness, bright acidity, and a
+      satisfyingly full body. Expect dark chocolate and cream up front, followed
+      by elderberry, citrus, grape, and pomegranate notes that keep the cup lively.
+      It is comfortable as a daily pour-over and has enough structure for espresso.
     </p>
   </div>
 
@@ -53,9 +53,13 @@
 <h4>Producer Notes</h4>
 <div class="producer-notes">
   <p>
-    The Jauja Blend from El Pesadero was created by the Coto family.
+    This Jauja coffee comes from El Pesadero and the Coto family in Antigua,
+    Guatemala.
   </p>
   <p>
-    El Pesadero is centrally located in the municipality of Antigua. Antigua is surrounded by 3 volcanoes, Volcan de Agua, Volcan de Acatenango, and Volcan de Fuego. The rich volcanic soil, warm days and cool nights and high winds give Antigua its unique microclimate that has been highly sought after for many years and provides perfect conditions for processing coffees.
+    Antigua is surrounded by three volcanoes: Volcan de Agua, Volcan de Acatenango,
+    and Volcan de Fuego. Rich volcanic soil, warm days, cool nights, and steady
+    winds create the region's distinctive microclimate, giving this coffee its
+    layered sweetness and clean structure.
   </p>
 </div>

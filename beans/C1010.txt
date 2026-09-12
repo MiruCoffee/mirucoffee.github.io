@@ -12,20 +12,20 @@
     <ul>
       <li>Tropical Fruit, Blackberry, Plum</li>
       <li>Honey, Grapefruit, Rose</li>
-      <li>Organic Green Coffee Lot</li>
+      <li>Organic Coffee Lot</li>
     </ul>
     <p>
-      This Ethiopia Sidama natural comes from an organic green coffee lot sourced
-      from approximately 600 smallholder farmers around the village of Bombe in
-      Bensa, Sidama. Processed at Ayla Washing Station, the lot is designed for
-      a vibrant, fruit-forward cup with tropical fruit, blackberry, plum, honey,
-      grapefruit, and rose-like floral notes.
+      This Ethiopia Sidama natural comes from an organic coffee lot grown by
+      approximately 600 smallholder farmers around the village of Bombe in Bensa,
+      Sidama. Processed at Ayla Washing Station, it offers a vibrant,
+      fruit-forward cup with tropical fruit, blackberry, plum, honey, grapefruit,
+      and rose-like floral notes.
     </p>
     <p>
-      The supplier describes this as an Improved Natural process: ripe cherries
-      are sorted, floated to remove lower-density fruit, soaked for 12 hours, and
-      then dried slowly on raised beds for about 28 days. That extra care helps
-      build sweetness, clarity, and the honey-like character that makes this coffee
+      This coffee uses an Improved Natural process: ripe cherries are sorted,
+      floated to remove lower-density fruit, soaked for 12 hours, and then dried
+      slowly on raised beds for about 28 days. That extra care helps build
+      sweetness, clarity, and the honey-like character that makes this coffee
       feel lively and refined.
     </p>
   </div>
@@ -48,7 +48,7 @@
     <tr><td>Grade:</td><td>G1</td></tr>
     <tr><td>Washing Station:</td><td>Ayla Washing Station</td></tr>
     <tr><td>Producer:</td><td>Approximately 600 smallholder farmers</td></tr>
-    <tr><td>Green Coffee Lot:</td><td>Organic</td></tr>
+    <tr><td>Organic Source:</td><td>Yes</td></tr>
     <tr><td>Harvest:</td><td>October-January</td></tr>
     <tr><td>Cup Score:</td><td>87.00</td></tr>
   </table>
@@ -79,8 +79,7 @@
     rainfall, and rich soils help cherries mature slowly.
   </p>
   <p>
-    This coffee is listed by the supplier as an organic green coffee lot. On Miru
-    Coffee materials, we describe the green coffee source accurately without using
-    USDA Organic certification language for the roasted product.
+    In the cup, it brings the kind of expressive fruit, clean sweetness, and floral
+    aroma that make Ethiopian natural coffees so memorable.
   </p>
 </div>
