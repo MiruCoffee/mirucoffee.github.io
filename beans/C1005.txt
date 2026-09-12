@@ -34,7 +34,7 @@
     <tr><td>Origin:</td><td>Werka Village, Refisa Kebele, Nensebo District, West Arsi, Oromia</td></tr>
     <tr><td>Altitude:</td><td>1950–2100 m.a.s.l.</td></tr>
     <tr><td>Processing:</td><td>Natural (Raised Bed Dried)</td></tr>
-    <tr><td>Varieties:</td><td>Selective local heirloom varieties</td></tr>
+    <tr><td>Varieties:</td><td>Selected local heirloom varieties, valued for floral aromatics and vibrant fruit complexity</td></tr>
     <tr><td>Washing Station:</td><td>Nensebo A.A.S.H. Washing Station</td></tr>
     <tr><td>Farmers:</td><td>Nearly 850 smallholder family farmers</td></tr>
     <tr><td>Cup Score:</td><td>86.25</td></tr>

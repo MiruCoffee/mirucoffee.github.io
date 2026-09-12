@@ -37,7 +37,7 @@
     <tr><td>Origin:</td><td>Gicherori, Embu County, Kenya</td></tr>
     <tr><td>Altitude:</td><td>1800-1900 m.a.s.l.</td></tr>
     <tr><td>Processing:</td><td>Washed</td></tr>
-    <tr><td>Varieties:</td><td>SL28, SL34</td></tr>
+    <tr><td>Varieties:</td><td>SL28 and SL34, prized Kenyan varieties known for vivid acidity and juicy fruit character</td></tr>
     <tr><td>Grade:</td><td>AB</td></tr>
     <tr><td>Producer:</td><td>Kibugu Farmers Cooperative Society</td></tr>
     <tr><td>Washing Station:</td><td>Gikirima Factory</td></tr>

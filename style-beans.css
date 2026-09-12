@@ -54,6 +54,25 @@
   max-width: 100%;
   height: auto;
 }
+
+.bean-info-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.bean-info-table td {
+  padding: 0.35rem 0.45rem;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.bean-info-table td:first-child {
+  width: 120px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 /* “View on Google Maps” 置左 */
 #bean-detail .view-map {
   text-align: left;
@@ -114,6 +133,10 @@
     display: block;
     width: 100%;
     overflow-x: auto;
+  }
+
+  .bean-info-table td:first-child {
+    width: 96px;
   }
 
   .map-embed iframe {

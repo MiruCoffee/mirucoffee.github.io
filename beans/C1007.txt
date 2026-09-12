@@ -36,7 +36,7 @@
     <tr><td>Origin:</td><td>Antigua Jauja, Guatemala</td></tr>
     <tr><td>Altitude:</td><td>1550–1650 m.a.s.l.</td></tr>
     <tr><td>Processing:</td><td>Washed</td></tr>
-    <tr><td>Varieties:</td><td>Various</td></tr>
+    <tr><td>Varieties:</td><td>Regional blend of traditional varieties, selected for balanced sweetness, chocolate, and citrus brightness</td></tr>
     <tr><td>Washing Station:</td><td>El Pesadero</td></tr>
     <tr><td>Farmers:</td><td>Stuardo Coto</td></tr>
     <tr><td>Cup Score:</td><td>86.00</td></tr>

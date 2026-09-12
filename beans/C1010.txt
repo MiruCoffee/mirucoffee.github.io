@@ -44,7 +44,7 @@
     <tr><td>Origin:</td><td>Bombe, Daye Bensa, Sidama, Ethiopia</td></tr>
     <tr><td>Altitude:</td><td>1950-2150 m.a.s.l.</td></tr>
     <tr><td>Processing:</td><td>Improved Natural</td></tr>
-    <tr><td>Variety:</td><td>74158</td></tr>
+    <tr><td>Variety:</td><td>74158, an Ethiopian selection known for floral clarity and fruit-forward sweetness</td></tr>
     <tr><td>Grade:</td><td>G1</td></tr>
     <tr><td>Washing Station:</td><td>Ayla Washing Station</td></tr>
     <tr><td>Producer:</td><td>Approximately 600 smallholder farmers</td></tr>

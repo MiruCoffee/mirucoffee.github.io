@@ -34,7 +34,7 @@
     <tr><td>Origin:</td><td>San José Poaquil, Acatenango, Chimaltenango</td></tr>
     <tr><td>Altitude:</td><td>1900–2000 m.a.s.l.</td></tr>
     <tr><td>Processing:</td><td>Washed</td></tr>
-    <tr><td>Varieties:</td><td>Typica, Bourbon, Caturra, Catuai</td></tr>
+    <tr><td>Varieties:</td><td>Classic Central American varieties (Typica, Bourbon, Caturra, Catuai), known for clean sweetness and bright acidity</td></tr>
     <tr><td>Farm:</td><td>Cooperative La Asunción</td></tr>
     <tr><td>Lot ID:</td><td>Maribel</td></tr>
     <tr><td>Farmers:</td><td>Multiple families around San José Poaquil</td></tr>

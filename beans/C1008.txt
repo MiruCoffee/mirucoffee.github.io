@@ -36,7 +36,7 @@
     <tr><td>Origin:</td><td>Tarrazú, Costa Rica</td></tr>
     <tr><td>Altitude:</td><td>1200–1750 m.a.s.l.</td></tr>
     <tr><td>Processing:</td><td>Honey</td></tr>
-    <tr><td>Varieties:</td><td>Caturra, Catuai</td></tr>
+    <tr><td>Varieties:</td><td>Caturra and Catuai, Costa Rican favorites known for clean sweetness and lively acidity</td></tr>
     <tr><td>Mill:</td><td>Beneficio San Diego</td></tr>
     <tr><td>Producer:</td><td>Beneficio San Diego, various smallholders</td></tr>
     <tr><td>Cup Score:</td><td>85.25</td></tr>

@@ -35,7 +35,7 @@
     <tr><td>Origin:</td><td>Ngozi Province, Burundi</td></tr>
     <tr><td>Altitude:</td><td>1660–1700 m.a.s.l.</td></tr>
     <tr><td>Processing:</td><td>Natural</td></tr>
-    <tr><td>Varieties:</td><td>Red Bourbon</td></tr>
+    <tr><td>Varieties:</td><td>Red Bourbon, a classic variety known for sweetness, round body, and bright fruit notes</td></tr>
     <tr><td>Washing Station:</td><td>Mubuga</td></tr>
     <tr><td>Farmers:</td><td>120+ female growers of the Rama Women’s Association</td></tr>
   </table>

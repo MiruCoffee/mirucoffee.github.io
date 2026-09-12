@@ -28,6 +28,9 @@ reactivating an inactive coffee.
   style, and who the coffee is good for.
 - Keep origin details accurate and concrete: region, altitude, process, variety,
   producer, mill or washing station, and cup score when known.
+- Do not list variety codes alone. Keep the code or variety name, then add a
+  short customer-friendly meaning, such as the expected sweetness, acidity,
+  floral quality, body, or fruit character.
 - Include the bean code, origin, roast date, and score when the page or image
   format supports it.
 - Mention organic source information only when it is listed by the bean source,

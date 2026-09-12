@@ -34,7 +34,7 @@
     <tr><td>Origin:</td><td>Guji Zone, Shakiso Woreda, Oromia, Ethiopia</td></tr>
     <tr><td>Altitude:</td><td>1850–2100 m.a.s.l.</td></tr>
     <tr><td>Processing:</td><td>Natural (Dried on raised beds)</td></tr>
-    <tr><td>Varieties:</td><td>Local Heirloom</td></tr>
+    <tr><td>Varieties:</td><td>Local heirloom varieties, often associated with floral aromatics and layered fruit character</td></tr>
     <tr><td>Washing Station:</td><td>Gigesa Washing Station</td></tr>
     <tr><td>Farmers:</td><td>500+ smallholder farmers</td></tr>
     <tr><td>Cup Score:</td><td>85.88</td></tr>

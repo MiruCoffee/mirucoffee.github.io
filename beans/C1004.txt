@@ -32,7 +32,7 @@
     <tr><td>Origin:</td><td>Nyamasheke District, Western Province, Rwanda (Near Lake Kivu)</td></tr>
     <tr><td>Altitude:</td><td>1700–2100 m.a.s.l.</td></tr>
     <tr><td>Processing:</td><td>Natural</td></tr>
-    <tr><td>Varieties:</td><td>Red Bourbon</td></tr>
+    <tr><td>Varieties:</td><td>Red Bourbon, a classic variety known for sweetness, round body, and red fruit character</td></tr>
     <tr><td>Washing Station:</td><td>Muhororo Washing Station</td></tr>
     <tr><td>Farmers:</td><td>Celestin and Marie Rumenenangabo + 236 smallholders</td></tr>
   </table>

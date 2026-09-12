@@ -32,7 +32,7 @@
     <tr><td>Origin:</td><td>Minas Gerais, Brazil</td></tr>
     <tr><td>Altitude:</td><td>950–1120 m.a.s.l.</td></tr>
     <tr><td>Processing:</td><td>Natural</td></tr>
-    <tr><td>Varieties:</td><td>Various (Mundo Novo, Yellow Catuai, Topazio, Acaia)</td></tr>
+    <tr><td>Varieties:</td><td>Classic Brazilian varieties (Mundo Novo, Yellow Catuai, Topazio, Acaia), chosen for sweet, nutty, chocolate-friendly balance</td></tr>
     <tr><td>Cooperative:</td><td>Cocatel</td></tr>
     <tr><td>Farmers:</td><td>Nearly 7,000 smallholder coffee growers</td></tr>
   </table>
