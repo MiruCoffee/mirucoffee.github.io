@@ -32,7 +32,7 @@
     "name": "Ethiopia West Arsi, Werka Nensebo",
     "image": "IMG/Bean/C1005.png",
     "detail": "beans/C1005.txt",
-    "active": true
+    "active": false
   },
   {
     "code": "C1006",
@@ -60,6 +60,13 @@
     "name": "Kenya Embu Gikirima, Washed",
     "image": "IMG/Bean/C1009.png",
     "detail": "beans/C1009.txt",
+    "active": true
+  },
+  {
+    "code": "C1010",
+    "name": "Ethiopia Organic Sidama Ayla Bombe G1 Natural",
+    "image": "IMG/Bean/C1010.png",
+    "detail": "beans/C1010.txt",
     "active": true
   }
 ]

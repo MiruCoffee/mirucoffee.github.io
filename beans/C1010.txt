@@ -1,0 +1,86 @@
+<!-- Bean Name -->
+<h2 class="bean-name">
+  Ethiopia Organic Sidama Ayla Bombe G1 Natural
+</h2>
+
+<hr>
+
+<!-- Flavor Notes -->
+<h4>Flavor Notes</h4>
+<div class="bean-hero-flex">
+  <div class="bean-text">
+    <ul>
+      <li>Tropical Fruit, Blackberry, Plum</li>
+      <li>Honey, Grapefruit, Rose</li>
+      <li>Organic Green Coffee Lot</li>
+    </ul>
+    <p>
+      This Ethiopia Sidama natural comes from an organic green coffee lot sourced
+      from approximately 600 smallholder farmers around the village of Bombe in
+      Bensa, Sidama. Processed at Ayla Washing Station, the lot is designed for
+      a vibrant, fruit-forward cup with tropical fruit, blackberry, plum, honey,
+      grapefruit, and rose-like floral notes.
+    </p>
+    <p>
+      The supplier describes this as an Improved Natural process: ripe cherries
+      are sorted, floated to remove lower-density fruit, soaked for 12 hours, and
+      then dried slowly on raised beds for about 28 days. That extra care helps
+      build sweetness, clarity, and the honey-like character that makes this coffee
+      feel lively and refined.
+    </p>
+  </div>
+
+  <div class="bean-image">
+    <img src="IMG/Bean/C1010.png" alt="C1010" class="bean-full-image">
+  </div>
+</div>
+
+<hr>
+
+<!-- Origin Details -->
+<h4>Origin Details</h4>
+<div class="origin-section-flex">
+  <table class="bean-info-table">
+    <tr><td>Origin:</td><td>Bombe, Daye Bensa, Sidama, Ethiopia</td></tr>
+    <tr><td>Altitude:</td><td>1950-2150 m.a.s.l.</td></tr>
+    <tr><td>Processing:</td><td>Improved Natural</td></tr>
+    <tr><td>Variety:</td><td>74158</td></tr>
+    <tr><td>Grade:</td><td>G1</td></tr>
+    <tr><td>Washing Station:</td><td>Ayla Washing Station</td></tr>
+    <tr><td>Producer:</td><td>Approximately 600 smallholder farmers</td></tr>
+    <tr><td>Green Coffee Lot:</td><td>Organic</td></tr>
+    <tr><td>Harvest:</td><td>October-January</td></tr>
+    <tr><td>Cup Score:</td><td>87.00</td></tr>
+  </table>
+
+  <div class="map-embed">
+    <iframe
+      src="https://www.google.com/maps?q=Ayla%20Washing%20Station%2C%20Bombe%2C%20Daye%20Bensa%2C%20Sidama%2C%20Ethiopia&t=k&z=12&output=embed"
+      width="100%" height="220"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    <p class="map-link">
+      <a href="https://www.google.com/maps/search/?api=1&query=Ayla%20Washing%20Station%2C%20Bombe%2C%20Daye%20Bensa%2C%20Sidama%2C%20Ethiopia"
+         target="_blank" rel="noopener">View on Google Maps</a>
+    </p>
+  </div>
+</div>
+
+<hr>
+
+<!-- Producer Notes -->
+<h4>Producer Notes</h4>
+<div class="producer-notes">
+  <p>
+    Bombe is one of the most admired coffee-growing areas in Sidama, known for
+    high elevation, careful cherry selection, and expressive fruit-forward cup
+    profiles. This lot is processed at Ayla Washing Station near the Bonora River
+    and the slopes of Durto Gerbamo Mountain, where cool mountain temperatures,
+    rainfall, and rich soils help cherries mature slowly.
+  </p>
+  <p>
+    This coffee is listed by the supplier as an organic green coffee lot. On Miru
+    Coffee materials, we describe the green coffee source accurately without using
+    USDA Organic certification language for the roasted product.
+  </p>
+</div>
